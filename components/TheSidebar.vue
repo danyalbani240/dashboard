@@ -1,6 +1,6 @@
 <template>
   <div class="bg-primary">
-    <nav class="h-full flex flex-col relative bg-primary w-56">
+    <nav class="h-full min-h-screen flex flex-col relative bg-primary w-56">
       <div class="navicon relative">
         <img
           class="mx-auto px-9 py-8"
