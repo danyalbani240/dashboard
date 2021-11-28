@@ -6,10 +6,7 @@
 </template>
 
 <script>
-import TheSidebar from "~/components/TheSidebar.vue";
-export default {
-  components: { TheSidebar },
-};
+export default {};
 </script>
 
 <style></style>
