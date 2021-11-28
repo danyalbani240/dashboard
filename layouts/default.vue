@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row-reverse">
+  <div class="flex flex-row-reverse text-Neutral-Gray">
     <the-sidebar />
     <Nuxt />
   </div>

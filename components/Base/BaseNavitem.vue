@@ -38,6 +38,7 @@ export default {
     },
   },
   computed: {
+    //To making Image address dynamic
     myImage() {
       return require(`~/assets/images/sidebar/${this.address}.svg`);
     },
