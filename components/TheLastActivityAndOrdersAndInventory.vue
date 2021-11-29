@@ -24,7 +24,7 @@
         <base-switch-badge linkOne="خرید" linkTwo="فروش" />
       </div>
       <table
-        class="table rounded-2xl mt-2.5 font-xs"
+        class="table relative orders rounded-2xl mt-2.5 font-xs"
         style="color: #15ab89; direction: rtl"
       >
         <tr class="text-white justify-between">
@@ -119,7 +119,7 @@ export default {
 
 <style>
 .last-do {
-  background-image: url(../assets/images/weiredelectral.svg);
+  background-image: url("../assets/images/weiredelectral.svg?external");
   width: 390px;
   height: 308px;
   background-repeat: no-repeat;
@@ -195,8 +195,17 @@ a.sell {
   bottom: 0;
   background: linear-gradient(270deg, #010e17 0%, #15ab89 51.04%, #010e17 100%);
 }
-.mj {
-  width: 331px;
-  height: 308px;
+.orders::after {
+  content: "";
+  position: absolute;
+  width: 167px;
+  height: 159px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #15ab89;
+  opacity: 0.5;
+  filter: blur(210px);
 }
 </style>

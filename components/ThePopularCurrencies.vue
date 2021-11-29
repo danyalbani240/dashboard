@@ -30,6 +30,7 @@ export default {
             dPrice: "61,689.12",
             buyPrice: "17.199.036.763",
             sellPrice: "17.199.036.763",
+            address: "btccardlogo",
           },
           {
             short: "BTCC",
@@ -37,6 +38,7 @@ export default {
             dPrice: "61,689.12",
             buyPrice: "17.199.036.763",
             sellPrice: "17.199.036.763",
+            address: "shitcoin",
           },
         ],
         [
@@ -45,6 +47,7 @@ export default {
             allName: "bitcoin",
             dPrice: "61,689.12",
             buyPrice: "17.199.036.763",
+            address: "btccardlogo",
             sellPrice: "17.199.036.763",
           },
           {
@@ -52,6 +55,8 @@ export default {
             allName: "bitcoin",
             dPrice: "61,689.12",
             buyPrice: "17.199.036.763",
+            address: "shitcoin",
+
             sellPrice: "17.199.036.763",
           },
         ],

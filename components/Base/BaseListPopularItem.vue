@@ -3,7 +3,7 @@
     <div v-if="trapezoid && !trapezoidR" class="trapezoid pt-3">
       <div class="flex items-center">
         <div class="flex ml-3.5">
-          <!-- <img class="mr-2.5" src="../static/btccardlogo.svg" alt="" /> -->
+          <img class="mr-2.5" :src="myImage" alt="" />
           <div>
             <p>{{ short }}</p>
             <p>{{ allName }}</p>
@@ -21,7 +21,7 @@
     <div v-if="trapezoidR" class="trapezoid-r pt-3">
       <div class="ml-20 flex items-center">
         <div class="flex">
-          <!-- <img class="mr-2.5" src="../static/shitCoin.svg" alt="" /> -->
+          <img class="mr-2.5" :src="myImage" alt="" />
           <div>
             <p>{{ short }}</p>
             <p>{{ allName }}</p>
@@ -42,6 +42,9 @@
 <script>
 export default {
   props: {
+    address: {
+      type: String,
+    },
     trapezoid: {
       type: Boolean,
       default: true,
@@ -69,6 +72,12 @@ export default {
     sellPrice: {
       type: String,
       required: true,
+    },
+  },
+  computed: {
+    //To making Image address dynamic
+    myImage() {
+      return require(`~/assets/images/popular/${this.address}.svg`);
     },
   },
 };

@@ -9,6 +9,7 @@
       :buyPrice="coin.buyPrice"
       :sellPrice="coin.sellPrice"
       :trapezoidR="index % 2 == 0 ? false : true"
+      :address="coin.address"
     />
   </div>
 </template>

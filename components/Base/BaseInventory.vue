@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3 mt-2.5 mj rounded-2xl current">
+  <div class="px-3 mt-2.5 ineventory rounded-2xl current">
     <div class="flex relative p-2 sync justify-between">
       <p>رمز ارز</p>
       <p>موجودی</p>
@@ -27,4 +27,22 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.ineventory {
+  width: 331px;
+  height: 308px;
+  position: relative;
+}
+.ineventory::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-80%, -50%);
+  width: 167px;
+  height: 159px;
+  background-color: #15ab89;
+  opacity: 0.5;
+  filter: blur(210px);
+}
+</style>
