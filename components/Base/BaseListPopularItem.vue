@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="trapezoid && !trapezoidR" class="trapezoid pt-3">
+    <div v-if="trapezoid && !trapezoidR" class="relative trapezoid pt-3">
       <div class="flex items-center">
         <div class="flex ml-3.5">
           <img class="mr-2.5" :src="myImage" alt="" />
@@ -18,7 +18,7 @@
         <p class="sell">فروش به ما: {{ sellPrice }} ریال</p>
       </div>
     </div>
-    <div v-if="trapezoidR" class="trapezoid-r pt-3">
+    <div v-if="trapezoidR" class="relative trapezoid-r pt-3">
       <div class="ml-20 flex items-center">
         <div class="flex">
           <img class="mr-2.5" :src="myImage" alt="" />
@@ -82,3 +82,32 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.buy {
+  color: #21813c;
+}
+.sell {
+  color: #eb0020;
+}
+.price {
+  background-image: linear-gradient(
+    to left,
+    rgba(1, 14, 23, 0) 0%,
+    rgba(64, 72, 233, 0.31) 100%
+  );
+  border-radius: 5px;
+  padding: 2.5px 4px;
+}
+.trapezoid::after,.trapezoid-r::after {
+  content: "";
+  position: absolute;
+  background-color: #4048e9;
+  filter: blur(80px);
+  width: 45px;
+  height: 45px;
+  right: 40%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+}
+</style>
