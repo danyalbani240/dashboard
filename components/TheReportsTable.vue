@@ -16,7 +16,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="report in reports" :key="report.payment">
+        <tr
+          v-for="(report, index) in reports"
+          :class="{ two: index % 2 === 0 }"
+          :key="report.payment"
+        >
           <td>{{ report.price }}</td>
           <td>{{ report.credit }}</td>
           <td>{{ report.payment }}</td>
@@ -25,6 +29,25 @@
         </tr>
       </tbody>
     </table>
+    <div class="flex flex-row-reverse justify-end mt-3">
+      <img src="../assets/images/nexticon.svg" alt="" />
+      <div class="flex">
+        <img src="../assets/images/pagbefore.svg" alt="" />
+        <div class="flex items-center">
+          <div class="pag-active pag-item">1</div>
+          <div class="pag-item">2</div>
+          <div class="pag-item">3</div>
+          <div class="pag-12 px-3.5 py-1">صفحه 12</div>
+          <div class="pag-item">28</div>
+        </div>
+        <img src="../assets/images/pagnext.svg" alt="" />
+      </div>
+      <img src="../assets/images/previousicon.svg" alt="" />
+    </div>
+    <div class="btn-group mt-14">
+      <base-button>مرحله بعد</base-button>
+      <base-button bGreen="true">مرحله قبل</base-button>
+    </div>
   </div>
 </template>
 
@@ -43,7 +66,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 table {
   direction: rtl;
 }
@@ -52,12 +75,31 @@ thead {
 
   height: 50px;
 }
-
+tbody tr {
+  background-image: linear-gradient(0deg, #031f24 21.31%, #053130 78.69%);
+  height: 50px;
+}
 td {
   text-align: right;
 }
 tr {
   margin: 5px 0;
+  position: relative;
+}
+tr::before {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  content: "";
+}
+tr::after {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #010e10;
+  height: 5px;
+  content: "";
 }
 tr td:first-of-type {
   border-radius: 0 5px 5px 0px;
@@ -67,5 +109,27 @@ tr td:first-of-type {
 tr td:last-of-type {
   border-radius: 5px 0 0 5px;
   padding-right: 5px;
+}
+tr.two {
+  background-image: linear-gradient(0deg, #097369 21.31%, #15ab88 78.69%);
+}
+.pag-item {
+  width: 28px;
+  text-align: center;
+  height: 28px;
+  border-radius: 5px;
+}
+.pag-12 {
+  border: 1px solid #15ab89;
+  border-radius: 5px;
+  text-align: center;
+}
+.pag-item.pag-active {
+  background-image: linear-gradient(
+    181.44deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 100%
+  );
+  backdrop-filter: blur(12px);
 }
 </style>
