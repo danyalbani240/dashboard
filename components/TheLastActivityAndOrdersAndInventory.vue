@@ -134,12 +134,7 @@ a.buy {
 a.sell {
   color: #15ab89;
 }
-.table-header {
-  border-radius: 17px;
-  border: 1px solid #15ab89;
-  width: 154px;
-  height: 34px;
-}
+
 .current {
   border: 1px solid rgba(21, 171, 137, 0.3);
 }

@@ -1,10 +1,9 @@
 <template>
   <div
-    class="relative justify-center flex-row-reverse rounded-2xl pr-2 items-center flex table-header text-sm"
+    class="relative justify-center flex-row-reverse rounded-2xl pr-1 items-center flex badge-contain text-sm"
   >
     <a
-      class="flex items-center text-center py-1 w-10 justify-center buy active rounded-2xl text-primary"
-      href=""
+      class="flex items-center text-center py-1 w-20 justify-center buy active rounded-2xl text-primary font-bold"
       >{{ linkOne }}</a
     >
     <div
@@ -13,7 +12,7 @@
     >
       <img src="../../assets/images/transform.svg" alt="" />
     </div>
-    <a class="sell flex items-center text-center w-20 py-1 px-5" href="">{{
+    <a class="sell flex items-center text-center w-20 py-1 px-5 text-Neutral-Green1 font-bold" href="">{{
       linkTwo
     }}</a>
   </div>
@@ -34,4 +33,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.active {
+  background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
+}
+.badge-contain {
+  border-radius: 17px;
+  border: 1px solid #15ab89;
+  height: 34px;
+}
+</style>
