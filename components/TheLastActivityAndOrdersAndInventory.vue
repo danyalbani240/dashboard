@@ -84,46 +84,8 @@ export default {
   box-sizing: border-box;
   box-shadow: 0px 10px 16px rgba(21, 171, 137, 0.1);
 }
-table {
-  width: 390px;
-  height: 306px;
-  background: linear-gradient(
-    91.44deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(196, 196, 196, 0.06) 100%
-  );
-}
-table tr {
-  height: 38px;
-}
 
-tr {
-  background-color: #15ab8886;
-  text-align: center;
-}
-tr:nth-child(even) {
-  background-image: none;
-  background-color: transparent !important;
-}
 
-tr:first-child {
-  border-radius: 16px;
-  position: relative;
-}
-tr:first-child::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background-image: linear-gradient(
-    270deg,
-    rgba(14, 33, 39, 0.3) 0%,
-    #15ab89 51.04%,
-    rgba(44, 61, 66, 0.3) 100%
-  );
-}
 a.buy.active {
   background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
 }
@@ -146,17 +108,5 @@ a.sell {
   bottom: 0;
   background: linear-gradient(270deg, #010e17 0%, #15ab89 51.04%, #010e17 100%);
 }
-.orders::after {
-  content: "";
-  position: absolute;
-  width: 167px;
-  height: 159px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
-  background-color: #15ab89;
-  opacity: 0.5;
-  filter: blur(210px);
-}
 </style>
