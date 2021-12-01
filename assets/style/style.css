@@ -61,3 +61,39 @@
   backdrop-filter: blur(12px);
   border-radius: 6px;
 }
+.acounting-box-1 {
+  border-radius: 18px;
+  border: 1px solid rgba(21, 171, 137, 0.3);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+
+  background-color: #010e17;
+}
+
+.acounting-box-1 p {
+  margin-top: 10px;
+}
+.acounting-box-1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #15ab89;
+  opacity: 0.5;
+  filter: blur(130px);
+  width: 296px;
+  height: 282px;
+  z-index: -1;
+}
+.list-paragraph::before {
+  position: absolute;
+  content: "";
+  background-image: url(../images/lastpicon.svg);
+  height: 12px;
+  width: 37px;
+  top: 50%;
+  right: 0;
+  margin-right: -40px;
+  display: inline-block;
+}

@@ -16,6 +16,7 @@ module.exports = {
         "Neutral-Green1": "#15AB89",
         "Neutral-Green2": "#76D9B9",
         "Neutral-Gray": "#EBEBEB",
+        "Neutral-Orange": "#F28337",
       },
     },
   },
