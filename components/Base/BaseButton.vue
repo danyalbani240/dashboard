@@ -12,6 +12,7 @@ export default {
   props: {
     bGreen: {
       type: Boolean,
+      default: false,
     },
     bTrans: {
       type: Boolean,

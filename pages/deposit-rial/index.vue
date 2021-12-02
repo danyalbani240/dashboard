@@ -11,14 +11,14 @@
           عضو شبکه شتاب و از طریق درگاه پرداخت اینترنتی اقدام نمایید.
         </p>
         <p>در هنگام پرداخت به نکات زیر دقت نمایید:</p>
-        <p class="list-paragraph relative">
+        <p class="list-paragraph relative mr-10">
           حتماً به آدرس صفحه‌ی درگاه بانکی دقت نموده و تنها پس از اطمینان از
           حضور در سایت‌های سامانه‌ی شاپرک مشخصات کارت بانکی خود را وارد نمایید.
         </p>
-        <p class="list-paragraph relative">
+        <p class="list-paragraph relative mr-10">
           در صفحه درگاه دقت کنید که حتما مبلغ نمایش داده شده درست باشد.
         </p>
-        <p class="list-paragraph relative">
+        <p class="list-paragraph relative mr-10">
           در تعیین مبلغ واریز به این موضوع دقت نمایید که حداقل مبلغ معامله در
           بازار نوین تکس سیصد هزار تومان است.
         </p>
@@ -27,6 +27,7 @@
           پروفایل‌تان ثبت و تایید شده است، استفاده نمایید.
         </p>
       </div>
+      <ThePerformOperations />
     </div>
   </div>
 </template>
