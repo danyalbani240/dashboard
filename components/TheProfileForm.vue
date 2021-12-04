@@ -42,6 +42,16 @@ export default {};
   backdrop-filter: blur(12px);
   height: 369px;
 }
+.profile-form::before {
+  position: absolute;
+  width: 155px;
+  left: 44%;
+  top: -25%;
+  background-image: url(/_nuxt/assets/images/profilePolygon.svg);
+  height: 172px;
+  content: "";
+  background-repeat: no-repeat;
+}
 .select-perform {
   background-image: url(../assets/images/selectperform.svg);
   background-color: #010e17;

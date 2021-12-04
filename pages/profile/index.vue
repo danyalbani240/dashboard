@@ -1,7 +1,7 @@
 <template>
   <div class="bg-primary w-full text-Neutral-Gray p-5">
     <base-dashboard-header :pageName="'پروفایل'" />
-    <div class="mt-2">
+    <div class="mt-10">
       <base-part-header :address="'insidereport'" headName="حساب کاربری" />
 
       <the-profile-form />
