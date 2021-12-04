@@ -3,17 +3,17 @@
     class="flex flex-row-reverse px-4 justify-between items-center profile-form mx-auto"
   >
     <form class="w-full">
-      <div class="flex justify-center w-full flex-row-reverse">
+      <div class="flex justify-between w-full flex-row-reverse">
         <base-input label="نام" :w270="true" />
         <base-input label="نام خانوادگی" :w270="true" />
         <base-input label="کدملی" :w270="true" />
       </div>
-      <div class="my-2.5 flex justify-center w-full flex-row-reverse">
+      <div class="my-2.5 flex justify-between w-full flex-row-reverse">
         <base-input label="تاریخ تولد" :w270="true" />
         <base-input label="نام پدر " :w270="true" />
         <base-input label="جنسیت" :w270="true" />
       </div>
-      <div class="flex justify-center w-full flex-row-reverse">
+      <div class="flex justify-between w-full flex-row-reverse">
         <base-input label="شماره موبایل" :w270="true" />
         <base-input label="آدرس" :w366="true" />
         <base-input label="شماره ثابت" :w174="true" />

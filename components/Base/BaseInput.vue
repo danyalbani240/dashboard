@@ -1,6 +1,6 @@
 <template>
-  <div dir="rtl">
-    <label class="mb-1">
+  <div dir="rtl" :class="{ 'w-270': w270, 'w-366': w366, 'w-174': w174 }">
+    <label>
       {{ label }}
     </label>
     <input
@@ -8,8 +8,7 @@
       :placeholder="place"
       v-bind:value="model"
       v-on:input="model = $event"
-      :class="{ 'w-270': w270, 'w-366': w366, 'w-174': w174 }"
-      class="bg-primary"
+      class="bg-primary w-full mt-1.5"
     />
   </div>
 </template>
