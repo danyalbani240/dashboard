@@ -21,6 +21,7 @@ export default {
     },
     place: {
       type: String,
+      required: false,
     },
     w270: {
       type: Boolean,

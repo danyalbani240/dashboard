@@ -1,6 +1,10 @@
 <template>
   <button
-    :class="{ 'bg-button-gradient': bGreen, 'border-bg': bTrans }"
+    :class="{
+      'bg-button-gradient': bGreen,
+      'border-bg': bTrans,
+      'w-full': full,
+    }"
     class="px-9 py-2 rounded-md"
   >
     <slot></slot>
@@ -17,6 +21,10 @@ export default {
     bTrans: {
       type: Boolean,
       default: true,
+    },
+    full: {
+      type: Boolean,
+      default: false,
     },
   },
 };
