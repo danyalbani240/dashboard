@@ -10,10 +10,7 @@
 </template>
 
 <script>
-import TheProfileForm from "~/components/TheProfileForm.vue";
-export default {
-  components: { TheProfileForm },
-};
+export default {};
 </script>
 
 <style></style>
