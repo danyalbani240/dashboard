@@ -53,7 +53,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .auth-box-container {
   width: 637px;
 }

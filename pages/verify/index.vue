@@ -27,8 +27,8 @@
     <!-- <the-verify-stage-one /> -->
     <!-- <the-verify-stage-two /> -->
     <!-- <the-verify-email-stage /> -->
-    <the-authentication-stage />
-    
+    <!-- <the-authentication-stage /> -->
+    <the-authentication-stage-two />
   </div>
 </template>
 
