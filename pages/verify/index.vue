@@ -5,37 +5,45 @@
     <div class="stages flex mt-8 justify-center">
       <div class="stage mx-2.5">
         <div class="stage-input"></div>
-        <p class="text-center mt-2">+</p>
+        <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
       <div class="stage mx-2.5">
         <div class="stage-input"></div>
-        <p class="text-center mt-2">+</p>
+        <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
       <div class="stage mx-2.5">
         <div class="stage-input"></div>
-        <p class="text-center mt-2">+</p>
+        <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
       <div class="stage mx-2.5">
         <div class="stage-input"></div>
-        <p class="text-center mt-2">+</p>
+        <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
       <div class="stage mx-2.5">
         <div class="stage-input"></div>
-        <p class="text-center mt-2">+</p>
+        <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
     </div>
     <!-- <the-verify-stage-one /> -->
     <!-- <the-verify-stage-two /> -->
-    <the-verify-email-stage />
+    <!-- <the-verify-email-stage /> -->
+    <the-authentication-stage />
+    
   </div>
 </template>
 
 <script>
+import TheAuthenticationStage from "~/components/TheAuthenticationStage.vue";
 import TheVerifyEmailStage from "~/components/TheVerifyEmailStage.vue";
 import TheVerifyStageOne from "~/components/TheVerifyStageOne.vue";
 import TheVerifyStageTwo from "~/components/TheVerifyStageTwo.vue";
 export default {
-  components: { TheVerifyStageOne, TheVerifyStageTwo, TheVerifyEmailStage },
+  components: {
+    TheVerifyStageOne,
+    TheVerifyStageTwo,
+    TheVerifyEmailStage,
+    TheAuthenticationStage,
+  },
 };
 </script>
 
