@@ -4,11 +4,10 @@
       فعال سازی گوگل دو مرحله ای
     </p>
     <p class="text-sm mt-5 text-center">
-      از طریق یکی از پلتفرم های زیر نرم افزار های گوگل دو مرحله را فعال کنید.
+      کیو ار نمایش داده شده را اسکن کنید یا لینک زیر را برای فعال کردن گوگل دو
+      مرحله وارد کنید.
     </p>
-    <div
-      class="auth-box-container mx-auto mt-14 flex justify-center flex-wrap"
-    >
+    <div class="auth-box-container mx-auto mt-14 flex justify-center flex-wrap">
       <div class="base-auth-item flex items-center justify-center my-7">
         <div
           class="auth-item-box bg-primary flex flex-col items-center justify-center"
@@ -17,6 +16,18 @@
             <img src="../assets/images/Qrbarcode.svg" alt="" />
           </div>
         </div>
+      </div>
+    </div>
+    <div class="mx-auto wtf flex items-center justify-center">
+      <div class="bg-primary flex items-center">
+        <img
+          class="mx-6"
+          src="../assets/images/bulk-documnet-copy.svg"
+          alt=""
+        />
+        <p>
+          afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiasdfghfgsdfgs
+        </p>
       </div>
     </div>
     <div class="btn-group mt-14">
@@ -30,7 +41,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .base-auth-item {
   border: 2px solid #15ab89;
   border-radius: 10px;
@@ -49,5 +60,18 @@ export default {};
   background-position: bottom left;
   border: 1px solid #15ab89;
   border-radius: 5px;
+}
+.wtf {
+  width: 633.31px;
+  height: 77.39px;
+  border: 2px solid #15ab89;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 10px #15ab89;
+}
+.wtf div {
+  border: 1px solid #15ab89;
+  border-radius: 5px;
+  width: 615px;
+  height: 62px;
 }
 </style>
