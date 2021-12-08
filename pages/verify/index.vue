@@ -28,12 +28,14 @@
     <!-- <the-verify-stage-two /> -->
     <!-- <the-verify-email-stage /> -->
     <!-- <the-authentication-stage /> -->
-    <the-authentication-stage-two />
+    <!-- <the-authentication-stage-two /> -->
+    <the-verify-completed />
   </div>
 </template>
 
 <script>
 import TheAuthenticationStage from "~/components/TheAuthenticationStage.vue";
+import TheVerifyCompleted from "~/components/TheVerifyCompleted.vue";
 import TheVerifyEmailStage from "~/components/TheVerifyEmailStage.vue";
 import TheVerifyStageOne from "~/components/TheVerifyStageOne.vue";
 import TheVerifyStageTwo from "~/components/TheVerifyStageTwo.vue";
@@ -43,6 +45,7 @@ export default {
     TheVerifyStageTwo,
     TheVerifyEmailStage,
     TheAuthenticationStage,
+    TheVerifyCompleted,
   },
 };
 </script>
