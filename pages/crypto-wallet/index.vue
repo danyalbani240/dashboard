@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import BaseCryptoWalletItem from "~/components/Base/BaseCryptoWalletItem.vue";
+
 export default {
-  components: { BaseCryptoWalletItem },
+
 };
 </script>
 
