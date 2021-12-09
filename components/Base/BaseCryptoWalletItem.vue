@@ -1,5 +1,17 @@
 <template>
   <div dir="rtl" class="base-item-container relative">
+    <div style="top: 18px" class="relative z-20 flex">
+      <div
+        class="rounded-full bg-primary item-logo flex justify-center items-center"
+      >
+        <img src="../../assets/images/bitcoinseeklogo.svg" alt="" />
+      </div>
+      <div
+        class="-mr-6 item-short rounded-full flex justify-center items-center self-end"
+      >
+        BTC
+      </div>
+    </div>
     <div class="base-item relative z-10 justify-between flex pt-5 items-center">
       <div class="h-10 flex items-center invent-primary justify-between">
         <div class="h-10 w-10 flex justify-center items-center relative z-10">
@@ -115,5 +127,21 @@ export default {};
     #144bb8 98.6%
   );
   border-radius: 5px;
+}
+.item-logo {
+  box-shadow: 0px 6px 50px rgba(60, 59, 59, 0.25);
+  width: 102px;
+  height: 102px;
+}
+.item-short {
+  width: 58px;
+  height: 58px;
+
+  background: linear-gradient(
+    91.44deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 100%
+  );
+  backdrop-filter: blur(12px);
 }
 </style>
