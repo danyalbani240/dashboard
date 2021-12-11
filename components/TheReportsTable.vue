@@ -5,30 +5,32 @@
 
       <img src="../assets/images/refresh.svg" alt="" />
     </div>
-    <table class="bg-opacity-50 w-full mt-3.5">
-      <thead>
-        <tr>
-          <td>مبلغ</td>
-          <td>شماره کارت</td>
-          <td>تاریخ پرداخت</td>
-          <td>شماره تراکنش</td>
-          <td>وضعیت تراکنش</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="(report, index) in reports"
-          :class="{ two: index % 2 === 0 }"
-          :key="report.payment"
-        >
-          <td>{{ report.price }}</td>
-          <td>{{ report.credit }}</td>
-          <td>{{ report.payment }}</td>
-          <td>{{ report.transactionNum }}</td>
-          <td>{{ report.transactionStatus === true ? "موفق" : "ناموفق" }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="overflow-x-auto">
+      <table class="bg-opacity-50 w-full mt-3.5">
+        <thead>
+          <tr>
+            <td>مبلغ</td>
+            <td>شماره کارت</td>
+            <td>تاریخ پرداخت</td>
+            <td>شماره تراکنش</td>
+            <td>وضعیت تراکنش</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(report, index) in reports"
+            :class="{ two: index % 2 === 0 }"
+            :key="report.payment"
+          >
+            <td>{{ report.price }}</td>
+            <td>{{ report.credit }}</td>
+            <td>{{ report.payment }}</td>
+            <td>{{ report.transactionNum }}</td>
+            <td>{{ report.transactionStatus === true ? "موفق" : "ناموفق" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="flex flex-row-reverse justify-end mt-3">
       <img src="../assets/images/nexticon.svg" alt="" />
       <div class="flex">
@@ -46,7 +48,7 @@
     </div>
     <div class="btn-group mt-14">
       <base-button>مرحله بعد</base-button>
-      <base-button bGreen="true">مرحله قبل</base-button>
+      <base-button :bGreen="true">مرحله قبل</base-button>
     </div>
   </div>
 </template>
