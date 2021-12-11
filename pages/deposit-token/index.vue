@@ -1,68 +1,73 @@
 <template>
   <div class="bg-primary w-full text-Neutral-Gray p-5">
     <div class="flex flex-row-reverse justify-between">
-      <div class="harvest-crypto">
-        <div class="flex flex-row-reverse items-center">
-          <div class="w-16 h-16 rounded-full crypto-logo"></div>
-          <div
-            class="flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-          ></div>
+      <the-harvest-token-component />
+      <div>
+        <div class="deposit-crypto flex flex-col px-3">
+          <div class="flex flex-row-reverse">
+            <div>
+              <div
+                class="input-name-container flex flex-row-reverse mt-12 items-center"
+              >
+                <div class="crypto-logo relative z-20"></div>
+                <div
+                  class="name-input flex-1 relative -mr-1 z-10 rounded bg-primary"
+                ></div>
+              </div>
+              <div class="mt-5">
+                <p dir="rtl">شبکه</p>
+                <div
+                  class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
+                ></div>
+                <div class="flex mt-3">
+                  <base-badge name="TRX" />
+                  <base-badge name="BTC" />
+                  <base-badge name="ERC20" />
+                  <base-badge name="TRC20" />
+                </div>
+              </div>
+            </div>
+            <div class="bg-primary qr-code flex flex-col mr-5 mt-8 px-5 py-4">
+              <img src="../../assets/images/qr-code.svg" alt="" />
+              <div class="mt-5 flex items-center justify-center">
+                <img src="../../assets/images/bulk-documnet-copy.svg" alt="" />
+                <p style="font-size: 10px">asndfoshdohofshoushiou</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-between mt-8">
+            <div
+              class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
+            >
+              <div
+                class="h-10 w-10 flex justify-center items-center relative z-10"
+              >
+                <img src="/_nuxt/assets/images/walletcheck.svg" alt="" />
+              </div>
+              <div
+                class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
+              >
+                <span class="inline-block">موجودی اصلی</span>
+                <span>96.222</span>
+              </div>
+            </div>
+            <div
+              class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
+            >
+              <div
+                class="h-10 w-10 flex justify-center items-center relative z-10"
+              >
+                <img src="/_nuxt/assets/images/walletcheck.svg" alt="" />
+              </div>
+              <div
+                class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
+              >
+                <span class="inline-block">موجودی اصلی</span>
+                <span>96.222</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mt-5">
-          <p dir="rtl">شبکه:</p>
-          <div
-            class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-          ></div>
-        </div>
-        <div class="flex mt-3">
-          <base-badge name="TRX" />
-          <base-badge name="BTC" />
-          <base-badge name="ERC20" />
-          <base-badge name="TRC20" />
-        </div>
-        <div class="mt-5">
-          <p dir="rtl">نواع انتقال:</p>
-          <div
-            class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-          ></div>
-        </div>
-        <div class="flex mt-3">
-          <base-badge name="Fast" />
-          <base-badge name="Trade" />
-          
-        </div>
-        <div class="mt-5">
-          <p dir="rtl">فی شبکه:</p>
-          <div
-            class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-          ></div>
-        </div>
-        <div class="flex mt-3 flex-row-reverse">
-          <base-badge name="ثابت" />
-          <base-badge name="متغیر" />
-          
-        </div>
-        <div class="mt-5">
-          <p dir="rtl">آدرس انتقال:</p>
-          <div
-            class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-          ></div>
-        </div>
-        <div class="mt-5">
-          <p dir="rtl">مقدار برداشت:</p>
-          <div
-            class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-          ></div>
-        </div>
-        <div
-          class="flex flex-row-reverse justify-between bg-accent flex-1 h-10"
-        ></div>
-        <base-button class="w-full mt-7" :bGreen="true"
-          ><span>برداشت</span></base-button
-        >
-      </div>
-      <div class="">
-        <div class="deposit-crypto"></div>
       </div>
     </div>
   </div>
@@ -71,6 +76,7 @@
 <script>
 import BaseBadge from "~/components/Base/BaseBadge.vue";
 import BaseButton from "~/components/Base/BaseButton.vue";
+import TheHarvestTokenComponent from "~/components/TheHarvestTokenComponent.vue";
 export default {
   components: {
     BaseButton,
@@ -80,21 +86,6 @@ export default {
 </script>
 
 <style scoped>
-.harvest-crypto {
-  padding-top: 30px;
-  width: 572px;
-  height: 838px;
-  background: linear-gradient(
-    91.44deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(196, 196, 196, 0.06) 100%
-  );
-  backdrop-filter: blur(12px);
-  /* Note: backdrop-filter has minimal browser support */
-  padding-right: 18px;
-  padding-left: 33px;
-  border-radius: 10px;
-}
 .deposit-crypto {
   width: 572px;
   height: 415px;
@@ -105,16 +96,65 @@ export default {
   );
   backdrop-filter: blur(12px);
   border-radius: 10px;
+  border: 2px solid #15ab89;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px #15ab89;
+  /* filter: drop-shadow(0px 0px 10px #15ab89); */
+}
+.deposit-crypto > :first-child > :first-child {
+  width: 306px;
+}
+.input-name-container {
+  height: 76px;
 }
 .crypto-logo {
-  background: linear-gradient(
+  width: 76px;
+  height: 76px;
+  background-image: linear-gradient(
+    91.44deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 100%
+  );
+  border-radius: 50%;
+}
+.name-input {
+  height: 42px;
+}
+.qr-code {
+  width: 219px;
+  height: 275px;
+  background: #010e17;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+.qr-code > div {
+  width: 183px;
+  height: 32px;
+  background-image: linear-gradient(
     91.44deg,
     rgba(255, 255, 255, 0.18) 0%,
     rgba(196, 196, 196, 0.06) 100%
   );
   backdrop-filter: blur(12px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 5px;
 }
-.name-input {
-  height: 42px;
+.invent-primary > :first-child {
+  background-color: #010e17;
+  border: 1px solid #15ab89;
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.invent-primary > :nth-child(2) {
+  background-image: linear-gradient(
+    91.44deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 100%
+  );
+  backdrop-filter: blur(12px);
+  border-radius: 3px;
+  width: 189px;
+  height: 32px;
 }
 </style>
