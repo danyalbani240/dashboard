@@ -52,7 +52,6 @@
 </template>
 
 <script>
-import BasePartHeader from "./Base/BasePartHeader.vue";
 export default {
   props: {
     heads: {
@@ -73,20 +72,23 @@ table {
 thead {
   background-image: linear-gradient(to top, #031f24 21.31%, #053130 78.69%);
 
-  height: 50px;
+  height: 60px;
 }
 tbody tr {
   background-image: linear-gradient(0deg, #031f24 21.31%, #053130 78.69%);
-  height: 50px;
+  height: 60px;
 }
 td {
   text-align: right;
+  position: relative;
+  text-align: center;
 }
 tr {
   margin: 5px 0;
   position: relative;
+  text-align: center;
 }
-tr::before {
+/* tr::before {
   position: absolute;
   top: 0;
   width: 100%;
@@ -100,6 +102,24 @@ tr::after {
   background-color: #010e10;
   height: 5px;
   content: "";
+} */
+tr td::before {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: #010e17 !important;
+}
+tr td::after {
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: #010e17 !important;
 }
 tr td:first-of-type {
   border-radius: 0 5px 5px 0px;
