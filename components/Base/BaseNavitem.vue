@@ -3,15 +3,17 @@
     class="nav-item my-1.5 flex flex-row-reverse justify-between h-12 items-center cursor-pointer"
     :class="{ active: active }"
   >
-    <div class="flex flex-row-reverse items-center">
-      <div class="ml-2.5">
-        <img :src="myImage" />
+    <NuxtLink :to="linkAddress">
+      <div class="flex flex-row-reverse items-center">
+        <div class="ml-2.5">
+          <img :src="myImage" />
+        </div>
+        <p class="text-base text-gray-300">{{ name }}</p>
       </div>
-      <p class="text-base text-gray-300">{{ name }}</p>
-    </div>
-    <span class="ml-2.5 drop cursor-pointer" v-if="dropdown">
-      <!-- <img src="../../static/downicon.svg" alt="down" /> -->
-    </span>
+      <span class="ml-2.5 drop cursor-pointer" v-if="dropdown">
+        <!-- <img src="../../static/downicon.svg" alt="down" /> -->
+      </span>
+    </NuxtLink>
   </div>
 </template>
 
@@ -35,6 +37,10 @@ export default {
     address: {
       type: String,
       required: true,
+    },
+    linkAddress: {
+      type: String,
+      default: "/",
     },
   },
   computed: {

@@ -14,6 +14,7 @@
           :key="navItem.name"
           :name="navItem.name"
           :address="navItem.address"
+          :linkAddress="navItem.linkAddress"
         />
       </div>
       <div class="relative pr-5 logout">
@@ -35,6 +36,7 @@ export default {
           name: "داشبورد",
           dropdown: false,
           address: "dashicon",
+          linkAddress: "/",
         },
         {
           name: "تعاریف",
@@ -43,14 +45,17 @@ export default {
         {
           name: "حسابداری",
           address: "countericon",
+          linkAddress: "/deposit-rial",
         },
         {
           address: "profileicon",
           name: "پروفایل",
+          linkAddress: "/profile",
         },
         {
           address: "bazaricon",
           name: "بازار",
+          linkAddress: "/crypto-trade",
         },
         {
           address: "NFTicon",
@@ -59,6 +64,7 @@ export default {
         {
           address: "walleticon",
           name: "کیف پول",
+          linkAddress: "/crypto-wallet",
         },
         {
           address: "documentsicon",
@@ -71,6 +77,7 @@ export default {
         {
           address: "reportsicon",
           name: "گزارشات",
+          linkAddress: "/reports",
         },
       ],
     };
