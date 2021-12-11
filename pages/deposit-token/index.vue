@@ -9,7 +9,9 @@
               <div
                 class="input-name-container flex flex-row-reverse mt-12 items-center"
               >
-                <div class="crypto-logo relative z-20"></div>
+                <div class="crypto-logo relative z-20 flex items-center justify-center">
+                  <img src="../../assets/images/deposit-token/bitcoin.svg" alt="">
+                </div>
                 <div
                   class="name-input flex-1 relative -mr-1 z-10 rounded bg-primary"
                 ></div>

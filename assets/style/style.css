@@ -4,7 +4,8 @@
     url(~assets/fonts/IRANsansmedium.ttf) format("truetype");
 }
 
-html,body {
+html,
+body {
   font-family: "IranSans" !important;
 }
 
@@ -106,4 +107,19 @@ html,body {
   right: 0;
   margin-right: -40px;
   display: inline-block;
+}
+.crypto-logo img {
+  width: 90%;
+  height: 90%;
+}
+.divider {
+  width: 1px;
+  height: 42px;
+  background-image: linear-gradient(
+    270deg,
+    rgba(1, 14, 23, 0) 0%,
+    #15ab89 51.04%,
+    rgba(1, 14, 23, 0) 100%
+  );
+  opacity: 0.5;
 }

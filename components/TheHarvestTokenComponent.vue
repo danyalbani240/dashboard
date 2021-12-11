@@ -1,16 +1,36 @@
 <template>
   <div class="harvest-crypto">
     <div class="flex flex-row-reverse items-center">
-      <div class="w-16 h-16 rounded-full crypto-logo"></div>
       <div
-        class="flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-      ></div>
+        class="w-16 h-16 rounded-full crypto-logo flex items-center justify-center"
+      >
+        <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
+      </div>
+      <div
+        class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
+      >
+        <p>نام رمز ارز</p>
+        <div class="flex items-center px-2">
+          <img src="../assets/images/search-normal.svg" alt="" />
+          <div class="divider mx-2"></div>
+          <p class="text-xs">BTC</p>
+        </div>
+      </div>
     </div>
     <div class="mt-5">
       <p dir="rtl">شبکه:</p>
       <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-      ></div>
+        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1 justify-end"
+      >
+        <div class="flex text-sm">
+          <img
+            class="mx-2.5"
+            src="../assets/images/deposit-token/consist-close.svg"
+            alt=""
+          />
+          <p class="opacity-20">ERC20</p>
+        </div>
+      </div>
     </div>
     <div class="flex mt-3">
       <base-badge name="TRX" />
@@ -22,7 +42,16 @@
       <p dir="rtl">نواع انتقال:</p>
       <div
         class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-      ></div>
+      >
+        <div class="flex text-sm">
+          <img
+            class="mx-2.5"
+            src="../assets/images/deposit-token/consist-close.svg"
+            alt=""
+          />
+          <p class="opacity-20">ERC20</p>
+        </div>
+      </div>
     </div>
     <div class="flex mt-3">
       <base-badge name="Fast" />
@@ -31,8 +60,21 @@
     <div class="mt-5">
       <p dir="rtl">فی شبکه:</p>
       <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-      ></div>
+        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input flex-1 justify-between"
+      >
+        <div class="flex text-sm">
+          <img
+            class="mx-2.5"
+            src="../assets/images/deposit-token/consist-close.svg"
+            alt=""
+          />
+          <p class="opacity-20">ثابت</p>
+        </div>
+        <div class="flex items-center">
+          <div class="divider"></div>
+          <p class="mx-7 text-sm">0.000181025 btc</p>
+        </div>
+      </div>
     </div>
     <div class="flex mt-3 flex-row-reverse">
       <base-badge name="ثابت" />
@@ -41,14 +83,26 @@
     <div class="mt-5">
       <p dir="rtl">آدرس انتقال:</p>
       <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-      ></div>
+        class="mt-1.5 flex items-center rounded -mr-2 pl-3 bg-primary name-input flex-1"
+      >
+        <img class="mr-1" src="../assets/images/document-copy.svg" alt="" />
+        <p class="opacity-20 overflow-hidden text-xs">
+          afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiaudgUQY8TWEUEV7uwgdgfoiijad
+        </p>
+      </div>
     </div>
     <div class="mt-5">
       <p dir="rtl">مقدار برداشت:</p>
       <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
-      ></div>
+        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input flex-1 justify-between"
+      >
+        <div style="color: #14b82e" class="ml-2">MAX</div>
+        <div class="flex items-center">
+          <div class="divider mr-1"></div>
+          <span class="opacity-20 mr-8">5.000.000</span>
+          <p class="mr-1.5">:مبلغ نهایی</p>
+        </div>
+      </div>
     </div>
     <div class="flex justify-between mt-8">
       <div
