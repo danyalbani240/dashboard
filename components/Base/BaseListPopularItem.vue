@@ -19,7 +19,7 @@
       </div>
     </div>
     <div v-if="trapezoidR" class="relative trapezoid-r pt-3">
-      <div class="ml-20 flex items-center">
+      <div class="lg:ml-20 ml-2 flex items-center">
         <div class="flex">
           <img class="mr-2.5" :src="myImage" alt="" />
           <div>
@@ -99,7 +99,8 @@ export default {
   border-radius: 5px;
   padding: 2.5px 4px;
 }
-.trapezoid::after,.trapezoid-r::after {
+.trapezoid::after,
+.trapezoid-r::after {
   content: "";
   position: absolute;
   background-color: #4048e9;
@@ -109,5 +110,12 @@ export default {
   right: 40%;
   top: 50%;
   transform: translate(-40%, -50%);
+}
+@media only screen and (max-width: 1200px) {
+  .trapezoid,
+  .trapezoid-r {
+    clip-path: none;
+    left: 0;
+  }
 }
 </style>

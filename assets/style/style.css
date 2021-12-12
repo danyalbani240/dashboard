@@ -123,3 +123,21 @@ body {
   );
   opacity: 0.5;
 }
+
+
+@media only screen and (min-width: 1200px) {
+  .set {
+    margin-left: -100px;
+    
+    
+  }
+  .popular-list-container{
+    flex-wrap: nowrap;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .set{
+    flex-wrap: wrap;
+  }
+}
+

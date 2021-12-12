@@ -1,5 +1,5 @@
 <template>
-  <div class="flex set justify-between content-start">
+  <div class="flex set flex-1 my-2 lg:justify-center  justify-evenly content-start">
     <base-list-popular-item
       v-for="(coin, index) in coins"
       :key="coin.short"
