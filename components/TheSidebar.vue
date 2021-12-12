@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary">
+  <div :class="{ hidden: closed }" class="bg-primary">
     <nav class="h-full min-h-screen flex flex-col relative bg-primary w-56">
       <div class="navicon relative">
         <img
@@ -29,6 +29,12 @@
 
 <script>
 export default {
+  props: {
+    closed: {
+      type: Boolean,
+      default: true,
+    },
+  },
   data() {
     return {
       navItems: [
@@ -118,5 +124,7 @@ nav {
     #15ab89 51.04%,
     rgba(1, 14, 23, 0) 100%
   );
+}
+@media only screen and (max-width: 1024px) {
 }
 </style>

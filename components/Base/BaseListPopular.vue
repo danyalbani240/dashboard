@@ -1,5 +1,5 @@
 <template>
-  <div class="flex set justify-between">
+  <div class="flex set justify-between content-start">
     <base-list-popular-item
       v-for="(coin, index) in coins"
       :key="coin.short"
@@ -24,9 +24,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.set:first-child {
-  position: relative;
-  right: -100px;
-}
+<style>
+/* .set:nth-of-type(2) {
+  margin-left: -100px;
+} */
 </style>

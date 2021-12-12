@@ -3,15 +3,13 @@
     <base-part-header :address="'popularicon'" :headName="'ارز های پرطرفدار'" />
     <div
       style="min-height: 200px"
-      class="flex w-full flex-row-reverse relative justify-between items-center"
+      class="flex w-full flex-row-reverse justify-center items-center"
     >
-      <div class="absolute flex">
-        <base-list-popular
-          v-for="(coin, index) in coins"
-          :coins="coin"
-          :key="coin[index].short"
-        />
-      </div>
+      <base-list-popular
+        v-for="(coin, index) in coins"
+        :coins="coin"
+        :key="coin[index].short"
+      />
     </div>
   </div>
 </template>
@@ -67,4 +65,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped></style>
