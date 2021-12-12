@@ -1,6 +1,6 @@
 <template>
   <div class="mt-14">
-    <div class="flex flex-row-reverse">
+    <div class="flex flex-wrap flex-row-reverse justify-center">
       <div>
         <base-part-header
           :address="'usericon'"
@@ -8,7 +8,7 @@
         />
 
         <div
-          class="rounded-2xl flex flex-row-reverse relative bg-primary z-10 user-stat mt-2.5"
+          class="rounded-2xl flex flex-row-reverse relative flex-wrap-reverse px-2 bg-primary z-10 user-stat mt-2.5"
         >
           <div class="flex flex-col">
             <div class="text-right mt-11 mr-5">
@@ -19,13 +19,13 @@
             </div>
             <div class="mt-12"><base-progress-bar /></div>
           </div>
-          <div class="mt-6 mr-12">
+          <div class="mt-6 mr-12 hidden lg:block">
             <img src="../assets/images/stat-hero.svg" alt="" />
           </div>
         </div>
       </div>
       <!-- card -->
-      <div class="mr-14">
+      <div class="mr-14 py-2">
         <base-part-header :address="'credit'" :headName="'کارت های بانکی'" />
         <div class="credit-card relative mt-2.5">
           <div class="flex justify-end">
@@ -63,7 +63,7 @@ p {
 .user-stat {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(21, 171, 137, 0.3);
-  width: 795px;
+  max-width: 795px;
   height: 210px;
 }
 .user-stat::after {
