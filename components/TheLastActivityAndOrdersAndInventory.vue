@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-row-reverse mt-8">
-    <div>
+  <div class="flex flex-row-reverse mt-8 flex-wrap">
+    <div class="flex flex-1 flex-col">
       <base-part-header
         :headName="'آخرین فعالیت ها'"
         :address="'lastactivity'"
       />
-      <div class="flex mt-2.5 flex-row-reverse">
+      <div class="flex mt-2.5 flex-row-reverse flex-1">
         <div class="bg-primary rounded-2xl last-do flex justify-center">
           <div class="flex flex-col items-center mt-20">
             <div
@@ -85,7 +85,6 @@ export default {
   box-shadow: 0px 10px 16px rgba(21, 171, 137, 0.1);
 }
 
-
 a.buy.active {
   background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
 }
@@ -108,5 +107,4 @@ a.sell {
   bottom: 0;
   background: linear-gradient(270deg, #010e17 0%, #15ab89 51.04%, #010e17 100%);
 }
-
 </style>
