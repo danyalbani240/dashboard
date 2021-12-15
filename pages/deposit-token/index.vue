@@ -1,6 +1,6 @@
 <template>
   <div class="bg-primary w-full text-Neutral-Gray p-5">
-    <div class="flex flex-row-reverse justify-between">
+    <div class="flex flex-row-reverse flex-wrap justify-between">
       <the-harvest-token-component />
       <div>
         <div class="deposit-crypto flex flex-col px-3">
