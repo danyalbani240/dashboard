@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex flex-row-reverse px-3 justify-between items-center perform-operation mx-auto"
+    class="flex flex-wrap flex-row-reverse px-3 justify-between items-center perform-operation mx-auto"
   >
-    <div>
+    <div class="flex-1">
       <p class="text-right">:انتخاب حساب ارزی</p>
       <div
         class="select-perform mt-3 flex flex-col justify-center text-lg text-center items-center"
@@ -11,7 +11,7 @@
         <p>ریال</p>
       </div>
     </div>
-    <div>
+    <div class="flex-1 mx-1">
       <p class="text-right mb-3">:انتخاب کارت</p>
       <div class="select-credit px-8 pt-4">
         <div class="flex flex-row-reverse justify-between">
@@ -47,10 +47,10 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="flex-1">
       <p class="text-right">:مقدار واریزی</p>
       <div
-        class="bg-primary flex deposit-value justify-between flex-col items-center px-4 py-9"
+        class="bg-primary flex deposit-value justify-between mx-auto flex-col items-center px-4 py-9"
       >
         <input type="text" />
         <p class="text-xs">حداقل مقدار قابل واریز:500,000 ریال</p>
@@ -70,7 +70,7 @@ export default {};
 <style scoped>
 .perform-operation {
   margin-top: 120px;
-  width: 926px;
+  max-width: 926px;
   border-radius: 10px;
   border: 2px solid #15ab89;
 
@@ -81,7 +81,7 @@ export default {};
     rgba(196, 196, 196, 0.06) 100%
   );
   backdrop-filter: blur(12px);
-  height: 369px;
+  min-height: 369px;
 }
 .select-perform {
   background-image: url(../assets/images/selectperform.svg);
@@ -89,12 +89,14 @@ export default {};
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
   border-radius: 18px;
 
-  width: 256px;
+  min-width: 256px;
   height: 209px;
 }
 .select-credit {
+  background-repeat: no-repeat;
+    background-size: cover;
   background-image: url(../assets/images/mellatbank.svg);
-  width: 331px;
+  min-width: 331px;
   height: 209px;
   border-radius: 18px;
   filter: drop-shadow(0px 6px 30px rgba(21, 171, 137, 0.2));
@@ -106,7 +108,7 @@ export default {};
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
 }
 .deposit-value {
-  width: 256px;
+  min-width: 256px;
   height: 209px;
   background-color: #010e17;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
