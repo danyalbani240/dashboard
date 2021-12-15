@@ -29,7 +29,7 @@ export default {
 
 <style>
 .ineventory {
-  width: 331px;
+  min-width: 331px;
   height: 308px;
   position: relative;
 }

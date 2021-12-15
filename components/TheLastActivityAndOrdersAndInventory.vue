@@ -5,8 +5,8 @@
         :headName="'آخرین فعالیت ها'"
         :address="'lastactivity'"
       />
-      <div class="flex mt-2.5 flex-row-reverse flex-1">
-        <div class="bg-primary rounded-2xl last-do flex justify-center">
+      <div class="flex mt-2.5 flex-row-reverse  flex-1">
+        <div class="bg-primary rounded-2xl last-do flex w-full justify-center">
           <div class="flex flex-col items-center mt-20">
             <div
               class="icon-conatiner inline-block rounded-md icon-container p-1.5 mb-2.5"
@@ -18,19 +18,19 @@
         </div>
       </div>
     </div>
-    <div class="mr-4">
+    <div class="xl:mr-4 flex-1">
       <div class="flex flex-row-reverse justify-between items-center">
         <base-part-header :headName="'سفارشات'" :address="'shopingcart'" />
         <base-switch-badge linkOne="خرید" linkTwo="فروش" />
       </div>
-      <the-orders-table />
+      <the-orders-table class="w-full" />
     </div>
-    <div class="mr-14">
+    <div class="xl:mr-14 flex-1">
       <div class="flex flex-row-reverse justify-between items-center">
         <base-part-header :address="'inventory'" :headName="'موجودی'" />
         <base-switch-badge :linkOne="'رمز ارز'" :linkTwo="'ريالی'" />
       </div>
-      <base-inventory :itemsData="inventory" />
+      <base-inventory class="w-full" :itemsData="inventory" />
     </div>
   </div>
 </template>
@@ -76,7 +76,7 @@ export default {
 <style scoped>
 .last-do {
   background-image: url("../assets/images/weiredelectral.svg?external");
-  width: 390px;
+  min-width: 390px;
   height: 308px;
   background-repeat: no-repeat;
   background-position: bottom;

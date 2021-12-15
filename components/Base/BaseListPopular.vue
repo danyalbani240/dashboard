@@ -1,6 +1,7 @@
 <template>
   <div class="flex set flex-1 my-2   justify-evenly content-start">
     <base-list-popular-item
+    class="my-1"
       v-for="(coin, index) in coins"
       :key="coin.short"
       :short="coin.short"

@@ -56,7 +56,7 @@ export default {};
 
 <style scoped>
 table {
-  width: 390px;
+  min-width: 390px;
   height: 306px;
   background: linear-gradient(
     91.44deg,
