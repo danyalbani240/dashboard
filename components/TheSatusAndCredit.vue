@@ -1,14 +1,17 @@
 <template>
   <div class="mt-14">
-    <div class="flex flex-wrap flex-row-reverse justify-center">
-      <div>
-        <base-part-header
+    <div class="flex flex-wrap flex-row-reverse justify-around">
+      <div class="flex-1 flex-col flex">
+      <div dir="rtl">
+
+        <base-part-header dir="ltr" class="flex-row flex-row"
           :address="'usericon'"
           :headName="'وضعیت حساب کاربری'"
         />
 
+
         <div
-          class="rounded-2xl flex flex-row-reverse relative flex-wrap-reverse px-2 bg-primary z-10 user-stat mt-2.5"
+          class="rounded-2xl flex flex-row relative flex-wrap-reverse px-2 bg-primary z-10 user-stat mt-2.5"
         >
           <div class="flex flex-col">
             <div class="text-right mt-11 mr-5">
@@ -23,6 +26,7 @@
             <img src="../assets/images/stat-hero.svg" alt="" />
           </div>
         </div>
+      </div>
       </div>
       <!-- card -->
       <div class="mr-14 py-2">

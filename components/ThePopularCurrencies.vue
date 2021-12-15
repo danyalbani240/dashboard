@@ -9,6 +9,7 @@
         v-for="(coin, index) in coins"
         :coins="coin"
         :key="coin[index].short"
+        :class="{'lg:justify-end': index % 2 == 0, 'lg:justify-start': index %2 != 0}"
       />
     </div>
   </div>
