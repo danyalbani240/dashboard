@@ -4,7 +4,7 @@
       <div class="flex-1 flex-col flex">
       <div dir="rtl">
 
-        <base-part-header dir="ltr" class="flex-row flex-row"
+        <base-part-header dir="ltr" class=" flex-row"
           :address="'usericon'"
           :headName="'وضعیت حساب کاربری'"
         />

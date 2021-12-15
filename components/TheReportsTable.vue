@@ -70,6 +70,7 @@ export default {
 <style scoped>
 table {
   direction: rtl;
+  min-width: 580px;
 }
 thead {
   background-image: linear-gradient(to top, #031f24 21.31%, #053130 78.69%);
