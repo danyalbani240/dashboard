@@ -3,17 +3,17 @@
     class="flex flex-row-reverse px-4 justify-between items-center profile-form mx-auto"
   >
     <form class="w-full">
-      <div class="flex justify-between w-full flex-row-reverse">
+      <div class="flex justify-center md:justify-evenly w-full flex-row-reverse flex-wrap">
         <base-input label="نام" :w270="true" />
         <base-input label="نام خانوادگی" :w270="true" />
         <base-input label="کدملی" :w270="true" />
       </div>
-      <div class="my-2.5 flex justify-between w-full flex-row-reverse">
+      <div class="my-2.5 flex justify-center md:justify-evenly w-full flex-row-reverse flex-wrap">
         <base-input label="تاریخ تولد" :w270="true" />
         <base-input label="نام پدر " :w270="true" />
         <base-input label="جنسیت" :w270="true" />
       </div>
-      <div class="flex justify-between w-full flex-row-reverse">
+      <div class="flex justify-center md:justify-evenly w-full flex-row-reverse flex-wrap">
         <base-input label="شماره موبایل" :w270="true" />
         <base-input label="آدرس" :w366="true" />
         <base-input label="شماره ثابت" :w174="true" />
@@ -29,7 +29,7 @@ export default {};
 <style scoped>
 .profile-form {
   margin-top: 120px;
-  width: 926px;
+  max-width: 926px;
   border-radius: 10px;
   border: 2px solid #15ab89;
 
@@ -40,7 +40,7 @@ export default {};
     rgba(196, 196, 196, 0.06) 100%
   );
   backdrop-filter: blur(12px);
-  height: 369px;
+  min-height: 369px;
 }
 .profile-form::before {
   position: absolute;
