@@ -2,7 +2,7 @@
   <div class="mt-8">
     <base-part-header :address="'insidereport'" headName="خرید و فروش سریع" />
 
-    <div class="fast-form mt-8 pt-5 px-8 flex flex-col items-center">
+    <div class="fast-form mt-8 pt-5 md:px-8 flex flex-col items-center">
       <div class="flex flex-row-reverse w-full text-sm justify-between">
         <div
           class="bg-gray-gr flex items-center justify-between px-1.5"
@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
 .fast-form {
-  width: 527px;
+  max-width: 527px;
   height: 458px;
   background: linear-gradient(
     91.44deg,
@@ -90,7 +90,7 @@ export default {
   height: 32px;
 }
 .buy-sell-switch {
-  width: 481px;
+  max-width: 481px;
   height: 34px;
   border: 1px solid #14b82e;
   border-radius: 17px;

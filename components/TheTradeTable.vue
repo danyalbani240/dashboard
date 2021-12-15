@@ -1,4 +1,5 @@
 <template>
+<div class="overflow-x-auto">
   <div class="flex flex-col trade-table px-4 mt-8">
     <div class="flex justify-between flex-row-reverse py-3 table-header">
       <span>نام رمز ارز</span>
@@ -25,6 +26,7 @@
       <the-trade-table-item />
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -39,7 +41,8 @@ export default {
   position: relative;
 }
 .trade-table {
-  width: 627px;
+  max-width: 627px;
+  min-width: 500px;
   background-color: #010e17;
   border: 1px solid rgba(21, 171, 137, 0.3);
   border-radius: 18px;
