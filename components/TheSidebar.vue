@@ -1,6 +1,11 @@
 <template>
-  <div :class="{ hidden: closed }" class="bg-primary">
-    <nav class="h-full min-h-screen flex flex-col relative bg-primary w-56">
+  <div class="bg-primary">
+
+      <div @click="toggleSidebar" class="toggle  inline-flex items-center justify-center  cursor-pointer">
+        <img src="../assets/images/toggleicon.svg" alt="">
+      </div>
+
+    <nav :class="{'w-56' : isOpen,'w-0' : !isOpen}" class="h-full min-h-screen flex flex-col relative bg-primary overflow-x-hidden">
       <div class="navicon relative">
         <img
           class="mx-auto px-9 py-8"
@@ -37,6 +42,7 @@ export default {
   },
   data() {
     return {
+      isOpen: true,
       navItems: [
         {
           name: "داشبورد",
@@ -91,11 +97,21 @@ export default {
   computed: {
     myImage() {},
   },
+  methods:{
+    toggleSidebar(e) {
+      this.isOpen = !this.isOpen
+      e.currentTarget.classList.toggle('closed')
+      console.log(
+        e.currentTarget
+      )
+    }
+  }
 };
 </script>
 
 <style>
 nav {
+  transition: width 1s ease-in-out;
   border-radius: 110px 0 0 0;
   box-shadow: 0px 4px 4px rgba(21, 171, 137, 0.5);
 }
@@ -125,6 +141,25 @@ nav {
     rgba(1, 14, 23, 0) 100%
   );
 }
+.toggle{
+ width: 32px;
+height: 32px; 
+background: #15AB89;
+box-shadow: 0px 0px 10px #15AB89;
+border-radius: 5px; 
+position: absolute;
+top: 100px;
+z-index: 20;
+transform: translateX(-50%);
+  transition: all 0.4s ease-in;
+
+}
+.toggle.closed{
+  transform: translateX(-100%);
+  transition: all 0.4s ease-in;
+
+}
 @media only screen and (max-width: 1024px) {
 }
+
 </style>
