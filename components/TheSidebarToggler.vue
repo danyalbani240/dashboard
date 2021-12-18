@@ -1,15 +1,15 @@
 <template>
-  <div @click="$store.commit('sidebar/toggleSidebar')" class="toggle  inline-flex items-center justify-center z-40 sm:static fixed sm:ml-2  cursor-pointer">
+  <div @click="$store.commit('sidebar/toggleSidebar')" :class="{'fixed':!closed,'ml-2':closed}" class="toggle  inline-flex items-center justify-center z-40 sm:static  sm:ml-2  cursor-pointer">
         <img src="../assets/images/toggleicon.svg" alt="">
     </div>
 </template> 
 
 <script>
 export default {
-    methods:{
-        toggleSidebar(){
-            this.$nuxt.$emit('toggleSidebar')
-        }
+    computed:{
+      closed(){
+        return this.$store.state.sidebar.isClosed;
+      }
     }
 }
 </script>
@@ -32,5 +32,5 @@ z-index: 41;
   transform: translateX(-100%);
   transition: all 0.4s ease-in;
 
-}
-</style>
+  }
+  </style>
