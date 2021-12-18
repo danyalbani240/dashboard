@@ -1,9 +1,7 @@
 <template>
   <div class="bg-primary">
 
-      <div @click="toggleSidebar" class="toggle  inline-flex items-center justify-center  cursor-pointer">
-        <img src="../assets/images/toggleicon.svg" alt="">
-      </div>
+      <the-sidebar-toggler />
 
     <nav :class="{'w-56' : isOpen,'w-0' : !isOpen}" class="h-full min-h-screen flex flex-col relative bg-primary overflow-x-hidden">
       <div class="navicon relative">
@@ -33,7 +31,9 @@
 </template>
 
 <script>
+import TheSidebarToggler from './TheSidebarToggler.vue';
 export default {
+  components: { TheSidebarToggler },
   props: {
     closed: {
       type: Boolean,
