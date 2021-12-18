@@ -1,9 +1,8 @@
 <template>
   <div class="bg-primary">
 
-      <the-sidebar-toggler />
 
-    <nav :class="{'w-56' : isOpen,'w-0' : !isOpen}" class="h-full min-h-screen flex flex-col relative bg-primary overflow-x-hidden">
+    <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full min-h-screen flex flex-col relative bg-primary overflow-x-hidden">
       <div class="navicon relative">
         <img
           class="mx-auto px-9 py-8"
@@ -42,7 +41,6 @@ export default {
   },
   data() {
     return {
-      isOpen: true,
       navItems: [
         {
           name: "داشبورد",
@@ -141,24 +139,7 @@ nav {
     rgba(1, 14, 23, 0) 100%
   );
 }
-.toggle{
- width: 32px;
-height: 32px; 
-background: #15AB89;
-box-shadow: 0px 0px 10px #15AB89;
-border-radius: 5px; 
-position: absolute;
-top: 100px;
-z-index: 20;
-transform: translateX(-50%);
-  transition: all 0.4s ease-in;
 
-}
-.toggle.closed{
-  transform: translateX(-100%);
-  transition: all 0.4s ease-in;
-
-}
 @media only screen and (max-width: 1024px) {
 }
 
