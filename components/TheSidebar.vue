@@ -3,7 +3,7 @@
 
 
     <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">
-      <div class="navicon relative sm:flex sm:flex-row-reverse sm:items-end">
+      <div class="navicon relative sm:block flex flex-row-reverse items-end">
         <div class="flex-1 sm:hidden"></div>
         <img
           class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
