@@ -1,11 +1,12 @@
 <template>
-  <div class="bg-primary">
+  <div class="bg-primary fixed w-screen z-40 sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto  bg-opacity-60 top-0 right-0 h-screen">
 
 
-    <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full min-h-screen flex flex-col relative bg-primary overflow-x-hidden">
-      <div class="navicon relative">
+    <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">
+      <div class="navicon relative sm:flex sm:flex-row-reverse sm:items-end">
+        <div class="flex-1 sm:hidden"></div>
         <img
-          class="mx-auto px-9 py-8"
+          class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
           src="../assets/images/icon.svg"
           alt="novintex"
         />
@@ -140,7 +141,10 @@ nav {
   );
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 400px) {
+  nav{
+    border-radius: 20px 0 0;
+  }
 }
 
 </style>
