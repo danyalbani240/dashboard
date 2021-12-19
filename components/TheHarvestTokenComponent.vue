@@ -1,5 +1,9 @@
 <template>
-  <div class="harvest-crypto">
+<div>
+    <base-part-header :address="'insidereport'" headName="برداشت رمز ارز" />
+
+
+  <div class="harvest-crypto my-5">
     <div class="flex flex-row-reverse items-center">
       <div
         class="w-16 h-16 rounded-full crypto-logo flex items-center justify-center"
@@ -7,7 +11,7 @@
         <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
       </div>
       <div
-        class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
+        class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
       >
         <p>نام رمز ارز</p>
         <div class="flex items-center px-2">
@@ -20,7 +24,7 @@
     <div class="mt-5">
       <p dir="rtl">شبکه:</p>
       <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1 justify-end"
+        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-end"
       >
         <div class="flex text-sm">
           <img
@@ -41,7 +45,7 @@
     <div class="mt-5">
       <p dir="rtl">نواع انتقال:</p>
       <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input flex-1"
+        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
       >
         <div class="flex text-sm">
           <img
@@ -60,7 +64,7 @@
     <div class="mt-5">
       <p dir="rtl">فی شبکه:</p>
       <div
-        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input flex-1 justify-between"
+        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-between"
       >
         <div class="flex text-sm">
           <img
@@ -83,7 +87,7 @@
     <div class="mt-5">
       <p dir="rtl">آدرس انتقال:</p>
       <div
-        class="mt-1.5 flex items-center rounded -mr-2 pl-3 bg-primary name-input flex-1"
+        class="mt-1.5 flex items-center rounded -mr-2 pl-3 bg-primary name-input w-full"
       >
         <img class="mr-1" src="../assets/images/document-copy.svg" alt="" />
         <p class="opacity-20 overflow-hidden text-xs">
@@ -94,7 +98,7 @@
     <div class="mt-5">
       <p dir="rtl">مقدار برداشت:</p>
       <div
-        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input flex-1 justify-between"
+        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-between"
       >
         <div style="color: #14b82e" class="ml-2">MAX</div>
         <div class="flex items-center">
@@ -104,7 +108,7 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-between mt-8">
+    <div class="flex sm:justify-between mt-8 flex-wrap justify-center">
       <div
         class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
       >
@@ -136,17 +140,19 @@
       ><span>برداشت</span></base-button
     >
   </div>
+  </div>
 </template>
 
 <script>
+import BasePartHeader from './Base/BasePartHeader.vue';
 export default {};
 </script>
 
 <style scoped>
 .harvest-crypto {
   padding-top: 30px;
-  width: 572px;
-  height: 838px;
+  max-width: 572px;
+  min-height: 838px;
   background: linear-gradient(
     91.44deg,
     rgba(255, 255, 255, 0.18) 0%,
@@ -165,6 +171,7 @@ export default {};
 }
 .name-input {
   height: 42px;
+  box-sizing: border-box;
 }
 .crypto-logo {
   background: linear-gradient(
@@ -190,5 +197,11 @@ export default {};
   border-radius: 3px;
   width: 189px;
   height: 32px;
+}
+@media only screen and (max-width: 570px){
+  .harvest-crypto{
+    padding: 1px;
+    padding-top: auto;
+  }
 }
 </style>

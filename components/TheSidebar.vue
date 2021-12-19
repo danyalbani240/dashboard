@@ -1,9 +1,14 @@
 <template>
-  <div :class="{ hidden: closed }" class="bg-primary">
-    <nav class="h-full min-h-screen flex flex-col relative bg-primary w-56">
-      <div class="navicon relative">
+  <div :class="{
+    'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  z-40' : !closed
+  }" class="bg-primary  sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all ">
+
+
+    <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">
+      <div class="navicon relative sm:block flex flex-row-reverse items-end">
+        <div class="flex-1 sm:hidden"></div>
         <img
-          class="mx-auto px-9 py-8"
+          class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
           src="../assets/images/icon.svg"
           alt="novintex"
         />
@@ -28,7 +33,9 @@
 </template>
 
 <script>
+import TheSidebarToggler from './TheSidebarToggler.vue';
 export default {
+  components: { TheSidebarToggler },
   props: {
     closed: {
       type: Boolean,
@@ -91,11 +98,21 @@ export default {
   computed: {
     myImage() {},
   },
+  methods:{
+    toggleSidebar(e) {
+      this.isOpen = !this.isOpen
+      e.currentTarget.classList.toggle('closed')
+      console.log(
+        e.currentTarget
+      )
+    }
+  }
 };
 </script>
 
 <style>
 nav {
+  transition: width 1s ease-in-out;
   border-radius: 110px 0 0 0;
   box-shadow: 0px 4px 4px rgba(21, 171, 137, 0.5);
 }
@@ -125,6 +142,11 @@ nav {
     rgba(1, 14, 23, 0) 100%
   );
 }
-@media only screen and (max-width: 1024px) {
+
+@media only screen and (max-width: 400px) {
+  nav{
+    border-radius: 20px 0 0;
+  }
 }
+
 </style>

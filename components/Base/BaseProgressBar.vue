@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-row-reverse items-center">
-    <div class="w-96 h-5 relative progress-bar rounded-2xl mr-5">
+  <div class="flex flex-row-reverse justify-end items-center">
+    <div class="w-96 h-5 relative hidden sm:block progress-bar rounded-2xl mr-5">
       <div
         class="absolute flex justify-center text-sm progress w-6/12 h-full rounded-2xl text-primary"
       >
@@ -12,7 +12,7 @@
         <img src="../../assets/images/win.svg" alt="" />
       </div>
     </div>
-    <button class="auth-btn mr-12 rounded-md text-primary">احراز هویت</button>
+    <button class="auth-btn sm:mr-12 rounded-md text-white h-6 sm:text-base text-xs   sm:h-9 sm:text-primary">احراز هویت</button>
   </div>
 </template>
 
@@ -53,7 +53,7 @@ export default {};
 }
 .auth-btn {
   width: 140px;
-  height: 36px;
+  
   background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
 }
 </style>

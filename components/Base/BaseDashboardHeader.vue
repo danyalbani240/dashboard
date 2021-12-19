@@ -2,7 +2,11 @@
   <div
     class="flex flex-row-reverse bottom-gradient w-full pb-3 justify-between items-center"
   >
-    <p>{{ pageName }}</p>
+    <div class="flex items-center">
+      <p>{{ pageName }}</p>
+      <the-sidebar-toggler />
+      
+    </div>
     <div class="flex flex-row-reverse">
       <img
         class="ml-3 cursor-pointer"

@@ -76,7 +76,7 @@ export default {
 <style scoped>
 .last-do {
   background-image: url("../assets/images/weiredelectral.svg?external");
-  min-width: 390px;
+  min-width: 330px;
   height: 308px;
   background-repeat: no-repeat;
   background-position: bottom;

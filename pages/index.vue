@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary w-full text-Neutral-Gray p-5">
+  <div class="bg-primary w-full text-Neutral-Gray p-5 overflow-x-hidden">
     <base-dashboard-header />
     <the-popular-currencies />
     <the-satus-and-credit />

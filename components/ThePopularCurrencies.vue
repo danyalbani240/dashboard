@@ -5,18 +5,12 @@
       style="min-height: 200px"
       class="flex w-full flex-row-reverse justify-center items-center flex-wrap popular-list-container"
     >
-      <base-list-popular
-        v-for="(coin, index) in coins"
-        :coins="coin"
-        :key="coin[index].short"
-        :class="{'xl:justify-end': index % 2 == 0, 'xl:justify-start': index %2 != 0}"
-      />
+      <base-list-popular-item />
     </div>
   </div>
 </template>
 
 <script>
-import ListPopular from "./Base/BaseListPopular.vue";
 import ListPopularItem from "./Base/BaseListPopularItem.vue";
 export default {
   data() {
@@ -62,7 +56,7 @@ export default {
       ],
     };
   },
-  components: { ListPopularItem, ListPopular },
+  components: { ListPopularItem,  },
 };
 </script>
 

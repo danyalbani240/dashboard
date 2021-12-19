@@ -1,11 +1,14 @@
 <template>
   <div class="bg-primary w-full text-Neutral-Gray p-5">
-    <div class="flex flex-row-reverse flex-wrap justify-between">
+    <div class="flex flex-row-reverse flex-wrap justify-center lg:justify-between">
       <the-harvest-token-component />
       <div>
-        <div class="deposit-crypto flex flex-col px-3">
-          <div class="flex flex-row-reverse">
-            <div>
+        <div>
+          <base-part-header :address="'insidereport'" headName="واریز رمز ارز" />
+
+          <div class="deposit-crypto flex flex-col px-3 my-5">
+          <div class="flex flex-row-reverse flex-wrap-reverse sm:flex-nowrap justify-center">
+            <div class="flex-1 sm:flex-none">
               <div
                 class="input-name-container flex flex-row-reverse mt-12 items-center"
               >
@@ -29,7 +32,7 @@
                 </div>
               </div>
             </div>
-            <div class="bg-primary qr-code flex flex-col mr-5 mt-8 px-5 py-4">
+            <div class="bg-primary flex-1 sm:flex-none items-center qr-code flex flex-col mr-5 mt-8 px-5 py-4">
               <img src="../../assets/images/qr-code.svg" alt="" />
               <div class="mt-5 flex items-center justify-center">
                 <img src="../../assets/images/bulk-documnet-copy.svg" alt="" />
@@ -69,6 +72,8 @@
               </div>
             </div>
           </div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -89,8 +94,8 @@ export default {
 
 <style scoped>
 .deposit-crypto {
-  width: 572px;
-  height: 415px;
+  max-width: 572px;
+  min-height: 415px;
   background: linear-gradient(
     91.44deg,
     rgba(255, 255, 255, 0.18) 0%,

@@ -1,12 +1,13 @@
 <template>
   <div class="flex flex-row-reverse text-Neutral-Gray">
-    <the-sidebar />
-    <Nuxt />
+    <the-sidebar :closed="$store.state.sidebar.isClosed" />
+    <Nuxt  />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+};
 </script>
 
 <style></style>
