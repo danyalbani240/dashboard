@@ -5,7 +5,7 @@
       style="min-height: 200px"
       class="flex w-full flex-row-reverse justify-center items-center flex-wrap popular-list-container"
     >
-      <!-- <base-list-popular-item /> -->
+      <base-list-popular-item />
     </div>
   </div>
 </template>
