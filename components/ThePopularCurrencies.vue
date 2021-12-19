@@ -2,8 +2,7 @@
   <div class="mt-2.5">
     <base-part-header :address="'popularicon'" :headName="'ارز های پرطرفدار'" />
     <div
-      style="min-height: 200px"
-      class="flex w-full flex-row-reverse justify-center items-center flex-wrap popular-list-container"
+      class="flex w-screen overflow-x-scroll md:overflow-x-hidden md:justify-center"
     >
       <base-list-popular-item
     class="my-1"
@@ -16,6 +15,7 @@
       :sellPrice="coin.sellPrice"
       :trapezoidR="index % 2 == 0 ? false : true"
       :address="coin.address"
+      :class="{'mr-10': index == 1,'ml-10': index == 2,'mr-8':index == 3}"
     />
   
     </div>
@@ -23,12 +23,11 @@
 </template>
 
 <script>
-import ListPopularItem from "./Base/BaseListPopularItem.vue";
 export default {
   data() {
     return {
       coins: [
-        [
+        
           {
             short: "BTC",
             allName: "bitcoin",
@@ -45,8 +44,8 @@ export default {
             sellPrice: "17.199.036.763",
             address: "shitcoin",
           },
-        ],
-        [
+        
+        
           {
             short: "BTCCC",
             allName: "bitcoin",
@@ -64,11 +63,11 @@ export default {
 
             sellPrice: "17.199.036.763",
           },
-        ],
+        
       ],
     };
   },
-  components: { ListPopularItem,  },
+  
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div :class="{
     'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  z-40' : !closed
-  }" class="bg-primary  sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all ">
+  ,'sm:static': closed}" class="bg-primary  sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all ">
 
 
     <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">

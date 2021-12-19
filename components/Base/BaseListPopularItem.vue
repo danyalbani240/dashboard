@@ -18,7 +18,7 @@
         <p class="sell">فروش به ما: {{ sellPrice }} ریال</p>
       </div>
     </div>
-    <div v-if="trapezoidR" class="relative trapezoid-r pt-3">
+    <div v-if="trapezoidR" class="relative trapezoid-r pl-10 md:pl-0  pt-3">
       <div class="lg:ml-20 ml-2 flex items-center">
         <div class="flex">
           <img class="mr-2.5" :src="myImage" alt="" />
@@ -111,11 +111,36 @@ export default {
   top: 50%;
   transform: translate(-40%, -50%);
 }
-@media only screen and (max-width: 1200px) {
-  .trapezoid,
-  .trapezoid-r {
-    clip-path: none;
-    left: 0;
-  }
+
+.trapezoid {
+  clip-path: polygon(0 1%, 65% 0, 100% 100%, 0% 100%);
+  min-width: 347px;
+  height: 166px;
+  background-image: linear-gradient(
+    90.9deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 62.78%
+  );
+   
+  /* left: 7rem; */
+  backdrop-filter: blur(12px);
+  border-radius: 6px;
 }
+.trapezoid-r {
+   
+
+  clip-path: polygon(0 1%, 100% 0, 100% 100%, 35% 100%);
+  min-width: 347px;
+  height: 166px;
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 62.78%
+  );
+  backdrop-filter: blur(12px);
+  border-radius: 6px;
+  margin-left: -100px;
+  
+}
+
 </style>

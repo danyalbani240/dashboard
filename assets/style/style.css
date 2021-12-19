@@ -44,7 +44,7 @@ body {
 }
 /* 
  */
-.trapezoid {
+/* .trapezoid {
   clip-path: polygon(0 1%, 65% 0, 100% 100%, 0% 100%);
   width: 347px;
   height: 166px;
@@ -71,7 +71,7 @@ body {
   );
   backdrop-filter: blur(12px);
   border-radius: 6px;
-}
+} */
 .acounting-box-1 {
   border-radius: 18px;
   border: 1px solid rgba(21, 171, 137, 0.3);
