@@ -1,6 +1,7 @@
 <template>
+<div class="overflow-x-scroll">
   <table
-    class="table relative orders rounded-2xl pt-3.5 mt-2.5 font-xs"
+    class="table relative orders rounded-2xl pt-3.5 mt-2.5 font-xs w-full"
     style="color: #15ab89; direction: rtl"
   >
     <thead>
@@ -48,6 +49,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
 </template>
 
 <script>
@@ -56,7 +58,7 @@ export default {};
 
 <style scoped>
 table {
-  min-width: 390px;
+  min-width: 330px;
   height: 306px;
   background: linear-gradient(
     91.44deg,

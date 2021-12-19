@@ -11,25 +11,25 @@
 
 
         <div
-          class="rounded-2xl flex flex-row relative flex-wrap-reverse px-2 bg-primary z-10 user-stat mt-2.5"
+          class="rounded-2xl flex flex-row px-6 sm:px-2 bg-primary z-10 user-stat mt-2.5"
         >
           <div class="flex flex-col">
-            <div class="text-right mt-11 mr-5">
-              <p class="font-bold text-lg">.شما در سطح پایه هستید</p>
-              <p class="mt-2.5">
+            <div class="text-right mt-6 sm:mt-11 sm:mr-5">
+              <p class="font-bold sm:text-lg text-sm">.شما در سطح پایه هستید</p>
+              <p class="mt-3 text-xs sm:text-base sm:w-auto w-48">
                 .با انجام دادن مراحل احراز هویت سطح خود را افزایش دهید
               </p>
             </div>
-            <div class="mt-12"><base-progress-bar /></div>
+            <div class="sm:mt-12 mt-2.5"><base-progress-bar /></div>
           </div>
-          <div class="mt-6 mr-12 hidden lg:block">
+          <div class="sm:mt-6 items-center sm:mr-12 flex-1 flex justify-end">
             <img src="../assets/images/stat-hero.svg" alt="" />
           </div>
         </div>
       </div>
       </div>
       <!-- card -->
-      <div class="mr-14 py-2">
+      <div class="sm:mr-14 py-2 flex flex-col justify-center">
         <base-part-header :address="'credit'" :headName="'کارت های بانکی'" />
         <div class="credit-card relative mt-2.5">
           <div class="flex justify-end">
@@ -70,6 +70,14 @@ p {
   max-width: 795px;
   height: 210px;
 }
+@media only screen and (max-width: 600px){
+.user-stat{
+  height: 134px;
+}
+.user-stat img{
+  Width :63.87px;
+Height :90px;
+}}
 .user-stat::after {
   position: absolute;
   content: "";
