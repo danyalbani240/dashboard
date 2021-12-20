@@ -2,21 +2,22 @@
   <div
     class="flex flex-row-reverse px-4 justify-between items-center profile-form mx-auto"
   >
-    <form class="w-full">
+  <div class="polygon"></div>
+    <form class="w-full py-10 sm:py-0">
       <div class="flex justify-center md:justify-evenly w-full flex-row-reverse flex-wrap">
-        <base-input label="نام" :w270="true" />
-        <base-input label="نام خانوادگی" :w270="true" />
-        <base-input label="کدملی" :w270="true" />
+        <base-input place="مهدی" class="mt-4" label="نام" :w270="true" />
+        <base-input place="طالبی" class="mt-4" label="نام خانوادگی" :w270="true" />
+        <base-input place="0925738158" class="mt-4" label="کدملی" :w270="true" />
       </div>
       <div class="my-2.5 flex justify-center md:justify-evenly w-full flex-row-reverse flex-wrap">
-        <base-input label="تاریخ تولد" :w270="true" />
-        <base-input label="نام پدر " :w270="true" />
-        <base-input label="جنسیت" :w270="true" />
+        <base-input plcae="1380.04.04" class="mt-4" label="تاریخ تولد" :w270="true" />
+        <base-input place="محمد حسن" class="mt-4" label="نام پدر " :w270="true" />
+        <base-input place="مرد" class="mt-4" label="جنسیت" :w270="true" />
       </div>
       <div class="flex justify-center md:justify-evenly w-full flex-row-reverse flex-wrap">
-        <base-input label="شماره موبایل" :w270="true" />
-        <base-input label="آدرس" :w366="true" />
-        <base-input label="شماره ثابت" :w174="true" />
+        <base-input :verify="true" place="09399324994" class="mt-4" label="شماره موبایل" :w270="true" />
+        <base-input place="ﻣﺸﻬﺪ،ﮐﻮﯼ ﺍﻣﯿﺮﺍﻟﻤﻮﻣﻨﯿﻦ،ﺧﯿﺎﺑﺎﻥ ﺫﻭﺍﻟﻔﻘﺎﺭ 34،ﭖ42" class="mt-4" label="آدرس" :w366="true" />
+        <base-input place="051-37642535" class="mt-4" label="شماره ثابت" :w174="true" />
       </div>
     </form>
   </div>
@@ -41,13 +42,15 @@ export default {};
   );
   backdrop-filter: blur(12px);
   min-height: 369px;
+  position: relative;
 }
-.profile-form::before {
+.profile-form .polygon {
   position: absolute;
   width: 155px;
-  left: 44%;
-  top: -25%;
-  background-image: url(/_nuxt/assets/images/profilePolygon.svg);
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%,-60%);
+  background-image: url(../assets/images/profilePolygon.svg);
   height: 172px;
   content: "";
   background-repeat: no-repeat;
