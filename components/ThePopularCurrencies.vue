@@ -2,7 +2,7 @@
   <div class="mt-2.5">
     <base-part-header :address="'popularicon'" :headName="'ارز های پرطرفدار'" />
     <div
-      class="flex w-screen overflow-x-scroll md:overflow-x-hidden md:justify-center"
+      class="flex w-screen overflow-x-scroll md:overflow-x-hidden " :class="{'md:justify-center' : $store.state.sidebar.isClosed,'md:justify-start': !$store.state.sidebar.isClosed}"
     >
       <base-list-popular-item
     class="my-1"
