@@ -4,7 +4,7 @@
   ,'sm:static': closed}" class="bg-primary  sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all ">
 
 
-    <nav :class="{'w-56' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">
+    <nav :class="{'sm:w-56 w-7/12' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">
       <div class="navicon relative sm:block flex flex-row-reverse items-end">
         <div class="flex-1 sm:hidden"></div>
         <img
@@ -116,7 +116,6 @@ nav {
   border-radius: 110px 0 0 0;
   box-shadow: 0px 4px 4px rgba(21, 171, 137, 0.5);
 }
-
 .navicon::after {
   content: "";
   position: absolute;
@@ -143,7 +142,7 @@ nav {
   );
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   nav{
     border-radius: 20px 0 0;
   }
