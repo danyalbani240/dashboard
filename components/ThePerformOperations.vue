@@ -1,4 +1,11 @@
 <template>
+<div class="relative">
+  <div class="absolute doing-performation-box flex items-center justify-center">
+    <img  src="../assets/images/lastpicon.svg" alt="">
+    <p class="mx-4">انجام عملیات</p>
+    <img style="transform:rotate(180deg)" src="../assets/images/lastpicon.svg" alt="">
+
+  </div>
   <div
     class="flex flex-wrap flex-row-reverse px-3 justify-between items-center perform-operation mx-auto"
   >
@@ -13,7 +20,7 @@
     </div>
     <div class="flex-1 mx-1">
       <p class="text-right mb-3">:انتخاب کارت</p>
-      <div class="select-credit px-8 pt-4">
+      <div class="select-credit mx-2 my-4 px-8 pt-4">
         <div class="flex flex-row-reverse justify-between">
           <img src="../assets/images/mellatbankicon.svg" alt="" /><img
             src="../assets/images/crediticon.svg"
@@ -61,6 +68,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -96,7 +104,7 @@ export default {};
   background-repeat: no-repeat;
     background-size: cover;
   background-image: url(../assets/images/mellatbank.svg);
-  min-width: 331px;
+  min-width: 260px;
   height: 209px;
   border-radius: 18px;
   filter: drop-shadow(0px 6px 30px rgba(21, 171, 137, 0.2));
@@ -114,5 +122,16 @@ export default {};
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(21, 171, 137, 0.3);
   border-radius: 18px;
+}
+.doing-performation-box{
+  width: 234px;
+height: 60px;
+z-index: 20;
+left: 50%;
+transform: translate(-50%,-100%);
+background: linear-gradient(91.44deg, rgba(255, 255, 255, 0.18) 0%, rgba(196, 196, 196, 0.06) 100%);
+box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.49);
+backdrop-filter: blur(12px);
+border-radius:  10px 10px 0px 0px;
 }
 </style>
