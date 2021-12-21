@@ -5,7 +5,7 @@
       <p class="text-center mt-2.5">
         ایمیل خود را وارد کنید و کد تایید را برای احراز وارد کنید.
       </p>
-      <base-input label="شماره تلفن همراه" />
+      <base-input :code="true" label="شماره تلفن همراه" />
       <base-input label="کدتایید" />
       <base-button class="mt-4" :bGreen="true" :full="true"
         >مرحله بعدی</base-button
