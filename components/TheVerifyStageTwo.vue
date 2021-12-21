@@ -3,7 +3,7 @@
     <div style="width: 389px">
       <p class="font-bold text-lg text-center mt-9">تایید شماره</p>
       <p class="text-center mt-2.5">.شماره موبایل خود را تایید و احراز کنید</p>
-      <base-input label="شماره تلفن همراه" />
+      <base-input label="شماره تلفن همراه" :code="true" />
       <base-input label="کدتایید" />
       <base-button class="mt-4" :bGreen="true" :full="true"
         >مرحله بعدی</base-button

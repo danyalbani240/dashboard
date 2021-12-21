@@ -3,6 +3,18 @@
     <label>
       {{ label }}
     </label>
+    <!-- input for sms code -->
+    <div v-if="code" class="sendcode-input flex flex-row-reverse items-center">
+      <input    
+      type="text"
+      :placeholder="place"
+      class="bg-primary  px-2 w-9/12"
+      :class="{'placeholder-Neutral-Gray': placeWhite && !placeBlack}"
+    />
+    <button class="bg-Neutral-Green1 -ml-1 w-3/12 text-center sendcode-button text-white h-full">:ارسال کد</button>
+    </div>
+    <!-- input with verify icon -->
+
     <div class="relative" v-if="!!verify">
       <input
       type="text"
@@ -15,14 +27,14 @@
     </div>
     </div>
     <input
-    v-if="!verify"
+    v-if="!verify && !code"
       type="text"
       :placeholder="place"
       class="bg-primary w-full mt-1.5 px-2"
       :class="{'placeholder-Neutral-Gray': placeWhite && !placeBlack}"
     />
     <!-- 
-      for when binding added
+      for the time when binding added
       v-bind:value="model"
       v-on:input="model = $event"
      -->
@@ -32,6 +44,10 @@
 <script>
 export default {
   props: {
+    code:{
+      type:Boolean,
+      required:false
+    },
     verify:{
       type:Boolean,
       required:false
@@ -90,5 +106,15 @@ input {
   left: 10px;
     top: 55%;
     transform: translateY(-50%);
+}
+.sendcode-input{
+  width: 376px;
+  height: 40px;
+  border-radius: 5px;
+
+}
+.sendcode-button{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 </style>
