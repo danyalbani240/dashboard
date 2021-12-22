@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="flex-1 flex flex-col items-end" >
     <base-part-header :address="'insidereport'" headName="برداشت رمز ارز" />
 
 
