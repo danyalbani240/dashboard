@@ -42,7 +42,7 @@
           <div class="flex items-center flex-col">
             <p class="text-primary text-lg mb-3 font-bold">کارتی وجود ندارد</p>
             <p
-              class="text-primary py-1.5 px-2 border-primary border-2 rounded-md"
+              class="text-primary py-1.5 px-2 cursor-pointer z-10 relative border-primary border-2 rounded-md"
             >
               + افزودن کارت
             </p>
