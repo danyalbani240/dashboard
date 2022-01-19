@@ -19,7 +19,7 @@
       </div>
     </div>
     <div v-if="trapezoidR" class="relative trapezoid-r pl-10 md:pl-0  pt-3">
-      <div class="lg:ml-20 ml-2 flex items-center">
+      <div class="lg:ml-20 ml-2 flex justify-center items-center">
         <div class="flex">
           <img class="mr-2.5" :src="myImage" alt="" />
           <div>
@@ -114,7 +114,7 @@ export default {
 
 .trapezoid {
   clip-path: polygon(0 1%, 65% 0, 100% 100%, 0% 100%);
-  min-width: 347px;
+  width: 347px;
   height: 166px;
   background-image: linear-gradient(
     90.9deg,
@@ -130,7 +130,7 @@ export default {
    
 
   clip-path: polygon(0 1%, 100% 0, 100% 100%, 35% 100%);
-  min-width: 347px;
+  width: 347px;
   height: 166px;
   background-image: linear-gradient(
     to left,
