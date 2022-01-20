@@ -81,12 +81,16 @@ export default {
       subOpen: false,
     };
   },
-  computed: {
-    isDropdown() {
-      return !!dropdown;
-    },
+  mounted() {
+    console.log(this.$route.path);
   },
   
+  watch: {
+    routerUrl (newValue) {
+      this.subOpen = false
+    },
+  },
+
   props: {
     dropdown: {
       type: Array,
@@ -108,16 +112,20 @@ export default {
     linkAddress: {
       type: String,
     },
-    closed:{
-      type:Boolean,
-      required:false,
-      default:false
-    }
+    closed: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   computed: {
     //To making Image address dynamic
     myImage() {
       return require(`~/assets/images/sidebar/${this.address}.svg`);
+    },
+    routerUrl() {
+      
+      return this.$route.path;
     },
   },
 };
