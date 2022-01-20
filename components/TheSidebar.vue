@@ -27,6 +27,7 @@
           :linkAddress="navItem.linkAddress"
           :active="navItem.active"
           :dropdown="navItem.dropdown"
+          :closed="true"
         />
       </div>
       <div class="relative pr-5 logout">
@@ -51,6 +52,7 @@ export default {
   },
   data() {
     return {
+      
       navItems: [
         {
           name: "داشبورد",
