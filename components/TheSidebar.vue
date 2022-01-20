@@ -26,6 +26,7 @@
           :address="navItem.address"
           :linkAddress="navItem.linkAddress"
           :active="navItem.active"
+          :dropdown="navItem.dropdown"
         />
       </div>
       <div class="relative pr-5 logout">
@@ -53,7 +54,7 @@ export default {
       navItems: [
         {
           name: "داشبورد",
-          dropdown: false,
+
           address: "dashicon",
           active: true,
           linkAddress: "/",
@@ -66,16 +67,26 @@ export default {
           name: "حسابداری",
           address: "countericon",
           linkAddress: "/deposit-rial",
+          dropdown: [
+            { name: "واریز ریالی", linkAdress: "/deposit-rial" },
+            { name: "برداشت ریالی", linkAdress: "/withdarw-rial" },
+          ],
         },
         {
           address: "profileicon",
           name: "پروفایل",
           linkAddress: "/profile",
+          dropdown:[
+            { name: "حساب کاربری", linkAdress: "/profile" },
+            { name: "احراز هویت", linkAdress: "/verify" },
+            { name: "تعهد نامه", linkAdress: "/commitment" },
+          ]
         },
         {
           address: "bazaricon",
           name: "بازار",
           linkAddress: "/crypto-trade",
+          
         },
         {
           address: "NFTicon",
@@ -85,6 +96,13 @@ export default {
           address: "walleticon",
           name: "کیف پول",
           linkAddress: "/crypto-wallet",
+          dropdown:[
+            { name: "کیف پول", linkAdress: "/crypto-wallet" },
+            { name: "کیف پول ریالی", linkAdress: "/rail-wallet" },
+            { name: "معامله رمز ارز", linkAdress: "/trade-token" },
+
+          ]
+
         },
         {
           address: "documentsicon",
@@ -116,7 +134,6 @@ export default {
 </script>
 
 <style>
-
 nav {
   transition: width 1s ease-in-out;
   border-radius: 110px 0 0 0;
