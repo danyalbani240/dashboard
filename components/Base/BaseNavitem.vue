@@ -4,12 +4,14 @@
     :class="{ 'bg-image-hovered': subOpen }"
     v-if="linkAddress"
   >
+    <!-- v-if drop down -->
     <nuxt-link
       :to="linkAddress"
       event=""
       @click.native.prevent="subOpen = !subOpen"
       class="nav-item pr-4 my-1.5 flex flex-row-reverse justify-between h-12 items-center cursor-pointer"
       :class="{ active: active }"
+      v-if="dropdown"
     >
       <div class="flex flex-row-reverse items-center">
         <div class="ml-2.5">
@@ -25,10 +27,30 @@
         <img src="../../assets/images/downicon.svg" alt="down" />
       </span>
     </nuxt-link>
-
+    <!-- if not -->
+    <nuxt-link
+      :to="linkAddress"
+      class="nav-item pr-4 my-1.5 flex flex-row-reverse justify-between h-12 items-center cursor-pointer"
+      :class="{ active: active }"
+      v-else
+    >
+      <div class="flex flex-row-reverse items-center">
+        <div class="ml-2.5">
+          <img :src="myImage" />
+        </div>
+        <p class="text-base text-gray-300">{{ name }}</p>
+      </div>
+      <span
+        :class="{ 'transform -rotate-90': subOpen }"
+        class="ml-2.5 transition-all drop cursor-pointer"
+        v-if="dropdown"
+      >
+        <img src="../../assets/images/downicon.svg" alt="down" />
+      </span>
+    </nuxt-link>
     <div
       :class="{ 'h-0': !subOpen, 'h-auto': subOpen }"
-      v-if="subOpen && dropdown"
+      v-if="subOpen && !!dropdown"
       class="sub-container transition-all"
     >
       <base-sub-nav
@@ -59,12 +81,16 @@ export default {
       subOpen: false,
     };
   },
-
+  computed: {
+    isDropdown() {
+      return !!dropdown;
+    },
+  },
+  
   props: {
     dropdown: {
       type: Array,
       required: false,
-      
     },
     name: {
       required: false,
@@ -82,6 +108,11 @@ export default {
     linkAddress: {
       type: String,
     },
+    closed:{
+      type:Boolean,
+      required:false,
+      default:false
+    }
   },
   computed: {
     //To making Image address dynamic
