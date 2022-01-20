@@ -46,13 +46,7 @@
           </div>
         </div>
       </div>
-      <div class="relative progress-bar w-full mt-8 bg-primary rounded-full">
-        <div class="absolute">0</div>
-        <div class="absolute">20</div>
-        <div class="absolute">50</div>
-        <div class="absolute">70</div>
-        <div class="absolute">100</div>
-      </div>
+      <base-range-input />
       <base-button :bGreen="true" class="w-full mt-16"><span class="text-Neutral-Gray">خرید</span></base-button>
     </div>
   </div>
@@ -60,6 +54,7 @@
 
 <script>
 import BaseButton from "./Base/BaseButton.vue";
+
 export default {
   components: { BaseButton },
 };
@@ -130,45 +125,5 @@ export default {
   );
   left: 2px;
 }
-.progress-bar {
-  width: 480px;
-  height: 10px;
-}
-.progress-bar > div {
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(91.44deg, #15ab89 0%, #09736a 100%);
-  border: 0.5px solid #000000;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  line-height: 28px;
-}
-.progress-bar > div:nth-child(1) {
-  left: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.progress-bar > div:nth-child(2) {
-  left: 20%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.progress-bar > div:nth-child(3) {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.progress-bar > div:nth-child(4) {
-  left: 70%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.progress-bar > div:nth-child(5) {
-  right: 0;
-  top: 50%;
-  transform: translate(0%, -50%);
-}
+
 </style>
