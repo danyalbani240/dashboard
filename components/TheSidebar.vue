@@ -111,6 +111,9 @@ export default {
 </script>
 
 <style>
+.nuxt-link-active{
+border-right: 2px solid #15ab89;
+}
 nav {
   transition: width 1s ease-in-out;
   border-radius: 110px 0 0 0;
