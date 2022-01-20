@@ -3,7 +3,7 @@
     <base-dashboard-header :pageName="'حسابداری'" />
     <div class="mt-2">
       <base-part-header :address="'insidereport'" headName="گزارش واریزی ها" />
-      <base-button>بازگشت</base-button>
+      <base-button @click="goback">بازگشت</base-button>
       <div class="mt-9 acounting-box-1 bg-primary py-6 px-12" dir="rtl">
         <p>
           مسئولیت مشکلات ناشی از عدم توجه به این موارد بر عهده‌ی مشتری خواهد
@@ -33,7 +33,15 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+  
+  methods:{
+    goback(){
+      this.$router(-1)
+    }
+  }
+};
 </script>
 
 <style></style>
