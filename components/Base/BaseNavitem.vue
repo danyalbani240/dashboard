@@ -1,5 +1,9 @@
 <template>
-  <div class="flex flex-col" v-if="linkAddress">
+  <div
+    class="flex flex-col"
+    :class="{ 'bg-image-hovered': subOpen }"
+    v-if="linkAddress"
+  >
     <nuxt-link
       :to="linkAddress"
       event=""
@@ -21,7 +25,18 @@
         <img src="../../assets/images/downicon.svg" alt="down" />
       </span>
     </nuxt-link>
-    <div v-if="subOpen" class="sub-container">shit</div>
+
+    <div
+      :class="{ 'h-0': !subOpen, 'h-auto': subOpen }"
+      v-if="subOpen && dropdown"
+      class="sub-container transition-all"
+    >
+      <base-sub-nav
+        v-for="item in dropdown"
+        :linkAdress="item.linkAdress"
+        :name="item.name"
+      />
+    </div>
   </div>
   <div
     v-else
@@ -42,15 +57,14 @@ export default {
   data() {
     return {
       subOpen: false,
-      li: 1,
     };
   },
 
   props: {
     dropdown: {
-      type: Boolean,
+      type: Array,
       required: false,
-      default: true,
+      
     },
     name: {
       required: false,
@@ -79,6 +93,15 @@ export default {
 </script>
 
 <style scoped>
+.bg-image-hovered {
+  background-image: linear-gradient(
+    89.05deg,
+    rgba(1, 14, 23, 0) 0.81%,
+    rgba(11, 96, 82, 0.260417) 49.61%,
+    rgba(1, 15, 24, 0) 94.48%,
+    rgba(1, 14, 23, 0.5) 94.49%
+  );
+}
 .nav-item {
   border-right: 2px solid transparent;
   transition: ease-in-out 0.2s all;
