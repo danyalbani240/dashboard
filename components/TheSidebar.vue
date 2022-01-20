@@ -1,10 +1,15 @@
 <template>
-  <div :class="{
-    'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  z-40' : !closed
-  ,'sm:static': closed}" class="bg-primary  sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all ">
-
-
-    <nav :class="{'sm:w-56 w-7/12' : !closed,'w-0' : closed}" class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden">
+  <div
+    :class="{
+      'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  z-40': !closed,
+      'sm:static': closed,
+    }"
+    class="bg-primary sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all"
+  >
+    <nav
+      :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
+      class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden"
+    >
       <div class="navicon relative sm:block flex flex-row-reverse items-end">
         <div class="flex-1 sm:hidden"></div>
         <img
@@ -13,13 +18,14 @@
           alt="novintex"
         />
       </div>
-      <div class="flex-1 pr-5 links mt-6">
+      <div class="flex-1 pr-1 links mt-6">
         <base-navitem
           v-for="navItem in navItems"
           :key="navItem.name"
           :name="navItem.name"
           :address="navItem.address"
           :linkAddress="navItem.linkAddress"
+          :active="navItem.active"
         />
       </div>
       <div class="relative pr-5 logout">
@@ -33,7 +39,7 @@
 </template>
 
 <script>
-import TheSidebarToggler from './TheSidebarToggler.vue';
+import TheSidebarToggler from "./TheSidebarToggler.vue";
 export default {
   components: { TheSidebarToggler },
   props: {
@@ -49,6 +55,7 @@ export default {
           name: "داشبورد",
           dropdown: false,
           address: "dashicon",
+          active: true,
           linkAddress: "/",
         },
         {
@@ -98,22 +105,18 @@ export default {
   computed: {
     myImage() {},
   },
-  methods:{
+  methods: {
     toggleSidebar(e) {
-      this.isOpen = !this.isOpen
-      e.currentTarget.classList.toggle('closed')
-      console.log(
-        e.currentTarget
-      )
-    }
-  }
+      this.isOpen = !this.isOpen;
+      e.currentTarget.classList.toggle("closed");
+      console.log(e.currentTarget);
+    },
+  },
 };
 </script>
 
 <style>
-.nuxt-link-active{
-border-right: 2px solid #15ab89;
-}
+
 nav {
   transition: width 1s ease-in-out;
   border-radius: 110px 0 0 0;
@@ -146,9 +149,8 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
-  nav{
+  nav {
     border-radius: 20px 0 0;
   }
 }
-
 </style>
