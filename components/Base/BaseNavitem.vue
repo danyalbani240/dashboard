@@ -81,9 +81,7 @@ export default {
       subOpen: false,
     };
   },
-  mounted() {
-    console.log(this.$route.path);
-  },
+  
   
   watch: {
     routerUrl (newValue) {
