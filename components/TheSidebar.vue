@@ -137,7 +137,7 @@ export default {
     toggleSidebar(e) {
       this.isOpen = !this.isOpen;
       e.currentTarget.classList.toggle("closed");
-      console.log(e.currentTarget);
+      
     },
   },
 };

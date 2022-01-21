@@ -1,15 +1,17 @@
 <template>
   <div class="range-input">
     <div
-      @click.self="savePoint(`${$event.offsetX}px`,$event)"
+      @click.self="savePoint(`${$event.offsetX}px`, $event)"
       ref="progress"
       class="relative cursor-pointer range-bar w-full mt-8 bg-primary rounded-full"
     >
-      <div class="absolute z-20" @click.stop="savePoint('0%',$event)">0</div>
-      <div class="absolute z-20" @click.stop="savePoint('20%',$event)">20</div>
-      <div class="absolute z-20" @click.stop="savePoint('50%',$event)">50</div>
-      <div class="absolute z-20" @click.stop="savePoint('70%',$event)">70</div>
-      <div class="absolute z-20" @click.stop="savePoint('100%',$event)">100</div>
+      <div class="absolute z-20" @click.stop="savePoint('0%', $event)">0</div>
+      <div class="absolute z-20" @click.stop="savePoint('20%', $event)">20</div>
+      <div class="absolute z-20" @click.stop="savePoint('50%', $event)">50</div>
+      <div class="absolute z-20" @click.stop="savePoint('70%', $event)">70</div>
+      <div class="absolute z-20" @click.stop="savePoint('100%', $event)">
+        100
+      </div>
       <div class="p-color z-10"></div>
     </div>
   </div>
@@ -23,7 +25,6 @@ export default {
   computed: {},
   methods: {
     savePoint(e) {
-        console.log(e)
       document.querySelector(".p-color").style.width = e;
     },
   },
