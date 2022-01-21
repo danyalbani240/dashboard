@@ -3,10 +3,10 @@
     <base-part-header :address="'insidereport'" headName="خرید و فروش سریع" />
 
     <div class="fast-form mt-8 pt-5 md:px-8 flex flex-col items-center">
-      <div class="flex flex-row-reverse w-full text-sm justify-between">
+      <div class="flex flex-row-reverse w-full flex-wrap justify-center text-sm sm:justify-between">
         <div
-          class="bg-gray-gr flex items-center justify-between px-1.5"
-          dir="rtl"
+          class="bg-gray-gr my-1 flex items-center justify-between px-1.5"
+          dir="rtl "
         >
           <span dir="rtl">قیمت خرید Btc:</span>
           <span style="color: #14b82e">۱۸٬۵۹۷٬۹۶۳٬۹۱۴٫۶۵ </span>
@@ -20,8 +20,8 @@
         </div>
       </div>
       <div class="buy-sell-switch mt-4 flex flex-row-reverse items-center">
-        <div class="buy-button text-center">خرید</div>
-        <div class="sell-button text-center mr-2">فروش</div>
+        <div class="buy-button text-center flex-1">خرید</div>
+        <div class="sell-button text-center mr-2 flex-1">فروش</div>
       </div>
       <div class="flex flex-col mt-6">
         <p dir="rtl">انتخاب ارز ارسالی:</p>
@@ -85,7 +85,7 @@ export default {
   height: 32px;
 }
 .buy-sell-switch {
-  max-width: 481px;
+  width: 481px;
   height: 34px;
   border: 1px solid #14b82e;
   border-radius: 17px;
@@ -98,7 +98,7 @@ export default {
 }
 .buy-button,
 .sell-button {
-  width: 220px;
+  
   height: 28px;
 }
 .crypto-send {
@@ -125,5 +125,37 @@ export default {
   );
   left: 2px;
 }
-
+/* responsive */
+@media (max-width:768px) {
+  .range-bar  {
+    width: 434px;
+  }
+  .crypto-send{
+    width: 460px;
+  }
+}
+@media (max-width:500px) {
+  
+  .crypto-send{
+    width: 400px;
+  }
+  .buy-sell-switch{
+    width: 400px ;
+  }
+  .fast-form{
+    width: 430px;
+  }
+}
+@media (max-width:430px) {
+  
+  .crypto-send{
+    width: 320px;
+  }
+  .buy-sell-switch{
+    width: 320px ;
+  }
+  .fast-form{
+    width: 340px;
+  }
+}
 </style>

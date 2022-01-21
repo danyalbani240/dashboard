@@ -81,4 +81,15 @@ export default {
   height: 100%;
   background-color: #15ab89;
 }
+
+@media (max-width: 500px) {
+  .range-bar {
+    width: 400px;
+  }
+}
+@media (max-width: 430px) {
+  .range-bar {
+    width: 320px;
+  }
+}
 </style>
