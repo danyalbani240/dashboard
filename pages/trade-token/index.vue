@@ -6,7 +6,7 @@
       class="flex mt-11 flex-row-reverse flex-wrap justify-center lg:justify-between"
     >
       <the-harvest-token />
-      <div class="flex-1 mr-8">
+      <div class="flex-1 mx-auto sm:mr-8">
         <div class="flex flex-col items-end">
           <base-part-header
             :address="'insidereport'"

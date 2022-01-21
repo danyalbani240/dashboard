@@ -3,7 +3,7 @@
     <base-part-header :address="'insidereport'" headName="برداشت رمز ارز" />
 
 
-  <div class="harvest-crypto my-5">
+  <div class="harvest-crypto harvest-crypto flex mx-auto flex-col  my-5">
     <div class="flex flex-row-reverse items-center">
       <div
         class="w-16 h-16 rounded-full crypto-logo flex items-center justify-center"
@@ -200,6 +200,7 @@ export default {};
 }
 @media only screen and (max-width: 570px){
   .harvest-crypto{
+    width: 340px;
     padding: 1px;
     padding-top: auto;
   }
