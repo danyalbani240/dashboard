@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-row-reverse table-item items-center justify-between">
+  <div class="flex flex-row-reverse table-item items-center justify-between text-xs">
     <div class="flex flex-row-reverse items-center">
       <span><img src="../assets/images/cardano-ada.svg" /></span>
       <span class="text-xs">BTC-irr</span>
     </div>
     <div>۱۸٬۵۹۷٬۹۶۳٬۹۱۴٫۶۵</div>
     <div>۱۸٬۵۹۷٬۹۶۳٬۹۱۴٫۶۵</div>
-    <div class="flex flex-row-reverse trade-button items-center">
+    <div class="flex flex-row-reverse trade-button cursor-pointer items-center">
       <span class="text-center text-xs flex-1">ترید</span>
       <img class="relative" src="../assets/images/trade-button.svg" alt="" />
     </div>
