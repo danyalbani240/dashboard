@@ -3,9 +3,11 @@
     <base-part-header :address="'insidereport'" headName="خرید و فروش سریع" />
 
     <div class="fast-form mt-8 pt-5 md:px-8 flex flex-col items-center">
-      <div class="flex flex-row-reverse w-full flex-wrap justify-center text-sm sm:justify-between">
+      <div
+        class="flex flex-row-reverse w-full flex-wrap justify-center text-sm sm:justify-between"
+      >
         <div
-          class="bg-gray-gr my-1 flex items-center justify-between px-1.5"
+          class="bg-gray-gr my-1 flex flex-row-reverse items-center justify-between px-1.5"
           dir="rtl "
         >
           <span dir="rtl">قیمت خرید Btc:</span>
@@ -19,35 +21,86 @@
           <span>0 ریال</span>
         </div>
       </div>
+
+      <!-- switching Sell Or buy State -->
       <div class="buy-sell-switch mt-4 flex flex-row-reverse items-center">
-        <div class="buy-button text-center flex-1">خرید</div>
-        <div class="sell-button text-center mr-2 flex-1">فروش</div>
-      </div>
-      <div class="flex flex-col mt-6">
-        <p dir="rtl">انتخاب ارز ارسالی:</p>
-        <div class="flex flex-row-reverse crypto-send bg-primary">
-          <div
-            class="h-full flex justify-evenly px-6 cursor-pointer items-center"
-          >
-            <span class="mr-1">IRR</span>
-            <img src="../assets/images/downArrow.svg" />
-          </div>
+        <div
+          :class="{ active: activeState === 'buy' }"
+          @click="activeState = 'buy'"
+          class="buy-button text-center flex-1 cursor-pointer"
+        >
+          خرید
+        </div>
+        <div
+          :class="{ active: activeState === 'sell' }"
+          @click="activeState = 'sell'"
+          class="sell-button text-center mr-2 cursor-pointer flex-1"
+        >
+          فروش
         </div>
       </div>
-      <div class="flex flex-col mt-6">
-        <p dir="rtl">انتخاب ارز دریافتی:</p>
-        <div class="flex flex-row-reverse crypto-send bg-primary">
-          <div
-            class="h-full flex justify-evenly pl-2 cursor-pointer items-center"
-          >
-            <img src="../assets/images/cardano-ada.svg" alt="" />
-            <span class="mr-1">BTC</span>
-            <img src="../assets/images/downArrow.svg" />
+
+      <!-- checking the State sell OR BUy -->
+      <div>
+        <div v-if="activeState === 'buy'">
+          <div class="flex flex-col mt-6">
+            <p dir="rtl">انتخاب ارز ارسالی:</p>
+            <div class="flex flex-row-reverse crypto-send bg-primary">
+              <div
+                class="h-full flex justify-evenly px-6 cursor-pointer items-center"
+              >
+                <span class="mr-1">IRR</span>
+                <img src="../assets/images/downArrow.svg" />
+              </div>
+            </div>
           </div>
+          <div class="flex flex-col mt-6">
+            <p dir="rtl">انتخاب ارز دریافتی:</p>
+            <div class="flex flex-row-reverse crypto-send bg-primary">
+              <div
+                class="h-full flex justify-evenly pl-2 cursor-pointer items-center"
+              >
+                <img src="../assets/images/cardano-ada.svg" alt="" />
+                <span class="mr-1">BTC</span>
+                <img src="../assets/images/downArrow.svg" />
+              </div>
+            </div>
+          </div>
+          <base-range-input />
+          <base-button :bGreen="true" class="w-full mt-16"
+            ><span class="text-Neutral-Gray">خرید</span></base-button
+          >
+        </div>
+        <div v-if="activeState === 'sell'">
+          <div class="flex flex-col mt-6">
+            <p dir="rtl">انتخاب ارز ارسالی:</p>
+            <div class="flex flex-row-reverse crypto-send bg-primary">
+              <div
+                class="h-full flex justify-evenly px-6 cursor-pointer items-center"
+              >
+                <span class="mr-1">IRR</span>
+                <img src="../assets/images/downArrow.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col mt-6">
+            <p dir="rtl">انتخاب ارز دریافتی:</p>
+            <div class="flex flex-row-reverse crypto-send bg-primary">
+              <div
+                class="h-full flex justify-evenly pl-2 cursor-pointer items-center"
+              >
+                <img src="../assets/images/cardano-ada.svg" alt="" />
+                <span class="mr-1">BTC</span>
+                <img src="../assets/images/downArrow.svg" />
+              </div>
+            </div>
+          </div>
+          <base-range-input />
+          <base-button style="background-color: #eb0020" class="w-full mt-16"
+            ><span class="text-Neutral-Gray">فروش</span></base-button
+          >
         </div>
       </div>
-      <base-range-input />
-      <base-button :bGreen="true" class="w-full mt-16"><span class="text-Neutral-Gray">خرید</span></base-button>
     </div>
   </div>
 </template>
@@ -57,6 +110,11 @@ import BaseButton from "./Base/BaseButton.vue";
 
 export default {
   components: { BaseButton },
+  data() {
+    return {
+      activeState: "buy",
+    };
+  },
 };
 </script>
 
@@ -92,14 +150,17 @@ export default {
   padding-right: 3px;
   padding-left: 3px;
 }
-.buy-button {
+
+.buy-button.active {
   background-color: #14b82e;
-  border-radius: 13px;
 }
 .buy-button,
 .sell-button {
-  
   height: 28px;
+  border-radius: 13px;
+}
+.sell-button.active {
+  background-color: #eb0020;
 }
 .crypto-send {
   width: 481px;
@@ -126,35 +187,33 @@ export default {
   left: 2px;
 }
 /* responsive */
-@media (max-width:768px) {
-  .range-bar  {
+@media (max-width: 768px) {
+  .range-bar {
     width: 434px;
   }
-  .crypto-send{
+  .crypto-send {
     width: 460px;
   }
 }
-@media (max-width:500px) {
-  
-  .crypto-send{
+@media (max-width: 500px) {
+  .crypto-send {
     width: 400px;
   }
-  .buy-sell-switch{
-    width: 400px ;
+  .buy-sell-switch {
+    width: 400px;
   }
-  .fast-form{
+  .fast-form {
     width: 430px;
   }
 }
-@media (max-width:430px) {
-  
-  .crypto-send{
+@media (max-width: 430px) {
+  .crypto-send {
     width: 320px;
   }
-  .buy-sell-switch{
-    width: 320px ;
+  .buy-sell-switch {
+    width: 320px;
   }
-  .fast-form{
+  .fast-form {
     width: 340px;
   }
 }
