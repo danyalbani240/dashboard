@@ -10,6 +10,7 @@
         :itemName="item.name"
         :price="item.price"
         :key="item.name"
+        :red="active === 2"
       />
     </div>
   </div>
@@ -20,6 +21,9 @@ import BaseInventoryItem from "./BaseInventoryItem.vue";
 export default {
   components: { BaseInventoryItem },
   props: {
+    active: {
+      type: Number,
+    },
     itemsData: {
       type: Array,
     },

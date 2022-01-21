@@ -14,7 +14,7 @@
       />
       <div class="flex flex-row-reverse cursor-pointer head-button py-2 px-1.5">
         <img class="ml-1" src="../../assets/images/usericon.svg" alt="" />
-        <span>مهدی عزیز خوش امدید</span>
+        <span class="sm:text-base text-sm">مهدی عزیز خوش امدید</span>
       </div>
     </div>
   </div>

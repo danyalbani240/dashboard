@@ -5,7 +5,7 @@
         :headName="'آخرین فعالیت ها'"
         :address="'lastactivity'"
       />
-      <div class="flex mt-2.5 flex-row-reverse  flex-1">
+      <div class="flex mt-2.5 flex-row-reverse flex-1">
         <div class="bg-primary rounded-2xl last-do flex w-full justify-center">
           <div class="flex flex-col items-center mt-20">
             <div
@@ -21,16 +21,25 @@
     <div class="xl:mr-4 flex-1">
       <div class="flex flex-row-reverse justify-between items-center">
         <base-part-header :headName="'سفارشات'" :address="'shopingcart'" />
-        <base-switch-badge linkOne="خرید" linkTwo="فروش" />
+        <base-switch-badge @change="changeOrders" :active="ordersActive" linkOne="خرید" linkTwo="فروش" />
       </div>
-      <the-orders-table class="w-full" />
+      <the-orders-table class="w-full" :buy="ordersActive === 1" />
     </div>
     <div class="xl:mr-14 flex-1">
       <div class="flex flex-row-reverse justify-between items-center">
         <base-part-header :address="'inventory'" :headName="'موجودی'" />
-        <base-switch-badge :linkOne="'رمز ارز'" :linkTwo="'ريالی'" />
+        <base-switch-badge
+          :active="inventoryActive"
+          :linkOne="'رمز ارز'"
+          :linkTwo="'ريالی'"
+          @change="changeInventory"
+        />
       </div>
-      <base-inventory class="w-full" :itemsData="inventory" />
+      <base-inventory
+        :active="inventoryActive"
+        class="w-full"
+        :itemsData="inventory"
+      />
     </div>
   </div>
 </template>
@@ -41,6 +50,8 @@ export default {
   components: { BaseInventory },
   data() {
     return {
+      inventoryActive: 1,
+      ordersActive:1,
       orders: [],
       inventory: [
         {
@@ -69,6 +80,22 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    changeInventory() {
+      if (this.inventoryActive === 1) {
+        this.inventoryActive = 2;
+      } else {
+        this.inventoryActive = 1;
+      }
+    },
+    changeOrders() {
+      if (this.ordersActive === 1) {
+        this.ordersActive = 2;
+      } else {
+        this.ordersActive = 1;
+      }
+    },
   },
 };
 </script>

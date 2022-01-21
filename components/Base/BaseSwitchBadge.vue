@@ -2,19 +2,26 @@
   <div
     class="relative justify-center flex-row-reverse rounded-2xl pr-1 items-center flex badge-contain text-sm"
   >
-    <a
-      class="flex items-center text-center py-1 w-20 justify-center buy active rounded-2xl text-primary font-bold"
-      >{{ linkOne }}</a
-    >
     <div
-      class="changer w-6 h-6 flex justify-center items-center icon-container rounded absolute"
+      class="flex items-center text-center py-1 w-20 justify-center buy rounded-2xl text-white font-bold"
+      :class="{ 'active text-primary': active === 1 }"
+    >
+      {{ linkOne }}
+    </div>
+    <div
+      class="changer w-6 h-6 flex justify-center items-center icon-container rounded absolute cursor-pointer"
       style="left: 50%; transform: translateX(-50%)"
+      @click="toggleActive"
     >
       <img src="../../assets/images/transform.svg" alt="" />
     </div>
-    <a class="sell flex items-center text-center w-20 py-1 px-5 text-Neutral-Green1 font-bold" href="">{{
-      linkTwo
-    }}</a>
+    <div
+      class="sell flex items-center text-center w-20 py-1 px-5 text-Neutral-Green1 rounded-2xl font-bold"
+      :class="{ active: active === 2 }"
+      href=""
+    >
+      {{ linkTwo }}
+    </div>
   </div>
 </template>
 
@@ -29,13 +36,25 @@ export default {
       type: String,
       required: true,
     },
+    active: {
+      type: Number,
+      default: 1,
+    },
+  },
+  methods: {
+    toggleActive() {
+      this.$emit("change");
+    },
   },
 };
 </script>
 
 <style scoped>
-.active {
+.buy.active {
   background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
+}
+.sell.active {
+  background-image: linear-gradient(90.93deg, #730909 0%, #ab1542 100%);
 }
 .badge-contain {
   border-radius: 17px;
