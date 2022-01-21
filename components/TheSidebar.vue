@@ -10,8 +10,12 @@
       :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
       class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden"
     >
-      <div class="navicon relative sm:block flex flex-row-reverse items-end">
-        <div class="flex-1 sm:hidden"></div>
+      <div
+        class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
+      >
+        <div class="flex-1 sm:hidden flex flex-row-reverse pr-5">
+          <the-sidebar-toggler />
+        </div>
         <img
           class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
           src="../assets/images/icon.svg"
@@ -52,7 +56,6 @@ export default {
   },
   data() {
     return {
-      
       navItems: [
         {
           name: "داشبورد",
@@ -78,17 +81,16 @@ export default {
           address: "profileicon",
           name: "پروفایل",
           linkAddress: "/profile",
-          dropdown:[
+          dropdown: [
             { name: "حساب کاربری", linkAdress: "/profile" },
             { name: "احراز هویت", linkAdress: "/verify" },
             { name: "تعهد نامه", linkAdress: "/commitment" },
-          ]
+          ],
         },
         {
           address: "bazaricon",
           name: "بازار",
           linkAddress: "/crypto-trade",
-          
         },
         {
           address: "NFTicon",
@@ -98,13 +100,11 @@ export default {
           address: "walleticon",
           name: "کیف پول",
           linkAddress: "/crypto-wallet",
-          dropdown:[
+          dropdown: [
             { name: "کیف پول", linkAdress: "/crypto-wallet" },
             { name: "کیف پول ریالی", linkAdress: "/rail-wallet" },
             { name: "معامله رمز ارز", linkAdress: "/trade-token" },
-
-          ]
-
+          ],
         },
         {
           address: "documentsicon",
@@ -122,8 +122,16 @@ export default {
       ],
     };
   },
+
+  watch: {
+    routerUrl(newValue) {
+      this.$store.commit("sidebar/closeSidebar");
+    },
+  },
   computed: {
-    myImage() {},
+    routerUrl() {
+      return this.$route.path;
+    },
   },
   methods: {
     toggleSidebar(e) {
