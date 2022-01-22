@@ -57,6 +57,7 @@
         v-for="item in dropdown"
         :linkAdress="item.linkAdress"
         :name="item.name"
+        :key="item.name"
       />
     </div>
   </div>
