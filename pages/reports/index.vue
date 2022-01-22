@@ -144,7 +144,7 @@ export default {
         );
         newRows.push(rowArray);
       }
-      console.log(newRows);
+      
       return newRows;
     },
   },
