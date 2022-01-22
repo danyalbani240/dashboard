@@ -6,7 +6,7 @@
         اولین بخش احراز هویت بررسی کد ملی شما با اطلاعات هویتی است.
       </p>
       <base-input class="mt-5" label="کدملی" />
-      <base-button class="mt-4" :bGreen="true" :full="true"
+      <base-button class="mt-4" @click="nextStage" :bGreen="true" :full="true"
         >مرحله بعدی</base-button
       >
     </div>
@@ -21,6 +21,11 @@ import BaseButton from "./Base/BaseButton.vue";
 import BaseInput from "./Base/BaseInput.vue";
 export default {
   components: { BaseInput, BaseButton },
+  methods: {
+    nextStage() {
+      this.$emit("getPass");
+    },
+  },
 };
 </script>
 
