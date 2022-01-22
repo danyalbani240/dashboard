@@ -12,7 +12,7 @@
           </div>
         </div>
       </div>
-      <div class="commitment-bg my-5  flex items-center justify-center">
+      <div class="commitment-bg my-5 sm:my-0  flex items-center justify-center">
         <img class="rounded" src="../../assets/images/selfPicture.svg" alt="" />
       </div>
     </div>
