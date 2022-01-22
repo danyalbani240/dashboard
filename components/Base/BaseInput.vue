@@ -11,7 +11,7 @@
       class="bg-primary  px-2 w-9/12"
       :class="{'placeholder-Neutral-Gray': placeWhite && !placeBlack}"
     />
-    <button class="bg-Neutral-Green1 -ml-1 w-3/12 text-center sendcode-button text-white h-full">:ارسال کد</button>
+    <button class="bg-Neutral-Green1 -ml-1 w-3/12 text-center sendcode-button text-white h-full">ارسال کد:</button>
     </div>
     <!-- input with verify icon -->
 
