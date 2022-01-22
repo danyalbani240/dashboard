@@ -3,7 +3,7 @@
     <div class="flex justify-between flex-row-reverse mt-10">
       <base-part-header :address="'insidereport'" headName="گزارش واریزی ها" />
 
-      <img src="../assets/images/refresh.svg" alt="" />
+      <img src="../assets/images/refresh.svg" @click.prevent="" class="cursor-pointer" alt="" />
     </div>
     <div class="overflow-x-auto">
       <table class="bg-opacity-50 w-full mt-3.5">
