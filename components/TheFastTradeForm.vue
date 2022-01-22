@@ -10,8 +10,15 @@
           class="bg-gray-gr my-1 flex flex-row-reverse items-center justify-between px-1.5"
           dir="rtl "
         >
-          <span dir="rtl">قیمت خرید Btc:</span>
-          <span style="color: #14b82e">۱۸٬۵۹۷٬۹۶۳٬۹۱۴٫۶۵ </span>
+          <span v-if="activeState === 'buy'" dir="rtl">قیمت خرید Btc:</span>
+          <span v-else dir="rtl">قیمت فروش Btc:</span>
+          <span
+            :class="{
+              'buy-text-color': activeState == 'buy',
+              'sell-text-color': activeState == 'sell',
+            }"
+            >۱۸٬۵۹۷٬۹۶۳٬۹۱۴٫۶۵
+          </span>
         </div>
         <div
           dir="rtl"
@@ -66,7 +73,7 @@
               </div>
             </div>
           </div>
-          <base-range-input />
+          <base-range-input class="buy" />
           <base-button :bGreen="true" class="w-full mt-16"
             ><span class="text-Neutral-Gray">خرید</span></base-button
           >
@@ -95,7 +102,7 @@
               </div>
             </div>
           </div>
-          <base-range-input />
+          <base-range-input class="sell" />
           <base-button style="background-color: #eb0020" class="w-full mt-16"
             ><span class="text-Neutral-Gray">فروش</span></base-button
           >
@@ -185,6 +192,12 @@ export default {
     rgba(1, 14, 23, 0) 100%
   );
   left: 2px;
+}
+.buy-text-color {
+  color: #14b82e;
+}
+.sell-text-color {
+  color: #eb0020;
 }
 /* responsive */
 @media (max-width: 768px) {

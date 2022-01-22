@@ -2,7 +2,6 @@
   <div class="range-input">
     <div
       @click.self="savePoint(`${$event.offsetX}px`, $event)"
-      ref="progress"
       class="relative cursor-pointer range-bar w-full mt-8 bg-primary rounded-full"
     >
       <div class="absolute z-20" @click.stop="savePoint('0%', $event)">0</div>
@@ -36,10 +35,22 @@ export default {
   width: 480px;
   height: 10px;
 }
+.range-input.buy .range-bar > div:not(:last-child) {
+  background: linear-gradient(91.44deg, #15ab89 0%, #09736a 100%);
+}
+.range-input.buy .p-color {
+  background: linear-gradient(270deg, rgba(1, 14, 23, 0) 0%, #15ab89 100%);
+}
+.range-input.sell .p-color {
+  background: linear-gradient(270deg, rgba(1, 14, 23, 0) -20%, #eb0020 100%);
+}
+.range-input.sell .range-bar > div:not(:last-child) {
+  background: #eb0020;
+}
 .range-bar > div:not(:last-child) {
   width: 28px;
   height: 28px;
-  background: linear-gradient(91.44deg, #15ab89 0%, #09736a 100%);
+
   border: 0.5px solid #000000;
   border-radius: 50%;
   display: flex;
@@ -79,7 +90,7 @@ export default {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #15ab89;
+  border-radius: 50%;
 }
 
 @media (max-width: 500px) {
