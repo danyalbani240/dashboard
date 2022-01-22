@@ -34,8 +34,8 @@
           :closed="true"
         />
       </div>
-      <div class="relative pr-5 logout">
-        <div class="flex flex-row-reverse">
+      <div class="relative cursor-pointer pr-5 logout">
+        <div class="flex flex-row-reverse items-center">
           <img src="~/assets/images/sidebar/logouticon.svg" alt="" />
           <p class="text-gray-300 text-xs">خروج از حساب</p>
         </div>
