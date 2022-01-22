@@ -9,7 +9,7 @@
       </div>
       <div class="relative mt-16">
         <div class="absolute card-bg"></div>
-        <div class="bg-primary rial-wallet-card px-8 py-4">
+        <div class="bg-primary mx-auto rial-wallet-card px-2 sm:px-8 py-4">
           <div class="flex justify-center flex-col items-center">
             <div class="w-24 flag h-24 flex items-center justify-center">
               <img src="../../assets/images/iran-flag.svg" alt="" />
@@ -122,5 +122,10 @@ export default {};
   filter: blur(130px);
   /* position: relative; */
   z-index: 1;
+}
+@media (max-width:640px){
+  .rial-wallet-card {
+    width: 91.999%;
+  }
 }
 </style>
