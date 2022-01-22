@@ -7,7 +7,7 @@
       </p>
       <base-input :code="true" label="شماره تلفن همراه" />
       <base-input label="کدتایید" />
-      <base-button class="mt-4" :bGreen="true" :full="true"
+      <base-button  @click="$emit('getPass')" class="mt-4" :bGreen="true" :full="true"
         >مرحله بعدی</base-button
       >
     </div>

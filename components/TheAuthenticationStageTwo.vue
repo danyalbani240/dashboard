@@ -31,9 +31,9 @@
       </div>
     </div>
     <div class="btn-group mt-14">
-      <base-button>مرحله بعد</base-button>
-      <base-button bGreen="true">مرحله قبل</base-button>
-    </div>
+      <base-button @click="$emit('getPass')">مرحله بعد</base-button>
+      <base-button @click="$emit('getBack')" bGreen="true">مرحله قبل</base-button>
+    </div> 
   </div>
 </template>
 

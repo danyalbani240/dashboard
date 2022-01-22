@@ -9,7 +9,7 @@
     <div
       class="auth-box-container mx-auto mt-14 flex justify-between flex-wrap"
     >
-      <div class="base-auth-item flex items-center justify-center my-7">
+      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
             <img src="../assets/images/cafebazar.svg" alt="" />
@@ -17,34 +17,34 @@
           <p class="mt-7">دانلود از پلتفرم بازار</p>
         </div>
       </div>
-      <div class="base-auth-item flex items-center justify-center my-7">
+      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
-            <img src="../assets/images/cafebazar.svg" alt="" />
+            <img src="../assets/images/googleplaylogo.svg" alt="" />
           </div>
-          <p class="mt-7">دانلود از پلتفرم بازار</p>
+          <p class="mt-7">دانلود از پلتفرم گوگل پلی</p>
         </div>
       </div>
-      <div class="base-auth-item flex items-center justify-center my-7">
+      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
-            <img src="../assets/images/cafebazar.svg" alt="" />
+            <img src="../assets/images/googleauthenticator.svg" alt="" />
           </div>
-          <p class="mt-7">دانلود از پلتفرم بازار</p>
+          <p class="mt-7 text-center" style="width:160px;">استفاده از اکستنش گوگل دو مرحله ای</p>
         </div>
       </div>
-      <div class="base-auth-item flex items-center justify-center my-7">
+      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
-            <img src="../assets/images/cafebazar.svg" alt="" />
+            <img src="../assets/images/applestore.svg" alt="" />
           </div>
-          <p class="mt-7">دانلود از پلتفرم بازار</p>
+          <p class="mt-7">دانلود از پلتفرم اپ استور</p>
         </div>
       </div>
     </div>
     <div class="btn-group mt-14">
-      <base-button>مرحله بعد</base-button>
-      <base-button bGreen="true">مرحله قبل</base-button>
+      <base-button  @click="$emit('getPass')">مرحله بعد</base-button>
+      <base-button @click="$emit('getBack')" bGreen="true">مرحله قبل</base-button>
     </div>
   </div>
 </template>

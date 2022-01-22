@@ -7,7 +7,7 @@
         https://lottiefiles.com/70898-completed
       </p>
     </div>
-    <base-button class="w-36 mt-11" :bGreen="true">پایان</base-button>
+    <base-button @click="$router.push('/')" class="w-36 mt-11" :bGreen="true">پایان</base-button>
   </div>
 </template>
 

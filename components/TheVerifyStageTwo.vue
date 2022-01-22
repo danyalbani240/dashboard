@@ -5,7 +5,7 @@
       <p class="text-center mt-2.5">.شماره موبایل خود را تایید و احراز کنید</p>
       <base-input label="شماره تلفن همراه" :code="true" />
       <base-input label="کدتایید" />
-      <base-button class="mt-4" :bGreen="true" :full="true"
+      <base-button @click="$emit('getPass')" class="mt-4" :bGreen="true" :full="true"
         >مرحله بعدی</base-button
       >
     </div>
