@@ -2,39 +2,40 @@
   <div class="bg-primary w-full text-Neutral-Gray p-5">
     <base-dashboard-header :pageName="'احراز هویت'" />
 
-    <div class="stages flex mt-8 justify-center">
-      <div class="stage mx-2.5">
+    <div class="stages flex mt-8 justify-center flex-row-reverse">
+      <div class="stage mx-2.5" :class="{ active: step === 1, pass: step > 1 }">
         <div class="stage-input"></div>
         <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
-      <div class="stage mx-2.5">
+      <div class="stage mx-2.5" :class="{ active: step === 2, pass: step > 2 }">
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">کدملی</p>
+        <p class="text-center mt-2 text-xs">تایید شماره موبایل</p>
       </div>
-      <div class="stage mx-2.5">
+      <div class="stage mx-2.5" :class="{ active: step === 3, pass: step > 3 }">
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">کدملی</p>
+        <p class="text-center mt-2 text-xs">تایید پست الکترونیک</p>
       </div>
-      <div class="stage mx-2.5">
+      <div class="stage mx-2.5" :class="{ active: step === 4, pass: step > 4 }">
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">کدملی</p>
+        <p class="text-center mt-2 text-xs">گوگل دو مرحله ای</p>
       </div>
-      <div class="stage mx-2.5">
+      <div class="stage mx-2.5" :class="{ active: step === 5, pass: step > 5 }">
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">کدملی</p>
+        <p class="text-center mt-2 text-xs">نتیجه درخواست</p>
       </div>
     </div>
-     <!-- <the-verify-stage-one />  -->
-    <!-- <the-verify-stage-two /> -->
-    <!-- <the-verify-email-stage /> -->
-    <!-- <the-authentication-stage /> -->
-    <!-- <the-authentication-stage-two /> -->
-    <!-- <the-verify-completed /> -->
+    <the-verify-stage-one v-if="step === 1" @getPass="step++" />
+    <the-verify-stage-two v-if="step === 2" @getPass="step++" />
+    <the-verify-email-stage v-if="step === 3" @getPass="step++" />
+    <the-authentication-stage @getBack="step--"  v-if="step === 4" @getPass="step++" />
+    <the-authentication-stage-two @getBack="step--"  v-if="step === 5" @getPass="step++" />
+    <the-verify-completed v-if="step === 6" />
   </div>
 </template>
 
 <script>
 import TheAuthenticationStage from "~/components/TheAuthenticationStage.vue";
+import TheAuthenticationStageTwo from "~/components/TheAuthenticationStageTwo.vue";
 import TheVerifyCompleted from "~/components/TheVerifyCompleted.vue";
 import TheVerifyEmailStage from "~/components/TheVerifyEmailStage.vue";
 import TheVerifyStageOne from "~/components/TheVerifyStageOne.vue";
@@ -46,6 +47,12 @@ export default {
     TheVerifyEmailStage,
     TheAuthenticationStage,
     TheVerifyCompleted,
+    TheAuthenticationStageTwo
+  },
+  data() {
+    return {
+      step: 1,
+    };
   },
 };
 </script>
@@ -54,11 +61,17 @@ export default {
 .stage-input {
   width: 191px;
   height: 10px;
-  border: 2px solid #15ab89;
-  filter: drop-shadow(0px 0px 6px #15ab89);
+  border: 1px solid #15ab89;
   border-radius: 15.5px;
   opacity: 0.65;
   position: relative;
+}
+.stage.active .stage-input {
+  border-width: 2px !important;
+  filter:drop-shadow(2px 2px 5px #15ab89);
+}
+.stage.pass .stage-input {
+  background-color: #15ab89;
 }
 .stage-input::before {
   content: "";
