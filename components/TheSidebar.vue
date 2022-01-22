@@ -1,10 +1,10 @@
 <template>
   <div
     :class="{
-      'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  z-40': !closed,
+      'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  ': !closed,
       'sm:static': closed,
     }"
-    class="bg-primary sm:static sm:z-auto sm:bg-opacity-100 sm:h-auto sm:w-auto transition-all"
+    class="bg-primary sm:static sm:z-auto sm:bg-opacity-100 z-40 sm:h-auto sm:w-auto transition-all"
   >
     <nav
       :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
