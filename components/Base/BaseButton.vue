@@ -1,5 +1,6 @@
 <template>
   <button
+  @click="$emit('click', $event)"
     :class="{
       'bg-button-gradient': bGreen,
       'border-bg': bTrans,
