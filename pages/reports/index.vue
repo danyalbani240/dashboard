@@ -97,6 +97,44 @@ export default {
       ],
     };
   },
+  computed: {
+    Rows() {
+      let newRows = [];
+      for (let item = 0; item < this.reports.length; item++) {
+        let rowArray = [];
+        let priceObject = {
+          title: "مبلغ",
+          value: this.reports[item].price,
+        };
+        let creditObject = {
+          title: "شماره کارت",
+          value: this.reports[item].credit,
+        };
+        let paymentObject = {
+          title: "تاریخ پرداخت",
+          value: this.reports[item].payment,
+        };
+        let transactionNumObject = {
+          title: "شماره تراکنش",
+          value: this.reports[item].transactionNum,
+        };
+        let transactionStatusObject = {
+          title: "وضعیت تراکنش",
+          value: this.reports[item].transactionStatus,
+        };
+        rowArray.push(
+          priceObject,
+          creditObject,
+          paymentObject,
+          transactionNumObject,
+          transactionStatusObject
+        );
+        newRows.push(rowArray);
+      }
+      console.log(newRows);
+      return newRows;
+    },
+  },
 };
 </script>
 
