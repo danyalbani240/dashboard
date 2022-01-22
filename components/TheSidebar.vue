@@ -102,7 +102,7 @@ export default {
           linkAddress: "/crypto-wallet",
           dropdown: [
             { name: "کیف پول", linkAdress: "/crypto-wallet" },
-            { name: "کیف پول ریالی", linkAdress: "/rail-wallet" },
+            { name: "کیف پول ریالی", linkAdress: "/rial-wallet" },
             { name: "معامله رمز ارز", linkAdress: "/trade-token" },
           ],
         },
