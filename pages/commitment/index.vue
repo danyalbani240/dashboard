@@ -1,9 +1,10 @@
 <template>
   <div class="bg-primary w-full text-Neutral-Gray p-5">
+    <base-dashboard-header pageName="تعهد نامه" />
     <p class="text-center text-lg">ارسال تعهدنامه</p>
-    <div class="flex justify-evenly mt-16">
+    <div class="flex flex-wrap justify-evenly mt-16">
       <div class="commitment-bg flex justify-center items-center">
-        <div class="bg-primary flex flex-col items-center justify-center">
+        <div class="bg-primary my-5 cursor-pointer flex flex-col items-center justify-center">
           <img src="../../assets/images/bulk-import.svg" alt="" />
           <div class="text-center">
             <p>اپلود عکس تعهد نامه</p>
@@ -11,7 +12,7 @@
           </div>
         </div>
       </div>
-      <div class="commitment-bg flex items-center justify-center">
+      <div class="commitment-bg my-5  flex items-center justify-center">
         <img class="rounded" src="../../assets/images/selfPicture.svg" alt="" />
       </div>
     </div>
@@ -40,5 +41,11 @@ export default {};
   height: 418px;
   border-radius: 5px;
   border: 1px solid #15ab89;
+}
+@media (max-width: 500px) {
+  .commitment-bg > div {
+    width: 350px;
+    height: 350px;
+  }
 }
 </style>
