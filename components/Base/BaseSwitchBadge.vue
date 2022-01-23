@@ -3,8 +3,9 @@
     class="relative justify-center flex-row-reverse rounded-2xl pr-1 items-center flex badge-contain text-sm"
   >
     <div
-      class="flex items-center text-center py-1 w-20 justify-center buy rounded-2xl text-white font-bold"
+      class="flex items-center text-center py-1 w-20 justify-center buy rounded-2xl text-white font-bold cursor-pointer"
       :class="{ 'active text-primary': active === 1 }"
+      @click="toggleActive"
     >
       {{ linkOne }}
     </div>
@@ -16,9 +17,10 @@
       <img src="../../assets/images/transform.svg" alt="" />
     </div>
     <div
-      class="sell flex items-center text-center w-20 py-1 px-5 text-Neutral-Green1 rounded-2xl font-bold"
+      class="sell flex items-center text-center w-20 py-1 px-5 text-Neutral-Green1 rounded-2xl font-bold cursor-pointer"
       :class="{ active: active === 2 }"
       href=""
+      @click="toggleActive"
     >
       {{ linkTwo }}
     </div>
