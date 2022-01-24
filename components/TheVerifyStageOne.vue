@@ -10,7 +10,7 @@
         >مرحله بعدی</base-button
       >
     </div>
-    <div class="flex items-center justify-center mr-28">
+    <div class="hidden items-center md:flex justify-center mr-28">
       <img src="../assets/images/bigperson.svg" alt="" />
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
 
 <style scoped>
 .verify-stage {
-  width: 716px;
+  max-width: 716px;
   height: 277px;
   background: linear-gradient(
     91.44deg,
