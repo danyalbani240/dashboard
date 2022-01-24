@@ -1,6 +1,6 @@
 <template>
   <div class="verify-stage mx-auto mt-52 px-14 flex" dir="rtl">
-    <div style="width: 389px">
+    <div style="width: 389px" class="flex-1">
       <p class="font-bold text-lg text-center mt-9">تایید شماره</p>
       <p class="text-center mt-2.5">.شماره موبایل خود را تایید و احراز کنید</p>
       <base-input label="شماره تلفن همراه" :code="true" />
@@ -9,7 +9,7 @@
         >مرحله بعدی</base-button
       >
     </div>
-    <div class="flex items-center justify-center mr-28">
+    <div class="md:flex hidden items-center justify-center  mr-28">
       <img src="../assets/images/call.svg" alt="" />
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {};
 
 <style scoped BaseInput>
 .verify-stage {
-  width: 716px;
+  max-width: 716px;
   height: 380px;
   background: linear-gradient(
     91.44deg,
