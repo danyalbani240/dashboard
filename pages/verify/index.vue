@@ -55,7 +55,7 @@
           pass: step > 5,
           block: step > 2,
           'hidden lg:block': step <= 2,
-          'hidden md:block': step < 5,
+          'hidden lg:block': step < 5,
         }"
       >
         <div class="stage-input"></div>

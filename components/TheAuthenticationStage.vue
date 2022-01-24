@@ -7,7 +7,7 @@
       از طریق یکی از پلتفرم های زیر نرم افزار های گوگل دو مرحله را فعال کنید.
     </p>
     <div
-      class="auth-box-container mx-auto mt-14 flex justify-between flex-wrap"
+      class="auth-box-container mx-auto mt-14 flex justify-center sm:justify-between flex-wrap"
     >
       <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
         <div class="auth-item-box bg-primary flex flex-col items-center">
@@ -55,7 +55,7 @@ export default {};
 
 <style scoped>
 .auth-box-container {
-  width: 637px;
+  max-width: 637px;
 }
 .base-auth-item {
   border: 2px solid #15ab89;

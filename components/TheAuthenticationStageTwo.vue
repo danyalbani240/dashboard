@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="mx-auto wtf flex items-center justify-center">
+    <div class="mx-auto wtf overflow-x-scroll flex items-center justify-center">
       <div class="bg-primary flex items-center">
         <img
           class="mx-6"

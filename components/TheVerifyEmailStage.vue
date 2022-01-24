@@ -11,7 +11,7 @@
         >مرحله بعدی</base-button
       >
     </div>
-    <div class="flex items-center justify-center mr-28">
+    <div class="md:flex hidden items-center justify-center mr-28">
       <img src="../assets/images/verifygoogle.svg" alt="" />
     </div>
   </div>
@@ -24,7 +24,7 @@ export default {};
 
 <style scoped BaseInput>
 .verify-stage {
-  width: 716px;
+  max-width: 716px;
   height: 380px;
   background: linear-gradient(
     91.44deg,
