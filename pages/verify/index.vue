@@ -5,41 +5,57 @@
     <div class="stages flex mt-8 justify-center flex-row-reverse">
       <div
         class="stage mx-2.5"
-        :class="{ active: step === 1, 'pass hidden lg:block': step > 1 }"
+        :class="{
+          'active sm:block': step === 1,
+          'pass hidden lg:block': step > 1,
+        }"
       >
         <div class="stage-input"></div>
         <p class="text-center mt-2 text-xs">کدملی</p>
       </div>
       <div
         class="stage mx-2.5"
-        :class="{ active: step === 2, 'pass hidden lg:block': step > 2 }"
+        :class="{
+          'active sm:block': step === 2,
+          'pass hidden lg:block': step > 2,
+          'hidden md:block': step < 2,
+        }"
       >
         <div class="stage-input"></div>
         <p class="text-center mt-2 text-xs">تایید شماره موبایل</p>
       </div>
-      <div class="stage mx-2.5" :class="{ active: step === 3, pass: step > 3 }">
+      <div
+        class="stage mx-2.5"
+        :class="{
+          'active sm:block': step === 3,
+          pass: step > 3,
+          'hidden md:block': step < 3 || step > 3,
+        }"
+      >
         <div class="stage-input"></div>
         <p class="text-center mt-2 text-xs">تایید پست الکترونیک</p>
       </div>
       <div
         class="stage mx-2.5"
         :class="{
-          active: step === 4,
+          'active sm:block': step === 4,
           pass: step > 4,
-          block: step > 1,
+          'md:block': step > 1,
           'hidden md:block': step == 1,
+          'hidden md:block': step < 4 || step > 4,
         }"
       >
         <div class="stage-input"></div>
         <p class="text-center mt-2 text-xs">گوگل دو مرحله ای</p>
       </div>
       <div
-        class="stage mx-2.5  "
+        class="stage mx-2.5"
         :class="{
-          active: step === 5,
+          'active sm:block': step === 5,
           pass: step > 5,
           block: step > 2,
           'hidden lg:block': step <= 2,
+          'hidden md:block': step < 5,
         }"
       >
         <div class="stage-input"></div>
