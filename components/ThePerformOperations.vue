@@ -55,14 +55,18 @@
       </div>
     </div>
     <div class="flex-1">
-      <p class="text-right">:مقدار واریزی</p>
+      <p v-if="withdarw == false" class="text-right">:مقدار واریزی</p>
+      <p v-else class="text-right">:مبلغ برداشتی</p>
       <div
         class="bg-primary flex deposit-value justify-between mx-auto flex-col items-center px-4 py-9"
       >
         <input type="text" />
         <p class="text-xs">حداقل مقدار قابل واریز:500,000 ریال</p>
         <p class="text-xs">حداکثر مقدار قابل واریز:500,000,000 ریال</p>
-        <base-button :bGreen="true"
+        <base-button v-if="withdarw ==false" :bGreen="true"
+          ><span class="text-white">انتقال درگاه پرداخت</span></base-button
+        >
+        <base-button style="background:#eb0020;" v-else 
           ><span class="text-white">انتقال درگاه پرداخت</span></base-button
         >
       </div>
@@ -72,7 +76,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    withdarw:{
+      type:Boolean,default:false
+    }
+  }
+};
 </script>
 
 <style scoped>
