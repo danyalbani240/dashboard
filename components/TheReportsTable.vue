@@ -31,7 +31,22 @@
             <td>{{ report.credit }}</td>
             <td>{{ report.payment }}</td>
             <td>{{ report.transactionNum }}</td>
-            <td>{{ report.transactionStatus === true ? "موفق" : "ناموفق" }}</td>
+            <td>
+              <div
+                class="flex justify-center flex-row-reverse"
+                v-if="report.transactionStatus === true"
+              >
+                <img src="../assets/images/deposit-token/success.svg" alt="" />
+                <span class="ml-7" style="color: #358535">موفق</span>
+              </div>
+              <div v-else class="flex flex-row-reverse justify-center">
+                <img
+                  src="../assets/images/deposit-token/consist-close.svg"
+                  alt=""
+                />
+                <span class="text-red-500 ml-7">ناموفق</span>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
