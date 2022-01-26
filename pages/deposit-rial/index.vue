@@ -30,6 +30,12 @@
         </div>
       </div>
       <ThePerformOperations />
+      <div class="btn-group flex mt-14">
+        <base-button class="mr-2.5" :next="true" bGreen="true"
+          >مرحله بعد</base-button
+        >
+        <base-button :prev="true">مرحله قبل</base-button>
+      </div>
     </div>
   </div>
 </template>
