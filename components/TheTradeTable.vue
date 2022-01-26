@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-x-auto">
-    <div class="flex flex-col trade-table sm:px-4 mt-8">
+    <div class="flex flex-col trade-table w-full sm:px-4 mt-8">
       <div class="flex justify-between flex-row-reverse py-3 table-header">
         <span class="flex-1 text-right">نام رمز ارز</span>
         <span class="flex-1 text-right">قیمت خرید</span>
@@ -41,8 +41,8 @@ export default {
   position: relative;
 }
 .trade-table {
-  max-width: 627px;
-  min-width: 500px;
+  /* max-width: 627px;
+  min-width: 500px; */
   background-color: #010e17;
   border: 1px solid rgba(21, 171, 137, 0.3);
   border-radius: 18px;
@@ -61,7 +61,7 @@ export default {
   );
 }
 @media (max-width: 640px) {
-  .trade-table{
+  .trade-table {
     min-width: 340px;
   }
 }
