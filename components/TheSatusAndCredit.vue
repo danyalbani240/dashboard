@@ -2,31 +2,35 @@
   <div class="mt-14">
     <div class="flex flex-wrap flex-row-reverse justify-around">
       <div class="flex-1 flex-col flex">
-      <div dir="rtl">
+        <div dir="rtl">
+          <base-part-header
+            dir="ltr"
+            class="flex-row"
+            :address="'usericon'"
+            :headName="'وضعیت حساب کاربری'"
+          />
 
-        <base-part-header dir="ltr" class=" flex-row"
-          :address="'usericon'"
-          :headName="'وضعیت حساب کاربری'"
-        />
-
-
-        <div
-          class="rounded-2xl flex flex-row px-6 sm:px-2 bg-primary z-10 user-stat mt-2.5"
-        >
-          <div class="flex flex-col">
-            <div class="text-right mt-6 sm:mt-11 sm:mr-5">
-              <p class="font-bold sm:text-lg text-sm">.شما در سطح پایه هستید</p>
-              <p class="mt-3 text-xs sm:text-base sm:w-auto w-48">
-                .با انجام دادن مراحل احراز هویت سطح خود را افزایش دهید
-              </p>
+          <div
+            class="rounded-2xl flex flex-row px-6 sm:px-2 bg-primary w-10/12 z-10 user-stat mt-2.5"
+          >
+            <div class="flex flex-col">
+              <div class="text-right mt-6 sm:mt-11 sm:mr-5">
+                <p class="font-bold sm:text-lg text-sm">
+                  .شما در سطح پایه هستید
+                </p>
+                <p class="mt-3 text-xs sm:text-base sm:w-auto w-48">
+                  .با انجام دادن مراحل احراز هویت سطح خود را افزایش دهید
+                </p>
+              </div>
+              <div class="sm:mt-12 mt-2.5"><base-progress-bar /></div>
             </div>
-            <div class="sm:mt-12 mt-2.5"><base-progress-bar /></div>
-          </div>
-          <div class="sm:mt-6 items-center sm:mr-12 flex-1 flex justify-end">
-            <img src="../assets/images/stat-hero.svg" alt="" />
+            <div
+              class="sm:mt-6 items-center sm:mr-12 flex-1 flex justify-center"
+            >
+              <img src="../assets/images/stat-hero.svg" alt="" />
+            </div>
           </div>
         </div>
-      </div>
       </div>
       <!-- card -->
       <div class="sm:mr-14 py-2 flex flex-col justify-center">
@@ -67,17 +71,18 @@ p {
 .user-stat {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(21, 171, 137, 0.3);
-  max-width: 795px;
+
   height: 210px;
 }
-@media only screen and (max-width: 600px){
-.user-stat{
-  height: 134px;
+@media only screen and (max-width: 600px) {
+  .user-stat {
+    height: 134px;
+  }
+  .user-stat img {
+    width: 63.87px;
+    height: 90px;
+  }
 }
-.user-stat img{
-  Width :63.87px;
-Height :90px;
-}}
 .user-stat::after {
   position: absolute;
   content: "";
