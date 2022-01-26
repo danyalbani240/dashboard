@@ -5,33 +5,49 @@
     </label>
     <!-- input for sms code -->
     <div v-if="code" class="sendcode-input flex flex-row-reverse items-center">
-      <input    
-      type="text"
-      :placeholder="place"
-      class="bg-primary  px-2 w-9/12"
-      :class="{'placeholder-Neutral-Gray': placeWhite && !placeBlack}"
-    />
-    <button class="bg-Neutral-Green1 -ml-1 w-3/12 text-center sendcode-button text-white h-full">ارسال کد:</button>
+      <input
+        type="text"
+        :placeholder="place"
+        class="bg-primary px-2 w-9/12"
+        :class="{
+          'placeholder-Neutral-Gray': placeWhite && !placeBlack,
+          'placeholder-grey': placeGrey,
+        }"
+        :dir="!placeGrey ? 'rtl' : 'ltr'"
+      />
+      <button
+        class="bg-Neutral-Green1 -ml-1 w-3/12 text-center sendcode-button text-white h-full"
+      >
+        ارسال کد:
+      </button>
     </div>
     <!-- input with verify icon -->
 
     <div class="relative" v-if="!!verify">
       <input
-      type="text"
-      :placeholder="place"
-      class="bg-primary w-full mt-1.5 px-2"
-      :class="{'placeholder-Neutral-Gray': placeWhite && !placeBlack}"
-    />
-    <div class="absolute verify-icon inline-block">
-      <img src="../../assets/images/verify.svg" alt="">
-    </div>
+        type="text"
+        :placeholder="place"
+        class="bg-primary w-full mt-1.5 px-2"
+        :class="{
+          'placeholder-Neutral-Gray': placeWhite && !placeBlack,
+          'placeholder-grey': placeGrey,
+        }"
+        :dir="!placeGrey ? 'rtl' : 'ltr'"
+      />
+      <div class="absolute verify-icon inline-block">
+        <img src="../../assets/images/verify.svg" alt="" />
+      </div>
     </div>
     <input
-    v-if="!verify && !code"
+      v-if="!verify && !code"
       type="text"
       :placeholder="place"
       class="bg-primary w-full mt-1.5 px-2"
-      :class="{'placeholder-Neutral-Gray': placeWhite && !placeBlack}"
+      :class="{
+        'placeholder-Neutral-Gray': placeWhite && !placeBlack,
+        'placeholder-grey': placeGrey,
+      }"
+      :dir="!placeGrey ? 'rtl' : 'ltr'"
     />
     <!-- 
       for the time when binding added
@@ -44,17 +60,17 @@
 <script>
 export default {
   props: {
-    code:{
-      type:Boolean,
-      required:false
+    code: {
+      type: Boolean,
+      required: false,
     },
-    verify:{
-      type:Boolean,
-      required:false
+    verify: {
+      type: Boolean,
+      required: false,
     },
     model: {
       type: String,
-      required:false
+      required: false,
     },
     place: {
       type: String,
@@ -75,15 +91,18 @@ export default {
     label: {
       type: String,
     },
-    placeWhite:{
-      type:Boolean,
-      default: true
+    placeWhite: {
+      type: Boolean,
+      default: true,
     },
-    placeBlack:{
-      type:Boolean,
-      default: false
-
-    }
+    placeBlack: {
+      type: Boolean,
+      default: false,
+    },
+    placeGrey: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -102,19 +121,26 @@ input {
 .w-174 {
   width: 174px;
 }
-.verify-icon{
+.verify-icon {
   left: 10px;
-    top: 55%;
-    transform: translateY(-50%);
+  top: 55%;
+  transform: translateY(-50%);
 }
-.sendcode-input{
+.sendcode-input {
   width: 376px;
   height: 40px;
   border-radius: 5px;
-
 }
-.sendcode-button{
+.sendcode-input input:focus {
+  outline: none;
+  border: 1px solid #15ab89;
+}
+.sendcode-button {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+.placeholder-grey::placeholder {
+  color: #2c2e35;
+  direction: ltr;
 }
 </style>
