@@ -79,10 +79,13 @@
             حداکثر مقدار قابل واریز:500,000,000 ریال
           </p>
           <base-button class="w-11/12" v-if="withdarw == false" :bGreen="true"
-            ><span class="text-white">انتقال درگاه پرداخت</span></base-button
+            ><span class="text-white">انتقال به درگاه پرداخت</span></base-button
           >
-          <base-button class="w-11/12" style="background: #eb0020" v-else
-            ><span class="text-white">انتقال درگاه پرداخت</span></base-button
+          <base-button
+            class="w-11/12 sell-btn transition-all"
+            style="background: #eb0020; border: none"
+            v-else
+            ><span class="text-white">ثبت درخواست</span></base-button
           >
         </div>
       </div>
@@ -102,6 +105,10 @@ export default {
 </script>
 
 <style scoped>
+.sell-btn:hover {
+  box-shadow: 0px 4px 10px rgba(184, 20, 20, 0.25);
+  transform: scale(1.0001);
+}
 .perform-operation {
   margin-top: 120px;
 
