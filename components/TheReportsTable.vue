@@ -85,7 +85,7 @@ thead {
   height: 60px;
 }
 tbody tr {
-  background-image: linear-gradient(0deg, #031f24 21.31%, #053130 78.69%);
+  background-image: linear-gradient(180deg, #031f24 21.31%, #053130 78.69%);
   height: 60px;
 }
 td {
@@ -141,7 +141,7 @@ tr td:last-of-type {
   padding-right: 5px;
 }
 tr.two {
-  background-image: linear-gradient(0deg, #097369 21.31%, #15ab88 78.69%);
+  background-image: linear-gradient(180deg, #097369 21.31%, #15ab88 78.69%);
 }
 .pag-item {
   width: 28px;
