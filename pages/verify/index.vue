@@ -137,7 +137,6 @@ export default {
   border-radius: 5px;
 }
 .stage-input::after {
-  background-image: url(../../assets/images/bulk-security-card.svg);
   content: "";
   position: absolute;
   width: 36px;
@@ -146,5 +145,20 @@ export default {
   left: 50%;
   top: -50%;
   transform: translate(-35%, -25%);
+}
+.stage:nth-of-type(1) .stage-input::after {
+  background-image: url(../../assets/images/bulk-security-card.svg);
+}
+.stage:nth-of-type(2) .stage-input::after {
+  background-image: url(../../assets/images/phone.svg);
+}
+.stage:nth-of-type(3) .stage-input::after {
+  background-image: url(../../assets/images/google.svg);
+}
+.stage:nth-of-type(4) .stage-input::after {
+  background-image: url(../../assets/images/2step.svg);
+}
+.stage:nth-of-type(5) .stage-input::after {
+  background-image: url(../../assets/images/verifyed.svg);
 }
 </style>
