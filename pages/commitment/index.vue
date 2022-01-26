@@ -36,8 +36,14 @@
     <div class="flex flex-wrap justify-evenly mt-9">
       <base-button
         dir="rtl"
-        class="flex items-center justify-center w-4/12 text-center"
+        @click="openFile"
+        class="flex items-center justify-center w-4/12 relative text-center"
       >
+        <input
+          type="file"
+          class="absolute w-full h-full file-input"
+          style="visibility: hidden"
+        />
         <img src="../../assets/images/bulk-import.svg" class="w-6" alt="" />
         <span class="mr-1.5 text-sm"> اپلود فایل تعهدنامه </span>
       </base-button>
@@ -64,6 +70,11 @@ import BaseButton from "~/components/Base/BaseButton.vue";
 import BaseListItem from "~/components/Base/BaseListItem.vue";
 export default {
   components: { BaseListItem, BaseButton },
+  methods: {
+    openFile() {
+      document.querySelector(".file-input").click();
+    },
+  },
 };
 </script>
 
