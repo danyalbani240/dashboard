@@ -43,6 +43,7 @@
           :linkOne="'رمز ارز'"
           :linkTwo="'ريالی'"
           @change="changeInventory"
+          :notOpposite="true"
         />
       </div>
       <base-inventory

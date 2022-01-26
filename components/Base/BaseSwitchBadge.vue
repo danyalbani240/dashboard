@@ -18,7 +18,7 @@
     </div>
     <div
       class="sell flex items-center text-center w-20 py-1 px-5 text-Neutral-Green1 rounded-2xl font-bold cursor-pointer"
-      :class="{ active: active === 2 }"
+      :class="{ active: active === 2, 'not-op ': !!notOpposite }"
       href=""
       @click="toggleActive"
     >
@@ -42,6 +42,10 @@ export default {
       type: Number,
       default: 1,
     },
+    notOpposite: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     toggleActive() {
@@ -57,6 +61,14 @@ export default {
 }
 .sell.active {
   background-image: linear-gradient(90.93deg, #730909 0%, #ab1542 100%);
+}
+.sell.not-op.active {
+  background-image: linear-gradient(
+    90.93deg,
+    #097369 0%,
+    #15ab88 100%
+  ) !important;
+  color: #010e17;
 }
 .badge-contain {
   border-radius: 17px;
