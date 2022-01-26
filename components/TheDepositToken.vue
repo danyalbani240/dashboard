@@ -1,5 +1,5 @@
 <template>
-  <div class="deposit-crypto flex flex-col px-3 mx-auto my-5">
+  <div class="deposit-crypto flex flex-col px-3 mx-auto sm:mx-0 my-5">
     <div
       class="flex flex-row-reverse flex-wrap-reverse sm:flex-nowrap justify-center"
     >
@@ -13,21 +13,17 @@
             <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
           </div>
           <div
-            class="name-input flex-1 relative -mr-1 z-10 rounded bg-primary"
-          ></div>
-        </div>
-        <div class="mt-5">
-          <p dir="rtl">شبکه</p>
-          <div
-            class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
-          ></div>
-          <div class="flex mt-3">
-            <base-badge name="TRX" />
-            <base-badge name="BTC" />
-            <base-badge name="ERC20" />
-            <base-badge name="TRC20" />
+            class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
+          >
+            <p>نام رمز ارز</p>
+            <div class="flex items-center px-2">
+              <img src="../assets/images/search-normal.svg" alt="" />
+              <div class="divider mx-2"></div>
+              <p class="text-xs">BTC</p>
+            </div>
           </div>
         </div>
+        <BaseRadio :options="['TRX', 'BTC', 'ERC20', 'TRC20']" label="شبکه" />
       </div>
       <div
         class="bg-primary flex-1 sm:flex-none items-center qr-code flex flex-col mx-auto sm:mr-5 mt-8 px-5 py-4"
