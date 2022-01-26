@@ -1,151 +1,105 @@
 <template>
-<div class="flex-1 flex flex-col items-end" >
+  <div class="flex-1 flex flex-col items-end">
     <base-part-header :address="'insidereport'" headName="برداشت رمز ارز" />
 
-
-  <div class="harvest-crypto harvest-crypto flex mx-auto flex-col  my-5">
-    <div class="flex flex-row-reverse items-center">
-      <div
-        class="w-16 h-16 rounded-full crypto-logo flex items-center justify-center"
-      >
-        <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
-      </div>
-      <div
-        class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
-      >
-        <p>نام رمز ارز</p>
-        <div class="flex items-center px-2">
-          <img src="../assets/images/search-normal.svg" alt="" />
-          <div class="divider mx-2"></div>
-          <p class="text-xs">BTC</p>
-        </div>
-      </div>
-    </div>
-    <div class="mt-5">
-      <p dir="rtl">شبکه:</p>
-      <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-end"
-      >
-        <div class="flex text-sm">
-          <img
-            class="mx-2.5"
-            src="../assets/images/deposit-token/consist-close.svg"
-            alt=""
-          />
-          <p class="opacity-20">ERC20</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex mt-3">
-      <base-badge name="TRX" />
-      <base-badge name="BTC" />
-      <base-badge name="ERC20" />
-      <base-badge name="TRC20" />
-    </div>
-    <div class="mt-5">
-      <p dir="rtl">نواع انتقال:</p>
-      <div
-        class="mt-1.5 flex flex-row-reverse items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
-      >
-        <div class="flex text-sm">
-          <img
-            class="mx-2.5"
-            src="../assets/images/deposit-token/consist-close.svg"
-            alt=""
-          />
-          <p class="opacity-20">ERC20</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex mt-3">
-      <base-badge name="Fast" />
-      <base-badge name="Trade" />
-    </div>
-    <div class="mt-5">
-      <p dir="rtl">فی شبکه:</p>
-      <div
-        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-between"
-      >
-        <div class="flex text-sm">
-          <img
-            class="mx-2.5"
-            src="../assets/images/deposit-token/consist-close.svg"
-            alt=""
-          />
-          <p class="opacity-20">ثابت</p>
-        </div>
-        <div class="flex items-center">
-          <div class="divider"></div>
-          <p class="mx-7 text-sm">0.000181025 btc</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex mt-3 flex-row-reverse">
-      <base-badge name="ثابت" />
-      <base-badge name="متغیر" />
-    </div>
-    <div class="mt-5">
-      <p dir="rtl">آدرس انتقال:</p>
-      <div
-        class="mt-1.5 flex items-center rounded -mr-2 pl-3 bg-primary name-input w-full"
-      >
-        <img class="mr-1" src="../assets/images/document-copy.svg" alt="" />
-        <p class="opacity-20 overflow-hidden text-xs">
-          afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiaudgUQY8TWEUEV7uwgdgfoiijad
-        </p>
-      </div>
-    </div>
-    <div class="mt-5">
-      <p dir="rtl">مقدار برداشت:</p>
-      <div
-        class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-between"
-      >
-        <div style="color: #14b82e" class="ml-2">MAX</div>
-        <div class="flex items-center">
-          <div class="divider mr-1"></div>
-          <span class="opacity-20 mr-8">5.000.000</span>
-          <p class="mr-1.5">:مبلغ نهایی</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex sm:justify-between mt-8 flex-wrap justify-center">
-      <div
-        class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
-      >
-        <div class="h-10 w-10 flex justify-center items-center relative z-10">
-          <img src="/_nuxt/assets/images/walletcheck.svg" alt="" />
-        </div>
-        <div
-          class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
-        >
-          <span class="inline-block">موجودی اصلی</span>
-          <span>96.222</span>
-        </div>
-      </div>
-      <div
-        class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
-      >
-        <div class="h-10 w-10 flex justify-center items-center relative z-10">
-          <img src="/_nuxt/assets/images/walletcheck.svg" alt="" />
-        </div>
-        <div
-          class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
-        >
-          <span class="inline-block">موجودی اصلی</span>
-          <span>96.222</span>
-        </div>
-      </div>
-    </div>
-    <base-button class="w-full mt-7" :bGreen="true"
-      ><span>برداشت</span></base-button
+    <div
+      class="harvest-crypto harvest-crypto flex mx-auto sm:mx-0 flex-col my-5"
     >
-  </div>
+      <div class="flex flex-row-reverse items-center">
+        <div
+          class="w-16 h-16 rounded-full crypto-logo flex items-center justify-center"
+        >
+          <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
+        </div>
+        <div
+          class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
+        >
+          <p>نام رمز ارز</p>
+          <div class="flex items-center px-2">
+            <img src="../assets/images/search-normal.svg" alt="" />
+            <div class="divider mx-2"></div>
+            <p class="text-xs">BTC</p>
+          </div>
+        </div>
+      </div>
+      <BaseRadio :options="['TRX', 'BTC', 'ERC20', 'TRC20']" label="شبکه" />
+      <BaseRadio :options="['Fast', 'Trade']" label="نوع انتقال" />
+      <BaseRadio :options="['متغیر', 'ثابت']" label="فی شبکه" />
+
+      <div class="mt-5">
+        <p dir="rtl">آدرس انتقال:</p>
+        <div
+          @click="copyText"
+          class="mt-1.5 flex cursor-pointer items-center rounded -mr-2 pl-3 bg-primary name-input w-full"
+        >
+          <img class="mr-1" src="../assets/images/document-copy.svg" alt="" />
+          <p class="opacity-20 overflow-hidden text-xs">
+            afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiaudgUQY8TWEUEV7uwgdgfoiijad
+          </p>
+        </div>
+      </div>
+      <div class="mt-5">
+        <p dir="rtl">مقدار برداشت:</p>
+        <div
+          class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-between"
+        >
+          <div style="color: #14b82e" class="ml-2">MAX</div>
+          <div class="flex items-center">
+            <div class="divider mr-1"></div>
+            <span class="opacity-20 mr-8">5.000.000</span>
+            <p class="mr-1.5">:مبلغ نهایی</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex sm:justify-between mt-8 flex-wrap justify-center">
+        <div
+          class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
+        >
+          <div class="h-10 w-10 flex justify-center items-center relative z-10">
+            <img src="/_nuxt/assets/images/walletcheck.svg" alt="" />
+          </div>
+          <div
+            class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
+          >
+            <span class="inline-block">موجودی اصلی</span>
+            <span>96.222</span>
+          </div>
+        </div>
+        <div
+          class="h-10 flex flex-row-reverse items-center invent-primary justify-between"
+        >
+          <div class="h-10 w-10 flex justify-center items-center relative z-10">
+            <img src="/_nuxt/assets/images/walletcheck.svg" alt="" />
+          </div>
+          <div
+            class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
+          >
+            <span class="inline-block">موجودی اصلی</span>
+            <span>96.222</span>
+          </div>
+        </div>
+      </div>
+      <base-button class="w-full mt-7 mb-7" :bGreen="true"
+        ><span class="text-white">برداشت</span></base-button
+      >
+    </div>
   </div>
 </template>
 
 <script>
-import BasePartHeader from './Base/BasePartHeader.vue';
-export default {};
+import BasePartHeader from "./Base/BasePartHeader.vue";
+export default {
+  methods: {
+    data() {
+      return {
+        qr: "afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiaudgUQY8TWEUEV7uwgdgfoiijad",
+      };
+    },
+    copyText() {
+      window.navigator.clipboard.writeText(this.qr);
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -198,8 +152,8 @@ export default {};
   width: 189px;
   height: 32px;
 }
-@media only screen and (max-width: 570px){
-  .harvest-crypto{
+@media only screen and (max-width: 570px) {
+  .harvest-crypto {
     width: 340px;
     padding: 1px;
     padding-top: auto;
