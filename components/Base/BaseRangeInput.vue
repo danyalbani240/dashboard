@@ -1,17 +1,52 @@
 <template>
   <div class="range-input">
     <div
-      @click.self="savePoint(`${$event.offsetX}px`, $event)"
+      @click.self="
+        savePoint(
+          `${($event.offsetX / $event.target.offsetWidth) * 100}`,
+          $event
+        )
+      "
       class="relative cursor-pointer range-bar w-full mt-8 bg-primary rounded-full"
     >
-      <div class="absolute z-20" @click.stop="savePoint('0%', $event)">0</div>
-      <div class="absolute z-20" @click.stop="savePoint('20%', $event)">20</div>
-      <div class="absolute z-20" @click.stop="savePoint('50%', $event)">50</div>
-      <div class="absolute z-20" @click.stop="savePoint('70%', $event)">70</div>
-      <div class="absolute z-20" @click.stop="savePoint('100%', $event)">
+      <div
+        :class="{ active: point >= 0 }"
+        class="absolute z-20"
+        @click="savePoint('0', $event)"
+      >
+        0
+      </div>
+      <div
+        :class="{ active: point >= 20 }"
+        class="absolute z-20"
+        @click="savePoint('20', $event)"
+      >
+        20
+      </div>
+      <div
+        :class="{ active: point >= 50 }"
+        class="absolute z-20"
+        @click="savePoint('50', $event)"
+      >
+        50
+      </div>
+      <div
+        :class="{
+          active: point >= 70,
+        }"
+        class="absolute z-20"
+        @click="savePoint('70', $event)"
+      >
+        70
+      </div>
+      <div
+        :class="{ active: point >= 100 }"
+        class="absolute z-20"
+        @click="savePoint('100', $event)"
+      >
         100
       </div>
-      <div class="p-color z-10"></div>
+      <div @click.prevent="" class="p-color z-10"></div>
     </div>
   </div>
 </template>
@@ -19,12 +54,17 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      point: 0,
+    };
   },
   computed: {},
   methods: {
-    savePoint(e) {
-      document.querySelector(".p-color").style.width = e;
+    savePoint(e, eve) {
+      this.point = e;
+
+      document.querySelector(".p-color").style.width = e + "%";
+      console.log(this.point);
     },
   },
 };
@@ -36,8 +76,16 @@ export default {
   height: 10px;
 }
 .range-input.buy .range-bar > div:not(:last-child) {
+  background: linear-gradient(
+    91.44deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(196, 196, 196, 0.06) 100%
+  );
+}
+.range-input.buy .range-bar > div.active {
   background: linear-gradient(91.44deg, #15ab89 0%, #09736a 100%);
 }
+
 .range-input.buy .p-color {
   background: linear-gradient(270deg, rgba(1, 14, 23, 0) 0%, #15ab89 100%);
 }
