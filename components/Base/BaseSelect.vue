@@ -60,32 +60,31 @@ export default {
 .custom-select {
   position: relative;
   width: 100%;
-  text-align: left;
+  text-align: center;
   outline: none;
-  height: 47px;
-  line-height: 47px;
+  height: 42px;
+  line-height: 42px;
 }
 .custom-select .selected {
-  border-bottom: 1px solid #666666;
-  padding-left: 1em;
+  color: #ebebeb;
+
   cursor: pointer;
   user-select: none;
 }
 .custom-select .selected:after {
   position: absolute;
   content: "";
-  top: 22px;
-  right: 1rem;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-color: #e0e0e0 transparent transparent transparent;
+  top: 14px;
+  right: 4px;
+  width: 17px;
+  height: 17px;
+  background-image: url(../../assets/images/downArrow.svg);
 }
 .custom-select .items {
   border-radius: 0px 0px 6px 6px;
   overflow: hidden;
   position: absolute;
-  background-color: transparent;
+  background-color: #010e17;
   left: 0;
   right: 0;
   z-index: 1;
