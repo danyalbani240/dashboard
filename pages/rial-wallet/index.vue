@@ -4,12 +4,14 @@
     <base-part-header :address="'insidereport'" headName="کیف پول ریالی" />
     <div class="flex flex-col items-end mt-8">
       <div class="create-acc flex flex-row-reverse justify-center items-center">
-        <img src="../../assets/images/trade-button.svg" alt="">
+        <img src="../../assets/images/trade-button.svg" alt="" />
         <span>ایجاد حساب</span>
       </div>
-      <div class="relative mt-16">
+      <div class="relative w-full mt-16" dir="rtl">
         <div class="absolute card-bg"></div>
-        <div class="bg-primary mx-auto rial-wallet-card px-2 sm:px-8 py-4">
+        <div
+          class="bg-primary mx-auto sm:mx-0 w-11/12 sm:w-6/12 rial-wallet-card px-2 sm:px-8 py-4"
+        >
           <div class="flex justify-center flex-col items-center">
             <div class="w-24 flag h-24 flex items-center justify-center">
               <img src="../../assets/images/iran-flag.svg" alt="" />
@@ -56,7 +58,6 @@ export default {};
 
 <style>
 .rial-wallet-card {
-  width: 587px;
   height: 389px;
   background-image: url(../../assets/images/rail-wallet-card.svg);
 
@@ -123,9 +124,9 @@ export default {};
   /* position: relative; */
   z-index: 1;
 }
-@media (max-width:640px){
-  .rial-wallet-card {
-    width: 91.999%;
+@media (max-width: 640px) {
+  .card-bg {
+    width: 320px;
   }
 }
 </style>
