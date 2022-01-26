@@ -9,7 +9,9 @@
     <div
       class="auth-box-container mx-auto mt-14 flex justify-center sm:justify-between flex-wrap"
     >
-      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
+      <div
+        class="base-auth-item cursor-pointer flex items-center justify-center my-7"
+      >
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
             <img src="../assets/images/cafebazar.svg" alt="" />
@@ -17,7 +19,9 @@
           <p class="mt-7">دانلود از پلتفرم بازار</p>
         </div>
       </div>
-      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
+      <div
+        class="base-auth-item cursor-pointer flex items-center justify-center my-7"
+      >
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
             <img src="../assets/images/googleplaylogo.svg" alt="" />
@@ -25,15 +29,21 @@
           <p class="mt-7">دانلود از پلتفرم گوگل پلی</p>
         </div>
       </div>
-      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
+      <div
+        class="base-auth-item cursor-pointer flex items-center justify-center my-7"
+      >
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
             <img src="../assets/images/googleauthenticator.svg" alt="" />
           </div>
-          <p class="mt-7 text-center" style="width:160px;">استفاده از اکستنش گوگل دو مرحله ای</p>
+          <p class="mt-7 text-center" style="width: 160px">
+            استفاده از اکستنش گوگل دو مرحله ای
+          </p>
         </div>
       </div>
-      <div class="base-auth-item cursor-pointer flex items-center justify-center my-7">
+      <div
+        class="base-auth-item cursor-pointer flex items-center justify-center my-7"
+      >
         <div class="auth-item-box bg-primary flex flex-col items-center">
           <div class="mt-16">
             <img src="../assets/images/applestore.svg" alt="" />
@@ -42,9 +52,17 @@
         </div>
       </div>
     </div>
-    <div class="btn-group mt-14">
-      <base-button  @click="$emit('getPass')">مرحله بعد</base-button>
-      <base-button @click="$emit('getBack')" bGreen="true">مرحله قبل</base-button>
+    <div class="btn-group flex mt-14">
+      <base-button
+        @click="$emit('getPass')"
+        class="mr-2.5"
+        :next="true"
+        bGreen="true"
+        >مرحله بعد</base-button
+      >
+      <base-button :prev="true" @click="$emit('getBack')"
+        >مرحله قبل</base-button
+      >
     </div>
   </div>
 </template>
@@ -66,8 +84,12 @@ export default {};
     rgba(196, 196, 196, 0.06) 100%
   );
   width: 282px;
-
+  transition: all 0.2s ease;
   height: 282px;
+}
+.base-auth-item:hover {
+  transform: scale(1.1);
+  backdrop-filter: blur(12px);
 }
 .auth-item-box {
   background-image: url(../assets/images/auth-item-box-bg.svg);

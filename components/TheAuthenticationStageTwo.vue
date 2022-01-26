@@ -18,8 +18,11 @@
         </div>
       </div>
     </div>
-    <div class="mx-auto wtf overflow-x-scroll flex items-center justify-center">
-      <div class="bg-primary flex items-center">
+    <div class="mx-auto wtf overflow-hidden flex items-center justify-center">
+      <div
+        class="bg-primary flex cursor-pointer items-center"
+        @click="copyText"
+      >
         <img
           class="mx-6"
           src="../assets/images/bulk-documnet-copy.svg"
@@ -30,15 +33,34 @@
         </p>
       </div>
     </div>
-    <div class="btn-group mt-14">
-      <base-button @click="$emit('getPass')">مرحله بعد</base-button>
-      <base-button @click="$emit('getBack')" bGreen="true">مرحله قبل</base-button>
-    </div> 
+    <div class="btn-group flex mt-14">
+      <base-button
+        @click="$emit('getPass')"
+        class="mr-2.5"
+        :next="true"
+        bGreen="true"
+        >مرحله بعد</base-button
+      >
+      <base-button :prev="true" @click="$emit('getBack')"
+        >مرحله قبل</base-button
+      >
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      qr: "afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiasdfghfgsdfgs",
+    };
+  },
+  methods: {
+    copyText() {
+      window.navigator.clipboard.writeText(this.qr);
+    },
+  },
+};
 </script>
 
 <style scoped>
