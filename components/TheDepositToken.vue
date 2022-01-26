@@ -29,7 +29,10 @@
         class="bg-primary flex-1 sm:flex-none items-center qr-code flex flex-col mx-auto sm:mr-5 mt-8 px-5 py-4"
       >
         <img src="../assets/images/qr-code.svg" alt="" />
-        <div @click="copyText" class="mt-5 flex items-center justify-center">
+        <div
+          @click="copyText"
+          class="mt-5 flex cursor-pointer items-center justify-center"
+        >
           <img src="../assets/images/bulk-documnet-copy.svg" alt="" />
           <p style="font-size: 10px">asndfoshdohofshoushiou</p>
         </div>
