@@ -53,12 +53,7 @@
           <div class="flex flex-col mt-6">
             <p dir="rtl">انتخاب ارز ارسالی:</p>
             <div class="flex flex-row-reverse crypto-send bg-primary">
-              <div
-                class="h-full flex justify-evenly px-6 cursor-pointer items-center"
-              >
-                <span class="mr-1">IRR</span>
-                <img src="../assets/images/downArrow.svg" />
-              </div>
+              <BaseSelect :options="['IRR']" />
             </div>
           </div>
           <div class="flex flex-col mt-6">
