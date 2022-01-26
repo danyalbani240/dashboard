@@ -1,5 +1,8 @@
 <template>
-  <div class="justify-center items-center flex text-base mx-2">
+  <div
+    @click="$emit('click', $event)"
+    class="justify-center cursor-pointer items-center flex text-base mx-2"
+  >
     {{ name }}
   </div>
 </template>
