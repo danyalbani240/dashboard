@@ -8,7 +8,7 @@
   >
     <nav
       :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
-      class="h-full fixed right-0 top-0 min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden"
+      class="fixed right-0 top-0 overflow-y-visible min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden"
     >
       <div
         class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
@@ -35,7 +35,7 @@
         />
       </div>
       <div class="relative cursor-pointer pr-5 logout">
-        <div class="flex flex-row-reverse items-center">
+        <div class="flex flex-row-reverse pt-2 pb-2 items-center">
           <img src="~/assets/images/sidebar/logouticon.svg" alt="" />
           <p class="text-gray-300 text-xs">خروج از حساب</p>
         </div>
@@ -137,7 +137,6 @@ export default {
     toggleSidebar(e) {
       this.isOpen = !this.isOpen;
       e.currentTarget.classList.toggle("closed");
-      
     },
   },
 };
@@ -145,7 +144,7 @@ export default {
 
 <style>
 nav {
-  transition: width 1s ease-in-out;
+  transition: width 0.6s ease;
   border-radius: 110px 0 0 0;
   box-shadow: 0px 4px 4px rgba(21, 171, 137, 0.5);
 }
