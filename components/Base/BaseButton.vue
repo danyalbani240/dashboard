@@ -1,6 +1,6 @@
 <template>
   <button
-  @click="$emit('click', $event)"
+    @click="$emit('click', $event)"
     :class="{
       'bg-button-gradient': bGreen,
       'border-bg': bTrans,
@@ -8,9 +8,16 @@
       sell: sell,
       buy: buy,
     }"
-    class="px-9 py-2 rounded-md"
+    class="px-9 py-2 rounded-md transition-all flex justify-center items-center"
   >
+    <img v-if="next" src="../../assets/images/next.svg" class="mr-1.5 next" />
     <slot></slot>
+    <img
+      v-if="prev"
+      src="../../assets/images/prev.svg"
+      class="ml-1.5 prev"
+      alt=""
+    />
   </button>
 </template>
 
@@ -37,6 +44,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    next: {
+      type: Boolean,
+      default: false,
+    },
+    prev: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -45,6 +60,21 @@ export default {
 .bg-button-gradient {
   background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
   color: #010e17;
+}
+.bg-button-gradient:hover {
+  background: #010e17;
+  color: white;
+}
+.bg-button-gradient:hover .next {
+  filter: invert(100%);
+}
+button:hover {
+  background-image: linear-gradient(90.93deg, #097369 0%, #15ab88 100%);
+  color: #010e17;
+}
+button:hover .prev {
+  fill: #000;
+  filter: brightness(0);
 }
 .border-bg {
   border: 1px solid #15ab89;
