@@ -1,19 +1,24 @@
 <template>
   <div class="flex flex-row-reverse mt-8 flex-wrap">
-    <div class="flex flex-1 flex-col">
-      <base-part-header
-        :headName="'آخرین فعالیت ها'"
-        :address="'lastactivity'"
-      />
-      <div class="flex mt-2.5 flex-row-reverse flex-1">
-        <div class="bg-primary rounded-2xl last-do flex w-full justify-center">
-          <div class="flex flex-col items-center mt-20">
-            <div
-              class="icon-conatiner inline-block rounded-md icon-container p-1.5 mb-2.5"
-            >
-              <img src="../assets/images/infobox.svg" alt="" />
+    <div class="relative flex-1">
+      <div class="absolute do-bg rounded-full overflow-hidden z-50"></div>
+      <div class="flex flex-1 flex-col">
+        <base-part-header
+          :headName="'آخرین فعالیت ها'"
+          :address="'lastactivity'"
+        />
+        <div class="flex mt-2.5 flex-row-reverse flex-1">
+          <div
+            class="bg-primary rounded-2xl last-do bg-contain flex w-full justify-center"
+          >
+            <div class="flex flex-col items-center mt-20">
+              <div
+                class="icon-conatiner inline-block rounded-md icon-container p-1.5 mb-2.5"
+              >
+                <img src="../assets/images/infobox.svg" alt="" />
+              </div>
+              <p style="color: #15ab89">اطلاعاتی موجود نیست</p>
             </div>
-            <p style="color: #15ab89">اطلاعاتی موجود نیست</p>
           </div>
         </div>
       </div>
@@ -21,7 +26,12 @@
     <div class="xl:mr-4 flex-1">
       <div class="flex flex-row-reverse justify-between items-center">
         <base-part-header :headName="'سفارشات'" :address="'shopingcart'" />
-        <base-switch-badge @change="changeOrders" :active="ordersActive" linkOne="خرید" linkTwo="فروش" />
+        <base-switch-badge
+          @change="changeOrders"
+          :active="ordersActive"
+          linkOne="خرید"
+          linkTwo="فروش"
+        />
       </div>
       <the-orders-table class="w-full" :buy="ordersActive === 1" />
     </div>
@@ -51,7 +61,7 @@ export default {
   data() {
     return {
       inventoryActive: 1,
-      ordersActive:1,
+      ordersActive: 1,
       orders: [],
       inventory: [
         {
@@ -110,6 +120,7 @@ export default {
   border: 1px solid rgba(21, 171, 137, 0.3);
   box-sizing: border-box;
   box-shadow: 0px 10px 16px rgba(21, 171, 137, 0.1);
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.5));
 }
 
 a.buy.active {
@@ -133,5 +144,15 @@ a.sell {
   position: absolute;
   bottom: 0;
   background: linear-gradient(270deg, #010e17 0%, #15ab89 51.04%, #010e17 100%);
+}
+.do-bg {
+  background: #15ab89;
+  opacity: 0.5;
+  filter: blur(80px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 167px;
+  height: 159px;
 }
 </style>
