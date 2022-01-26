@@ -121,7 +121,7 @@ export default {
 table {
   min-width: 330px;
   height: 306px;
-  background: linear-gradient(
+  background-image: linear-gradient(
     91.44deg,
     rgba(255, 255, 255, 0.18) 0%,
     rgba(196, 196, 196, 0.06) 100%
@@ -132,12 +132,11 @@ table tr {
 }
 
 tr {
-  background-color: #15ab8886;
   text-align: center;
 }
 tr:nth-child(even) {
   background-image: none;
-  background-color: transparent !important;
+  background: #010e17;
 }
 
 tr:first-child {
