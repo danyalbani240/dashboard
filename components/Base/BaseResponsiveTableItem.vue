@@ -1,10 +1,9 @@
 <template>
   <div
-    class="table-item bg-primary w-full flex-col flex justify-between"
+    class="table-item-res bg-primary w-full flex-col flex justify-between"
     dir="rtl"
-
   >
-    <div  class="flex justify-between text-xs"  v-for="item in row">
+    <div class="flex justify-between text-xs" v-for="item in row">
       <p>{{ item.title }}:</p>
       <p>{{ item.value }}</p>
     </div>
@@ -23,7 +22,7 @@ export default {
 </script>
 
 <style>
-.table-item {
+.table-item-res {
   height: 220px;
   padding-right: 13px;
   padding-left: 9px;
