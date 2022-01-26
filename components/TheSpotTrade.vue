@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-8">
+  <div class="mt-8 w-6/12">
     <base-part-header :address="'insidereport'" headName="اسپات معاملات" />
 
-    <the-trade-table />
+    <the-trade-table class="w-full" />
   </div>
 </template>
 
