@@ -3,7 +3,12 @@
     <div class="flex justify-between flex-row-reverse mt-10">
       <base-part-header :address="'insidereport'" headName="گزارش واریزی ها" />
 
-      <img src="../assets/images/refresh.svg" @click.prevent="" class="cursor-pointer" alt="" />
+      <img
+        src="../assets/images/refresh.svg"
+        @click.prevent=""
+        class="cursor-pointer"
+        alt=""
+      />
     </div>
     <div class="overflow-x-auto">
       <table class="bg-opacity-50 w-full mt-3.5">
@@ -46,9 +51,11 @@
       </div>
       <img src="../assets/images/previousicon.svg" alt="" />
     </div>
-    <div class="btn-group mt-14">
-      <base-button>مرحله بعد</base-button>
-      <base-button :bGreen="true">مرحله قبل</base-button>
+    <div class="btn-group flex mt-14">
+      <base-button class="mr-2.5" :next="true" bGreen="true"
+        >مرحله بعد</base-button
+      >
+      <base-button :prev="true">مرحله قبل</base-button>
     </div>
   </div>
 </template>
