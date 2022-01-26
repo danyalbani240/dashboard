@@ -108,15 +108,18 @@ export default {
         // spaceBetween: 30,
         // grabCursor: true,
         freeMode: true,
-            
-        
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+
         slidesPerGroup: 2,
         breakpoints: {
           1300: {
             slidesPerView: 4,
             spaceBetween: 10,
             slidesPerGroup: 2,
-            freeMode:false,
+            freeMode: false,
           },
           1200: {
             slidesPerView: 4,
