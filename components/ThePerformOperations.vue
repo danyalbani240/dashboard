@@ -39,7 +39,7 @@
             6280 2313 5761 1705
           </p>
           <div class="flex flex-row-reverse justify-between mt-6">
-            <p style="color: #2c2e35">عرفات علیزاده</p>
+            <p style="color: #2c2e35">ن علیزاده</p>
             <div style="right: 1rem" class="flex relative">
               <img src="../assets/images/updowncarddownbutton.svg" alt="" />
               <div class="flex flex-row-reverse">
@@ -63,7 +63,7 @@
         <p v-if="withdarw == false" class="text-right">:مقدار واریزی</p>
         <p v-else class="text-right">:مبلغ برداشتی</p>
         <div
-          class="bg-primary flex deposit-value justify-between mx-auto flex-col items-center px-4 py-9"
+          class="bg-primary flex deposit-value justify-between mx-auto flex-col items-center px-4 py-9 mt-3"
         >
           <base-input class="w-11/12" />
           <p
