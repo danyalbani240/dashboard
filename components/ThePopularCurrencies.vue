@@ -115,9 +115,21 @@ export default {
 
         slidesPerGroup: 2,
         breakpoints: {
+          1600: {
+            slidesPerView: 4,
+            spaceBetween: -200,
+            slidesPerGroup: 2,
+            freeMode: false,
+          },
+          1450: {
+            slidesPerView: 4,
+            spaceBetween: -100,
+            slidesPerGroup: 2,
+            freeMode: false,
+          },
           1300: {
             slidesPerView: 4,
-            spaceBetween: 10,
+            spaceBetween: 80,
             slidesPerGroup: 2,
             freeMode: false,
           },
