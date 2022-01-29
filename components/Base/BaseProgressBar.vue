@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row justify-end items-center">
     <div
-      class="w-96 h-5 relative hidden sm:block progress-bar rounded-2xl mr-5"
+      class="w-96 h-5 flex-1 relative hidden sm:block progress-bar rounded-2xl mr-5"
     >
       <div
         class="absolute flex justify-center text-sm progress w-6/12 h-full rounded-2xl text-primary"
