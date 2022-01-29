@@ -11,7 +11,7 @@
     <div v-swiper:mySwiper="options">
       <div class="swiper-wrapper flex justify-between">
         <base-list-popular-item
-          class="my-1 swiper-slide"
+          class="my-1 swiper-slide mx-auto"
           v-for="(coin, index) in coins"
           :key="coin.short"
           :short="coin.short"
@@ -115,6 +115,12 @@ export default {
 
         slidesPerGroup: 2,
         breakpoints: {
+          1800: {
+            slidesPerView: 4,
+            spaceBetween: -400,
+            slidesPerGroup: 2,
+            freeMode: false,
+          },
           1600: {
             slidesPerView: 4,
             spaceBetween: -200,
