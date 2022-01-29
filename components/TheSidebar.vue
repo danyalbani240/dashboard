@@ -5,42 +5,51 @@
       'sm:static': closed,
     }"
     class="bg-primary sm:static sm:z-auto sm:bg-opacity-100 z-40 sm:h-auto sm:w-auto transition-all"
+    @click.self="$store.commit('sidebar/closeSidebar')"
   >
-    <nav
+    <div
+      class="relative transition-all"
       :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
-      class="fixed right-0 top-0 overflow-y-visible min-h-screen flex flex-col sm:relative bg-primary overflow-x-hidden"
     >
-      <div
-        class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
+      <nav
+        :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
+        class="fixed z-50 right-0 top-0 overflow-y-visible min-h-screen flex flex-col bg-primary overflow-x-hidden"
       >
-        <div class="flex-1 sm:hidden flex flex-row-reverse pr-5">
-          <the-sidebar-toggler />
+        <div
+          class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
+        >
+          <div class="flex-1 sm:hidden flex flex-row-reverse pr-5">
+            <the-sidebar-toggler
+              class="transition-all"
+              :class="{ rotated: !closed }"
+            />
+          </div>
+          <img
+            class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
+            src="../assets/images/icon.svg"
+            alt="novintex"
+          />
         </div>
-        <img
-          class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
-          src="../assets/images/icon.svg"
-          alt="novintex"
-        />
-      </div>
-      <div class="flex-1 pr-1 links mt-6">
-        <base-navitem
-          v-for="navItem in navItems"
-          :key="navItem.name"
-          :name="navItem.name"
-          :address="navItem.address"
-          :linkAddress="navItem.linkAddress"
-          :active="navItem.active"
-          :dropdown="navItem.dropdown"
-          :closed="true"
-        />
-      </div>
-      <div class="relative cursor-pointer pr-5 logout">
-        <div class="flex flex-row-reverse pt-2 pb-2 items-center">
-          <img src="~/assets/images/sidebar/logouticon.svg" alt="" />
-          <p class="text-gray-300 text-xs">خروج از حساب</p>
+        <div class="flex-1 pr-1 links mt-6">
+          <base-navitem
+            v-for="navItem in navItems"
+            :key="navItem.name"
+            :name="navItem.name"
+            :address="navItem.address"
+            :linkAddress="navItem.linkAddress"
+            :active="navItem.active"
+            :dropdown="navItem.dropdown"
+            :closed="true"
+          />
         </div>
-      </div>
-    </nav>
+        <div class="relative cursor-pointer pr-5 logout">
+          <div class="flex flex-row-reverse pt-2 pb-2 items-center">
+            <img src="~/assets/images/sidebar/logouticon.svg" alt="" />
+            <p class="text-gray-300 text-xs">خروج از حساب</p>
+          </div>
+        </div>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -178,5 +187,8 @@ nav {
   nav {
     border-radius: 20px 0 0;
   }
+}
+.rotated {
+  transform: rotate(90deg);
 }
 </style>
