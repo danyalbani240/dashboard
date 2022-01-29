@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-row-reverse mt-8 flex-wrap">
-    <div class="relative flex-1">
+    <div class="relative hidden md:block flex-1">
       <div class="absolute do-bg rounded-full overflow-hidden z-50"></div>
       <div class="flex flex-1 flex-col">
         <base-part-header
@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="xl:mr-4 flex-1">
+    <div class="xl:mr-4 my-6 md:my-0 flex-1">
       <div class="flex flex-row-reverse justify-between items-center">
         <base-part-header :headName="'سفارشات'" :address="'shopingcart'" />
         <base-switch-badge
