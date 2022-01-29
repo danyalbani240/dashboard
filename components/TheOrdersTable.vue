@@ -57,7 +57,7 @@
     >
       <thead>
         <tr class="text-white justify-between">
-          <th class="rounded-tr-2xl">راز ارسالی</th>
+          <th class="rounded-tr-2xl">ارز ارسالی</th>
           <th>ارز دریافتی</th>
           <th class="rounded-tl-2xl">تاریخ انجام</th>
         </tr>
@@ -115,8 +115,8 @@ export default {
 </script>
 
 <style scoped>
-.sell tr {
-  background-image: linear-gradient(90.93deg, #730909 0%, #ab1542 100%);
+.sell tr td {
+  color: #ab1542;
 }
 table {
   min-width: 330px;
