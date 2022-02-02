@@ -7,9 +7,11 @@
       >
         <div class="flex text-sm">
           <img
-            class="mx-2.5"
+            class="mx-2.5 cursor-pointer"
             src="../../assets/images/deposit-token/consist-close.svg"
             alt=""
+            :class="{ hidden: key === '' }"
+            @click="key = ''"
           />
           <p class="opacity-20">{{ key }}</p>
         </div>
