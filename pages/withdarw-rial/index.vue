@@ -2,8 +2,7 @@
   <div class="bg-primary w-full text-Neutral-Gray p-5">
     <base-dashboard-header :pageName="'حسابداری'" />
     <div class="mt-2">
-      <base-part-header :address="'insidereport'" headName="گزارش واریزی ها" />
-      <base-button @click="goback">بازگشت</base-button>
+      <base-part-header :address="'withdarw'" headName="برداشت ریالی" />
       <div class="relative">
         <div class="absolute bg-blur"></div>
         <div class="mt-9 acounting-box-1 bg-primary py-6 px-12" dir="rtl">

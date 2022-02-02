@@ -9,7 +9,7 @@
       <div class="flex-1 mx-auto sm:mr-8">
         <div class="flex flex-col items-end">
           <base-part-header
-            :address="'insidereport'"
+            :address="'recieve-token'"
             headName="واریز رمز ارز"
           />
           <the-deposit-token />
@@ -67,5 +67,36 @@ export default {
 .description p {
   line-height: 24px;
   padding: 18px 0;
+}
+.swiper {
+  height: 70px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  margin: 0;
+  display: block;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+
+  width: calc(44px / 44 * 27);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: 44px;
+  height: var(--swiper-navigation-size);
+  margin-top: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: block;
+  color: var(--swiper-theme-color);
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  left: auto;
+  right: auto;
+}
+.swiper-button-prev {
+  top: 67px;
+}
+.swiper-button-next {
+  top: -36px;
 }
 </style>
