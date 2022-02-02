@@ -18,39 +18,41 @@
         :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
         class="fixed z-50 right-0 top-0 h-3/5 sm:h-full flex overflow-y-visible flex-col bg-primary overflow-x-hidden"
       >
-        <div
-          class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
-        >
-          <div class="flex-1 sm:hidden flex flex-row-reverse pr-5">
-            <the-sidebar-toggler
-              class="transition-all"
-              :class="{ rotated: !closed }"
+        <vue-scroll :ops="ops">
+          <div
+            class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
+          >
+            <div class="flex-1 sm:hidden flex flex-row-reverse pr-5">
+              <the-sidebar-toggler
+                class="transition-all"
+                :class="{ rotated: !closed }"
+              />
+            </div>
+            <img
+              class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
+              src="../assets/images/icon.svg"
+              alt="novintex"
             />
           </div>
-          <img
-            class="mx-auto sm:px-9 sm:py-8 py-3 px-2"
-            src="../assets/images/icon.svg"
-            alt="novintex"
-          />
-        </div>
-        <div class="flex-1 pr-1 links mt-6">
-          <base-navitem
-            v-for="navItem in navItems"
-            :key="navItem.name"
-            :name="navItem.name"
-            :address="navItem.address"
-            :linkAddress="navItem.linkAddress"
-            :active="navItem.active"
-            :dropdown="navItem.dropdown"
-            :closed="true"
-          />
-        </div>
-        <div class="relative cursor-pointer pr-5 logout">
-          <div class="flex flex-row-reverse pt-2 pb-2 items-center">
-            <img src="~/assets/images/sidebar/logouticon.svg" alt="" />
-            <p class="text-gray-300 text-xs">خروج از حساب</p>
+          <div class="flex-1 pr-1 links mt-6">
+            <base-navitem
+              v-for="navItem in navItems"
+              :key="navItem.name"
+              :name="navItem.name"
+              :address="navItem.address"
+              :linkAddress="navItem.linkAddress"
+              :active="navItem.active"
+              :dropdown="navItem.dropdown"
+              :closed="true"
+            />
           </div>
-        </div>
+          <div class="relative cursor-pointer pr-5 logout">
+            <div class="flex flex-row-reverse pt-2 pb-2 items-center">
+              <img src="~/assets/images/sidebar/logouticon.svg" alt="" />
+              <p class="text-gray-300 text-xs">خروج از حساب</p>
+            </div>
+          </div></vue-scroll
+        >
       </nav>
     </div>
   </div>
@@ -132,6 +134,51 @@ export default {
           linkAddress: "/reports",
         },
       ],
+      ops: {
+        ops: {
+          vuescroll: {
+            mode: "native",
+            sizeStrategy: "percent",
+            detectResize: true,
+            /** Enable locking to the main axis if user moves only slightly on one of them at start */
+            locking: true,
+            wheelScrollDuration: 500,
+          },
+
+          scrollPanel: {
+            initialScrollY: false,
+            initialScrollX: false,
+            scrollingX: false,
+            scrollingY: true,
+            speed: 300,
+            easing: "easeOutQuad",
+            verticalNativeBarPos: "left",
+          },
+          maxHeight: 500,
+
+          rail: {
+            background: "#010E17",
+            opacity: 0,
+            size: "6px",
+            specifyBorderRadius: false,
+            gutterOfEnds: null,
+            gutterOfSide: "2px",
+            keepShow: false,
+          },
+          bar: {
+            showDelay: 500,
+            onlyShowBarOnScroll: true,
+            keepShow: false,
+            background: "#c1c1c1",
+            opacity: 1,
+            hoverStyle: false,
+            specifyBorderRadius: false,
+            minSize: 0,
+            size: "6px",
+            disable: false,
+          },
+        },
+      },
     };
   },
 
@@ -150,6 +197,10 @@ export default {
       this.isOpen = !this.isOpen;
       e.currentTarget.classList.toggle("closed");
     },
+  },
+  mounted() {
+    if (process.client) {
+    }
   },
 };
 </script>
@@ -201,5 +252,8 @@ nav::-webkit-scrollbar {
   nav {
     border-radius: 20px 0 0;
   }
+}
+.__rail-is-vertical {
+  left: 2px !important ;
 }
 </style>
