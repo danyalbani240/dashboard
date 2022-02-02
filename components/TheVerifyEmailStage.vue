@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="verify-stage mx-auto mt-52 px-14 flex" dir="rtl">
+    <div class="verify-stage mx-auto mt-20 sm:px-14 px-2 flex" dir="rtl">
       <div style="width: 389px">
         <p class="font-bold text-lg text-center mt-9">تایید پست الکترونیک</p>
         <p class="text-center mt-2.5">
@@ -21,7 +21,7 @@
         />
         <base-button
           @click="$emit('getPass')"
-          class="mt-6"
+          class="sm:mt-6 mt-2"
           :bGreen="true"
           :full="true"
           ><span class="text-white">مرحله بعدی</span>
