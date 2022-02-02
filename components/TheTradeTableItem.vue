@@ -1,5 +1,7 @@
 <template>
-  <div class="flex flex-row-reverse table-item items-center justify-between text-xs">
+  <div
+    class="flex flex-row-reverse table-item items-center justify-between text-xs"
+  >
     <div class="flex flex-row-reverse items-center">
       <span><img src="../assets/images/cardano-ada.svg" /></span>
       <span class="text-xs">BTC-irr</span>
@@ -8,14 +10,19 @@
     <div>۱۸٬۵۹۷٬۹۶۳٬۹۱۴٫۶۵</div>
     <div class="flex flex-row-reverse trade-button cursor-pointer items-center">
       <span class="text-center text-xs flex-1">ترید</span>
-      <img class="relative" src="../assets/images/trade-button.svg" alt="" />
+      <img
+        class="relative hidden sm:block"
+        src="../assets/images/trade-button.svg"
+        alt=""
+      />
     </div>
   </div>
 </template>
 
 <script>
 export default {};
-</script> flex-1
+</script>
+flex-1
 
 <style scoped>
 .table-item {
@@ -30,5 +37,11 @@ export default {};
     #15ab88 93.65%
   );
   border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  .trade-button {
+    width: ;
+  }
 }
 </style>
