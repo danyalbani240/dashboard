@@ -10,9 +10,9 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
       {
-        hid: 'theme-color',
-        name: 'theme-color',
-        content: '#010E17'
+        hid: "theme-color",
+        name: "theme-color",
+        content: "#010E17",
       },
       { name: "format-detection", content: "telephone=no" },
     ],
@@ -24,7 +24,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/vue-awesome-swiper', mode: 'client' }
+    { src: "@/plugins/vue-awesome-swiper", mode: "client" },
+    { src: "@/plugins/vuescrollbar", mode: "client" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,5 +42,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  
 };
