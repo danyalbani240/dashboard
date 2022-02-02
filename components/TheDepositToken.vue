@@ -10,7 +10,25 @@
           <div
             class="crypto-logo relative z-20 flex items-center justify-center"
           >
-            <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
+            <img
+              src="../assets/images/downArrow.svg"
+              alt=""
+              class="w-5 absolute -top-6 cursor-pointer swipers-button-next"
+              style="transform: rotate(180deg)"
+            />
+            <swiper class="swiper" :options="swiperOption">
+              <swiper-slide
+                ><img src="../assets/images/deposit-token/bitcoin.svg" alt=""
+              /></swiper-slide>
+              <swiper-slide
+                ><img src="../assets/images/deposit-token/bitcoin.svg" alt=""
+              /></swiper-slide>
+            </swiper>
+            <img
+              src="../assets/images/downArrow.svg"
+              alt=""
+              class="w-5 absolute -bottom-6 cursor-pointer swipers-button-prev"
+            />
           </div>
           <div
             class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
@@ -74,6 +92,13 @@ export default {
   data() {
     return {
       qr: "asndfoshdohofshoushiou",
+      swiperOption: {
+        direction: "vertical",
+        navigation: {
+          nextEl: ".swipers-button-next",
+          prevEl: ".swipers-button-prev",
+        },
+      },
     };
   },
   methods: {
@@ -107,8 +132,8 @@ export default {
   height: 76px;
 }
 .crypto-logo {
-  width: 76px;
-  height: 76px;
+  min-width: 76px;
+  min-height: 76px;
   background-image: linear-gradient(
     91.44deg,
     rgba(255, 255, 255, 0.18) 0%,
@@ -159,8 +184,39 @@ export default {
 @media (max-width: 500px) {
   .deposit-crypto {
     width: 340px;
-    padding: 1px;
+    padding: 0px 10px;
     padding-top: auto;
   }
+}
+.swiper {
+  height: 70px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  margin: 0;
+  display: block;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+
+  width: calc(44px / 44 * 27);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: 44px;
+  height: var(--swiper-navigation-size);
+  margin-top: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: block;
+  color: var(--swiper-theme-color);
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  left: auto;
+  right: auto;
+}
+.swiper-button-prev {
+  top: 67px;
+}
+.swiper-button-next {
+  top: -36px;
 }
 </style>
