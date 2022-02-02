@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-primary w-full text-Neutral-Gray p-5">
+  <div class="bg-primary w-full text-Neutral-Gray px-1 py-5 sm:p-5">
     <base-dashboard-header :pageName="'بازار'" />
-    <div class="flex w-full flex-wrap justify-center xl:justify-between flex-row-reverse">
+    <div
+      class="flex w-full flex-wrap justify-center xl:justify-between flex-row-reverse"
+    >
       <the-spot-trade />
       <the-fast-trade-form />
     </div>
