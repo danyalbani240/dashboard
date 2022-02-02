@@ -2,20 +2,23 @@
   <div class="bg-primary w-full text-Neutral-Gray p-5">
     <base-dashboard-header pageName="تعهد نامه" />
     <p class="text-center text-lg mt-7">ارسال تعهدنامه</p>
-    <div class="flex flex-col items-center commitment-description">
-      <base-list-item class="mt-7">
-        <p style="max-width: 671px">
-          در این بخش شما باید متن دست نوشته که در پایین صفحه برای شما قرار داده
-          شده است را روی یک برگه یادداشت کرده و به همراه کارت بانکی در ست چپ جلو
-          سینه خود نگه دارید و با دست دیگر بخش جلویی کارت ملی خود را نگه دارید.
-        </p>
-      </base-list-item>
-      <base-list-item>
-        <p>
-          توجه داشته باشید تصویر کیفیت کافی را داشته باشد و تمام موارد خوانایی
-          کافی را داشته باشد.
-        </p>
-      </base-list-item>
+    <div class="flex justify-center">
+      <div class="flex flex-col commitment-description">
+        <base-list-item class="mt-7">
+          <p style="max-width: 671px">
+            در این بخش شما باید متن دست نوشته که در پایین صفحه برای شما قرار
+            داده شده است را روی یک برگه یادداشت کرده و به همراه کارت بانکی در ست
+            چپ جلو سینه خود نگه دارید و با دست دیگر بخش جلویی کارت ملی خود را
+            نگه دارید.
+          </p>
+        </base-list-item>
+        <base-list-item>
+          <p>
+            توجه داشته باشید تصویر کیفیت کافی را داشته باشد و تمام موارد خوانایی
+            کافی را داشته باشد.
+          </p>
+        </base-list-item>
+      </div>
     </div>
     <div class="flex flex-wrap justify-evenly mt-16">
       <div class="commitment-bg flex justify-center items-center">
@@ -37,7 +40,7 @@
       <base-button
         dir="rtl"
         @click="openFile"
-        class="flex items-center justify-center w-4/12 relative text-center"
+        class="flex items-center justify-center w-full my-2 sm:my-0 sm:w-4/12 relative text-center"
       >
         <input
           type="file"
@@ -49,7 +52,7 @@
       </base-button>
       <base-button
         dir="rtl"
-        class="flex items-center justify-center w-4/12 text-center"
+        class="flex items-center justify-center w-full my-2 sm:my-0 sm:w-4/12 text-center"
       >
         <img src="../../assets/images/doc.svg" class="w-6" alt="" />
         <span class="mr-1.5 text-sm">مشاهده متن تعهدنامه</span>
