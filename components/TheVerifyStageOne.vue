@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="verify-stage flex mx-auto mt-52 px-14" dir="rtl">
+    <div class="verify-stage flex mx-auto mt-20 px-14" dir="rtl">
       <div style="width: 389px">
         <p class="font-bold text-lg text-center mt-9">وارد کردن کد ملی</p>
         <p
