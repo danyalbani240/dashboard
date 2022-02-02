@@ -13,7 +13,7 @@
     >
       <nav
         :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
-        class="fixed z-50 right-0 top-0 overflow-y-visible min-h-screen flex flex-col bg-primary overflow-x-hidden"
+        class="fixed z-50 right-0 top-0 overflow-y-auto min-h-screen flex flex-col bg-primary overflow-x-hidden"
       >
         <div
           class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
@@ -187,8 +187,5 @@ nav {
   nav {
     border-radius: 20px 0 0;
   }
-}
-.rotated {
-  transform: rotate(90deg);
 }
 </style>
