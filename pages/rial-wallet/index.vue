@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-primary w-full text-Neutral-Gray p-5">
+  <div class="bg-primary w-full min-h-screen text-Neutral-Gray p-5">
     <base-dashboard-header :pageName="'کیف پول'" />
-    <base-part-header :address="'insidereport'" headName="کیف پول ریالی" />
+    <base-part-header :address="'walleticon'" headName="کیف پول ریالی" />
     <div class="flex flex-col items-end mt-8">
       <div class="create-acc flex flex-row-reverse justify-center items-center">
         <img src="../../assets/images/trade-button.svg" alt="" />
@@ -10,7 +10,7 @@
       <div class="relative w-full mt-16" dir="rtl">
         <div class="absolute card-bg"></div>
         <div
-          class="bg-primary mx-auto sm:mx-0 w-11/12 sm:w-6/12 rial-wallet-card px-2 sm:px-8 py-4"
+          class="bg-primary mx-auto sm:mx-0 w-11/12 sm:w-5/12 rial-wallet-card px-2 sm:px-8 py-4"
         >
           <div class="flex justify-center flex-col items-center">
             <div class="w-24 flag h-24 flex items-center justify-center">
