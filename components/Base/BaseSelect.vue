@@ -1,5 +1,10 @@
 <template>
-  <div class="custom-select" :tabindex="tabindex" @blur="open = false">
+  <div
+    v-if="!html"
+    class="custom-select"
+    :tabindex="tabindex"
+    @blur="open = false"
+  >
     <div
       class="selected text-primary"
       :class="{ open: open }"
@@ -7,7 +12,7 @@
     >
       {{ selected }}
     </div>
-    <div class="items" :class="{ selectHide: !open }">
+    <div class="items relative" :class="{ selectHide: !open }">
       <div
         v-for="(option, i) of options"
         :key="i"
@@ -16,16 +21,42 @@
           open = false;
           $emit('input', option);
         "
-        class="bg-Neutral-Grey6 border-b-2 border-Neutral-Grey3 hover:bg-Neutral-Grey5 transition"
+        class="listing"
       >
         {{ option }}
       </div>
+    </div>
+  </div>
+  <div v-else class="custom-select" :tabindex="tabindex" @blur="open = false">
+    <div
+      class="selected text-primary"
+      :class="{ open: open }"
+      @click="open = !open"
+      v-html="selected"
+    ></div>
+    <div class="items relative" :class="{ selectHide: !open }">
+      <div
+        v-for="(option, i) of options"
+        :key="i"
+        @click="
+          selected = option;
+          open = false;
+          $emit('input', option);
+        "
+        class="listing"
+        v-html="option"
+      ></div>
     </div>
   </div>
 </template>
 <script>
 export default {
   props: {
+    html: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     options: {
       type: Array,
       required: true,
@@ -96,5 +127,19 @@ export default {
 }
 .selectHide {
   display: none;
+}
+.items::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(
+    270deg,
+    #010e17 0%,
+    #15ab89 51.04%,
+    #010e17 100%
+  );
 }
 </style>
