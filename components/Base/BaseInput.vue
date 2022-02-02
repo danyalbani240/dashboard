@@ -4,11 +4,15 @@
       {{ label }}
     </label>
     <!-- input for sms code -->
-    <div v-if="code" class="sendcode-input flex flex-row-reverse items-center">
+    <div
+      v-if="code"
+      :class="{ 'width-100': full }"
+      class="sendcode-input flex flex-row-reverse items-center"
+    >
       <input
         type="text"
         :placeholder="place"
-        class="bg-primary px-2 w-9/12"
+        class="bg-primary px-2 w-9/12 flex-1"
         :class="{
           'placeholder-Neutral-Gray': placeWhite && !placeBlack,
           'placeholder-grey': placeGrey,
@@ -64,6 +68,7 @@ export default {
       type: Boolean,
       required: false,
     },
+
     verify: {
       type: Boolean,
       required: false,
@@ -131,6 +136,7 @@ input {
   height: 40px;
   border-radius: 5px;
 }
+
 .sendcode-input input:focus {
   outline: none;
   border: 1px solid #15ab89;
@@ -142,5 +148,12 @@ input {
 .placeholder-grey::placeholder {
   color: #2c2e35;
   direction: ltr;
+}
+@media (max-width: 430px) {
+  .sendcode-input {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+  }
 }
 </style>
