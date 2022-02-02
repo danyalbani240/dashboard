@@ -18,7 +18,9 @@
         </div>
       </div>
     </div>
-    <div class="mx-auto wtf overflow-hidden flex items-center justify-center">
+    <div
+      class="mx-auto wtf overflow-hidden flex items-center justify-start sm:justify-center"
+    >
       <div
         class="bg-primary flex cursor-pointer items-center"
         @click="copyText"
@@ -45,6 +47,7 @@
         >مرحله قبل</base-button
       >
     </div>
+    <BaseCopyMessage v-if="showMessage" />
   </div>
 </template>
 
@@ -53,11 +56,17 @@ export default {
   data() {
     return {
       qr: "afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiasdfghfgsdfgs",
+      showMessage: false,
     };
   },
   methods: {
     copyText() {
       window.navigator.clipboard.writeText(this.qr);
+      this.showMessage = true;
+
+      setTimeout(() => {
+        this.showMessage = false;
+      }, 2000);
     },
   },
 };
@@ -89,6 +98,11 @@ export default {
   border: 2px solid #15ab89;
   border-radius: 10px;
   box-shadow: inset 0px 0px 10px #15ab89;
+}
+@media (max-width: 640px) {
+  .wtf {
+    width: 300px;
+  }
 }
 .wtf div {
   border: 1px solid #15ab89;
