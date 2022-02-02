@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-primary w-full text-Neutral-Gray p-5">
+  <div
+    class="bg-primary w-full overflow-y-hidden text-Neutral-Gray p-5"
+    :class="{ 'h-screen': step == 1 || step == 2 || step == 3 || step == 6 }"
+  >
     <base-dashboard-header :pageName="'احراز هویت'" />
 
     <div class="stages flex mt-8 justify-center flex-row-reverse">
@@ -11,7 +14,7 @@
         }"
       >
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">کدملی</p>
+        <p class="text-center mt-4 text-xs">کدملی</p>
       </div>
       <div
         class="stage mx-2.5"
@@ -22,7 +25,7 @@
         }"
       >
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">تایید شماره موبایل</p>
+        <p class="text-center mt-4 text-xs">تایید شماره موبایل</p>
       </div>
       <div
         class="stage mx-2.5"
@@ -33,7 +36,7 @@
         }"
       >
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">تایید پست الکترونیک</p>
+        <p class="text-center mt-4 text-xs">تایید پست الکترونیک</p>
       </div>
       <div
         class="stage mx-2.5"
@@ -46,7 +49,7 @@
         }"
       >
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">گوگل دو مرحله ای</p>
+        <p class="text-center mt-4 text-xs">گوگل دو مرحله ای</p>
       </div>
       <div
         class="stage mx-2.5"
@@ -59,7 +62,7 @@
         }"
       >
         <div class="stage-input"></div>
-        <p class="text-center mt-2 text-xs">نتیجه درخواست</p>
+        <p class="text-center mt-4 text-xs">نتیجه درخواست</p>
       </div>
     </div>
     <the-verify-stage-one v-if="step === 1" @getPass="step++" />
@@ -111,6 +114,7 @@ export default {
   border-radius: 15.5px;
   opacity: 0.65;
   position: relative;
+  z-index: 2;
 }
 .stage.active .stage-input {
   border-width: 2px !important;
@@ -131,6 +135,9 @@ export default {
     rgba(255, 255, 255, 0.18) 0%,
     rgba(196, 196, 196, 0.06) 100%
   );
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -142,9 +149,10 @@ export default {
   width: 36px;
   height: 36px;
   background-repeat: no-repeat;
+  background-position: center;
   left: 50%;
-  top: -50%;
-  transform: translate(-35%, -25%);
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .stage:nth-of-type(1) .stage-input::after {
   background-image: url(../../assets/images/bulk-security-card.svg);
