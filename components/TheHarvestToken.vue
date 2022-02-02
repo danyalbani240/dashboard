@@ -1,15 +1,31 @@
 <template>
   <div class="flex-1 flex flex-col items-end">
-    <base-part-header :address="'insidereport'" headName="برداشت رمز ارز" />
+    <base-part-header :address="'harvest-token'" headName="برداشت رمز ارز" />
 
     <div
       class="harvest-crypto harvest-crypto flex mx-auto sm:mx-0 flex-col my-5"
     >
-      <div class="flex flex-row-reverse items-center">
-        <div
-          class="w-16 h-16 rounded-full crypto-logo flex items-center justify-center"
-        >
-          <img src="../assets/images/deposit-token/bitcoin.svg" alt="" />
+      <div class="flex flex-row-reverse sm:mt-0 mt-10 items-center">
+        <div class="crypto-logo relative z-20 flex items-center justify-center">
+          <img
+            src="../assets/images/downArrow.svg"
+            alt=""
+            class="w-5 absolute -top-6 cursor-pointer swiper-button-next"
+            style="transform: rotate(180deg)"
+          />
+          <swiper class="swiper" :options="swiperOption">
+            <swiper-slide
+              ><img src="../assets/images/deposit-token/bitcoin.svg" alt=""
+            /></swiper-slide>
+            <swiper-slide
+              ><img src="../assets/images/deposit-token/bitcoin.svg" alt=""
+            /></swiper-slide>
+          </swiper>
+          <img
+            src="../assets/images/downArrow.svg"
+            alt=""
+            class="w-5 absolute -bottom-6 cursor-pointer swiper-button-prev"
+          />
         </div>
         <div
           class="flex flex-row-reverse justify-between items-center rounded -mr-2 pr-3 bg-primary name-input w-full"
@@ -22,7 +38,11 @@
           </div>
         </div>
       </div>
-      <BaseRadio :options="['TRX', 'BTC', 'ERC20', 'TRC20']" label="شبکه" />
+      <BaseRadio
+        class="mt-10"
+        :options="['TRX', 'BTC', 'ERC20', 'TRC20']"
+        label="شبکه"
+      />
       <BaseRadio :options="['Fast', 'Trade']" label="نوع انتقال" />
       <BaseRadio :options="['متغیر', 'ثابت']" label="فی شبکه" />
 
@@ -41,13 +61,24 @@
       <div class="mt-5">
         <p dir="rtl">مقدار برداشت:</p>
         <div
-          class="mt-1.5 flex items-center rounded -mr-2 pr-3 bg-primary name-input w-full justify-between"
+          class="mt-1.5 flex items-center rounded -mr-2 sm:pr-3 bg-primary name-input w-full justify-between"
         >
-          <div style="color: #14b82e" class="ml-2">MAX</div>
           <div class="flex items-center">
+            <div
+              style="color: #14b82e"
+              class="ml-2 cursor-pointer"
+              @click="money = '96.222'"
+            >
+              MAX
+            </div>
             <div class="divider mr-1"></div>
-            <span class="opacity-20 mr-8">5.000.000</span>
-            <p class="mr-1.5">:مبلغ نهایی</p>
+          </div>
+          <div class="flex items-center flex-1">
+            <input
+              class="opacity-20 sm:mr-8 bg-primary border-none focus:outline-none flex-1"
+              v-model="money"
+            />
+            <p class="sm:mr-1.5 sm:text-base text-xs">:مبلغ نهایی</p>
           </div>
         </div>
       </div>
@@ -89,12 +120,20 @@
 <script>
 import BasePartHeader from "./Base/BasePartHeader.vue";
 export default {
+  data() {
+    return {
+      qr: "afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiaudgUQY8TWEUEV7uwgdgfoiijad",
+      money: "",
+      swiperOption: {
+        direction: "vertical",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+    };
+  },
   methods: {
-    data() {
-      return {
-        qr: "afhoishisdiusdiufsiudfgiaudgfiuusagdfiuagdfiugaidufgiaudgUQY8TWEUEV7uwgdgfoiijad",
-      };
-    },
     copyText() {
       window.navigator.clipboard.writeText(this.qr);
     },
@@ -155,8 +194,39 @@ export default {
 @media only screen and (max-width: 570px) {
   .harvest-crypto {
     width: 340px;
-    padding: 1px;
+    padding: 0 10px;
     padding-top: auto;
   }
+}
+.swiper {
+  height: 70px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  margin: 0;
+  display: block;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+
+  width: calc(44px / 44 * 27);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: 44px;
+  height: var(--swiper-navigation-size);
+  margin-top: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: block;
+  color: var(--swiper-theme-color);
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+  left: auto;
+  right: auto;
+}
+.swiper-button-prev {
+  top: 67px;
+}
+.swiper-button-next {
+  top: -36px;
 }
 </style>
