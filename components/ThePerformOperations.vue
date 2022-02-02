@@ -12,7 +12,7 @@
       />
     </div>
     <div
-      class="flex flex-wrap flex-row-reverse px-3 justify-between items-center perform-operation mx-auto w-9/12"
+      class="flex flex-wrap flex-row-reverse px-3 justify-between items-center perform-operation mx-auto w-11/12 sm:w-9/12"
     >
       <div class="flex-1">
         <p class="text-right">:انتخاب حساب ارزی</p>
@@ -68,18 +68,36 @@
           <base-input class="w-11/12" />
           <p
             style="line-height: 15px"
+            v-if="!withdarw"
             class="text-xs w-11/12 text-center mt-3.5"
           >
             حداقل مقدار قابل واریز:500,000 ریال
           </p>
           <p
             style="line-height: 15px"
+            v-else
+            class="text-xs w-11/12 text-center mt-3.5"
+          >
+            حداقل مقدار قابل برداشت:500,000 ریال
+          </p>
+          <p
+            v-if="!withdarw"
+            style="line-height: 15px"
             class="text-xs w-11/12 text-center mb-3.5"
           >
             حداکثر مقدار قابل واریز:500,000,000 ریال
           </p>
+          <p
+            v-else
+            style="line-height: 15px"
+            class="text-xs w-11/12 text-center mb-3.5"
+          >
+            حداکثر مقدار قابل برداشت:2.000,000,000 ریال
+          </p>
           <base-button class="w-11/12" v-if="withdarw == false" :bGreen="true"
-            ><span class="text-white">انتقال به درگاه پرداخت</span></base-button
+            ><span class="text-white text-sm sm:text-base"
+              >انتقال به درگاه پرداخت</span
+            ></base-button
           >
           <base-button
             class="w-11/12 sell-btn transition-all"
