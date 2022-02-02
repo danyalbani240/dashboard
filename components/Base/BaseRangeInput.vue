@@ -7,7 +7,7 @@
           $event
         )
       "
-      class="relative cursor-pointer range-bar w-full mt-8 bg-primary rounded-full"
+      class="relative cursor-pointer range-bar w-full mt-8 xl:mx-auto bg-primary rounded-full"
     >
       <div
         :class="{ active: point >= 0 }"
@@ -46,7 +46,17 @@
       >
         100
       </div>
-      <div @click.prevent="" class="p-color z-10"></div>
+      <div
+        @click="
+          savePoint(
+            `${
+              ($event.offsetX / $event.target.parentElement.offsetWidth) * 100
+            }`,
+            $event
+          )
+        "
+        class="p-color z-10"
+      ></div>
     </div>
   </div>
 </template>
@@ -64,7 +74,7 @@ export default {
       this.point = e;
 
       document.querySelector(".p-color").style.width = e + "%";
-      console.log(this.point);
+      console.log(this.point, eve);
     },
   },
 };
@@ -92,7 +102,7 @@ export default {
 .range-input.sell .p-color {
   background: linear-gradient(270deg, rgba(1, 14, 23, 0) -20%, #eb0020 100%);
 }
-.range-input.sell .range-bar > div:not(:last-child) {
+.range-input.sell .range-bar > div.active {
   background: #eb0020;
 }
 .range-bar > div:not(:last-child) {
@@ -128,9 +138,9 @@ export default {
   transform: translate(-50%, -50%);
 }
 .range-bar > div:nth-child(5) {
-  right: 0;
+  left: 100%;
   top: 50%;
-  transform: translate(0%, -50%);
+  transform: translate(-50%, -50%);
 }
 .p-color {
   position: absolute;
@@ -148,7 +158,12 @@ export default {
 }
 @media (max-width: 430px) {
   .range-bar {
-    width: 320px;
+    width: 300px;
+  }
+}
+@media (min-width: 1300px) {
+  .range-bar {
+    width: calc(100% - 4rem);
   }
 }
 </style>
