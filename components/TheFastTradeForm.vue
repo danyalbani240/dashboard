@@ -1,8 +1,11 @@
 <template>
-  <div class="mt-8">
-    <base-part-header :address="'insidereport'" headName="خرید و فروش سریع" />
+  <div class="mt-8 lg:w-5/12">
+    <base-part-header
+      :address="'fast-transaction'"
+      headName="خرید و فروش سریع"
+    />
 
-    <div class="fast-form mt-8 pt-5 md:px-8 flex flex-col items-center">
+    <div class="fast-form xl:full mt-8 pt-5 md:px-8 flex flex-col items-center">
       <div
         class="flex flex-row-reverse w-full flex-wrap justify-center text-sm sm:justify-between"
       >
@@ -30,7 +33,10 @@
       </div>
 
       <!-- switching Sell Or buy State -->
-      <div class="buy-sell-switch mt-4 flex flex-row-reverse items-center">
+      <div
+        :class="{ sell: activeState === 'sell' }"
+        class="buy-sell-switch mt-4 flex flex-row-reverse items-center xl:w-5/12"
+      >
         <div
           :class="{ active: activeState === 'buy' }"
           @click="activeState = 'buy'"
@@ -48,9 +54,9 @@
       </div>
 
       <!-- checking the State sell OR BUy -->
-      <div>
+      <div class="xl:w-full">
         <div v-if="activeState === 'buy'">
-          <div class="flex flex-col mt-6">
+          <div class="flex flex-col mt-6 w-full">
             <p dir="rtl">انتخاب ارز ارسالی:</p>
             <div class="flex flex-row-reverse crypto-send bg-primary">
               <BaseSelect :options="['IRR']" />
@@ -59,17 +65,22 @@
           <div class="flex flex-col mt-6">
             <p dir="rtl">انتخاب ارز دریافتی:</p>
             <div class="flex flex-row-reverse crypto-send bg-primary">
-              <div
-                class="h-full flex justify-evenly pl-2 cursor-pointer items-center"
+              <BaseSelect
+                :options="[
+                  `<div
+                class='h-full flex justify-evenly pl-2 cursor-pointer items-center'
               >
-                <img src="../assets/images/cardano-ada.svg" alt="" />
-                <span class="mr-1">BTC</span>
-                <img src="../assets/images/downArrow.svg" />
-              </div>
+                <img src='/_nuxt/assets/images/cardano-ada.svg'  />
+                <span class='mr-4'>BTC</span>
+                
+              </div>`,
+                ]"
+                :html="true"
+              />
             </div>
           </div>
           <base-range-input class="buy" />
-          <base-button :bGreen="true" class="w-full mt-16"
+          <base-button :bGreen="true" class="w-full mt-8 sm:mt-16"
             ><span class="text-Neutral-Gray">خرید</span></base-button
           >
         </div>
@@ -98,9 +109,12 @@
             </div>
           </div>
           <base-range-input class="sell" />
-          <base-button style="background-color: #eb0020" class="w-full mt-16"
-            ><span class="text-Neutral-Gray">فروش</span></base-button
+          <button
+            style="background-color: #eb0020"
+            class="px-9 py-2 rounded-md transition-all flex justify-center items-center w-full mt-8 sm:mt-16 bg-button-gradient border-bg"
           >
+            <span class="text-Neutral-Gray">فروش</span>
+          </button>
         </div>
       </div>
     </div>
@@ -130,10 +144,10 @@ export default {
     rgba(196, 196, 196, 0.06) 100%
   );
   backdrop-filter: blur(12px);
-  /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 10px;
 }
+
 .bg-gray-gr {
   background-image: linear-gradient(
     91.44deg,
@@ -152,7 +166,9 @@ export default {
   padding-right: 3px;
   padding-left: 3px;
 }
-
+.buy-sell-switch.sell {
+  border: 1px solid #eb0020 !important;
+}
 .buy-button.active {
   background-color: #14b82e;
 }
@@ -162,6 +178,12 @@ export default {
   border-radius: 13px;
 }
 .sell-button.active {
+  background-color: #eb0020;
+}
+.sell-btn {
+  border: 1px solid #eb0020;
+}
+.sell-btn:hover {
   background-color: #eb0020;
 }
 .crypto-send {
@@ -195,6 +217,7 @@ export default {
   color: #eb0020;
 }
 /* responsive */
+
 @media (max-width: 768px) {
   .range-bar {
     width: 434px;
@@ -223,6 +246,17 @@ export default {
   }
   .fast-form {
     width: 340px;
+  }
+}
+@media (min-width: 1700px) {
+  .fast-form {
+    max-width: 700px !important;
+  }
+  .buy-sell-switch {
+    width: 100%;
+  }
+  .crypto-send {
+    width: 100%;
   }
 }
 </style>
