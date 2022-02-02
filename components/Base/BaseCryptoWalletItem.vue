@@ -1,6 +1,9 @@
 <template>
-  <div dir="rtl" class="base-item-container relative">
-    <div style="top: 18px" class="relative z-20 flex justify-center md:justify-start">
+  <div dir="rtl" class="base-item-container w-11/12 relative">
+    <div
+      style="top: 18px"
+      class="relative z-20 flex justify-center md:justify-start"
+    >
       <div
         class="rounded-full bg-primary item-logo flex justify-center items-center"
       >
@@ -12,32 +15,35 @@
         BTC
       </div>
     </div>
-    <div class="base-item h-80 flex-col md:h-auto lg:flex-row relative z-10 justify-evenly flex pt-5 items-center">
+    <div
+      class="base-item h-80 flex-col md:h-auto lg:flex-row relative z-10 justify-evenly flex pt-5 items-center"
+    >
       <div class="flex flex-col md:flex-row">
         <div class="h-10 flex items-center invent-primary mx-2 justify-between">
-        <div class="h-10 w-10 flex justify-center items-center relative z-10">
-          <img src="../../assets/images/walletcheck.svg" alt="" />
+          <div class="h-10 w-10 flex justify-center items-center relative z-10">
+            <img src="../../assets/images/walletcheck.svg" alt="" />
+          </div>
+          <div
+            class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
+          >
+            <span class="inline-block">موجودی اصلی</span>
+            <span>96.222</span>
+          </div>
         </div>
-        <div
-          class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
-        >
-          <span class="inline-block">موجودی اصلی</span>
-          <span>96.222</span>
+        <div class="h-10 flex items-center invent-primary mx-2">
+          <div class="h-10 w-10 flex justify-center items-center relative z-10">
+            <img src="../../assets/images/empty-walletchange.svg" alt="" />
+          </div>
+          <div
+            class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
+          >
+            <span class="inline-block">موجودی اصلی</span>
+            <span>96.222</span>
+          </div>
         </div>
       </div>
-      <div class="h-10 flex items-center invent-primary mx-2">
-        <div class="h-10 w-10 flex justify-center items-center relative z-10">
-          <img src="../../assets/images/empty-walletchange.svg" alt="" />
-        </div>
-        <div
-          class="-mr-1 relative z-0 justify-between text-sm flex items-center px-4"
-        >
-          <span class="inline-block">موجودی اصلی</span>
-          <span>96.222</span>
-        </div>
-      </div></div>
       <div
-        class="flex items-center deposit h-8 w-24 mx-2 justify-between text-center"
+        class="flex items-center deposit cursor-pointer h-8 w-24 mx-2 justify-between text-center"
       >
         <span class="flex-1">واریز</span>
         <span class="relative"
@@ -48,14 +54,16 @@
         /></span>
       </div>
       <div
-        class="flex mx-2 items-center harvest h-8 w-24 justify-between text-center"
+        class="flex mx-2 items-center harvest cursor-pointer h-8 w-24 justify-between text-center"
       >
         <span class="flex-1">برداشت</span>
         <span class="relative"
           ><img class="relative" src="../../assets/images/upbutton.svg" alt=""
         /></span>
       </div>
-      <div class="flex mx-2 items-center trade h-8 w-24 justify-between text-center">
+      <div
+        class="flex mx-2 items-center trade cursor-pointer h-8 w-24 justify-between text-center"
+      >
         <span class="flex-1">ترید</span>
         <span class="relative"
           ><img
@@ -79,7 +87,6 @@ export default {};
     rgba(255, 255, 255, 0.18) 0%,
     rgba(196, 196, 196, 0.06) 100%
   );
-  max-width: 1180px;
   min-height: 98px;
   border: 2px solid #15ab89;
   padding-right: 121px;
@@ -143,13 +150,12 @@ export default {};
   );
   backdrop-filter: blur(12px);
 }
-@media only screen and (max-width: 1100px){
-.base-item{
-  padding-right: 50px;
-  padding-left: 50px;
+@media only screen and (max-width: 1100px) {
+  .base-item {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
 }
-}
-@media only screen and (max-width: 850px){
- 
+@media only screen and (max-width: 850px) {
 }
 </style>
