@@ -6,9 +6,14 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
-<style></style>
+<style>
+* {
+  background-repeat: no-repeat !important;
+}
+input:focus {
+  outline: none !important;
+}
+</style>
