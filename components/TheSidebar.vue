@@ -1,4 +1,7 @@
 <template>
+  <!-- <div class="w-3/12 bg-red-400 h-auto">
+    <div class="fixed h-1/2 top-0 right-0 w-full bg-red-700"></div>
+  </div> -->
   <div
     :class="{
       'fixed w-screen bg-opacity-60 top-0 right-0 h-screen  ': !closed,
@@ -8,12 +11,12 @@
     @click.self="$store.commit('sidebar/closeSidebar')"
   >
     <div
-      class="relative transition-all"
+      class="relative h-full transition-all"
       :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
     >
       <nav
         :class="{ 'sm:w-56 w-7/12': !closed, 'w-0': closed }"
-        class="fixed z-50 right-0 top-0 overflow-y-auto min-h-screen flex flex-col bg-primary overflow-x-hidden"
+        class="fixed z-50 right-0 top-0 h-3/5 sm:h-full flex overflow-y-visible flex-col bg-primary overflow-x-hidden"
       >
         <div
           class="navicon relative sm:block justify-between flex flex-row-reverse items-end"
@@ -156,6 +159,17 @@ nav {
   transition: width 0.6s ease;
   border-radius: 110px 0 0 0;
   box-shadow: 0px 4px 4px rgba(21, 171, 137, 0.5);
+}
+
+/* hide scrollbar but allow scrolling */
+nav {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+nav::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 .navicon::after {
   content: "";
