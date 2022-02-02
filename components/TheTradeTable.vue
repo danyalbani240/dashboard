@@ -1,11 +1,11 @@
 <template>
-  <div class="overflow-x-auto">
+  <div class="overflow-x-visible">
     <div class="flex flex-col trade-table w-full sm:px-4 mt-8">
       <div class="flex justify-between flex-row-reverse py-3 table-header">
-        <span class="flex-1 text-right">نام رمز ارز</span>
-        <span class="flex-1 text-right">قیمت خرید</span>
-        <span class="flex-1 text-right">قیمت فروش</span>
-        <span class="flex-1 text-right"></span>
+        <span class="w-1/4 text-right">نام رمز ارز</span>
+        <span class="w-1/4 text-right sm:pr-7">قیمت خرید</span>
+        <span class="w-1/4 sm:pl-7">قیمت فروش</span>
+        <span class="w-1/4"></span>
       </div>
       <div>
         <the-trade-table-item />
