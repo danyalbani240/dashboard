@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="verify-stage mx-auto mt-52 px-14 flex" dir="rtl">
+    <div class="verify-stage mx-auto mt-20 sm:px-14 px-2 flex" dir="rtl">
       <div style="width: 389px" class="flex-1">
         <p class="font-bold text-lg text-center mt-9">تایید شماره</p>
         <p class="text-center mt-2.5" dir="rtl">
