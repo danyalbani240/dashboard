@@ -5,12 +5,13 @@
 
       <img
         src="../assets/images/refresh.svg"
-        @click.prevent=""
+        @click.prevent="refresh"
         class="cursor-pointer"
         alt=""
       />
     </div>
-    <div class="overflow-x-auto">
+    <div v-if="isLoading">loadin...</div>
+    <div v-else class="overflow-x-auto">
       <table class="bg-opacity-50 w-full mt-3.5">
         <thead>
           <tr>
@@ -77,6 +78,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isLoading: false,
+    };
+  },
   props: {
     heads: {
       type: Array,
@@ -84,6 +90,14 @@ export default {
     },
     reports: {
       type: Array,
+    },
+  },
+  methods: {
+    refresh() {
+      this.isLoading = true;
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 2000);
     },
   },
 };
@@ -100,8 +114,13 @@ thead {
   height: 60px;
 }
 tbody tr {
-  background-image: linear-gradient(180deg, #031f24 21.31%, #053130 78.69%);
+  background: linear-gradient(
+    143.41deg,
+    rgba(3, 31, 36, 0.5) 21.31%,
+    rgba(5, 49, 48, 0.5) 78.69%
+  );
   height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 td {
   text-align: right;
@@ -156,7 +175,11 @@ tr td:last-of-type {
   padding-right: 5px;
 }
 tr.two {
-  background-image: linear-gradient(180deg, #097369 21.31%, #15ab88 78.69%);
+  background: linear-gradient(
+    143.41deg,
+    rgba(9, 115, 105, 0.5) 21.31%,
+    rgba(21, 171, 136, 0.5) 78.69%
+  );
 }
 .pag-item {
   width: 28px;
