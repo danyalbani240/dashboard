@@ -99,6 +99,7 @@ export default {
             { name: "حساب کاربری", linkAdress: "/profile" },
             { name: "احراز هویت", linkAdress: "/verify" },
             { name: "تعهد نامه", linkAdress: "/commitment" },
+            { name: "امنیت", linkAdress: "/security" },
           ],
         },
         {
