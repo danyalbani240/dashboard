@@ -65,14 +65,22 @@
         <p class="text-center mt-4 text-xs">نتیجه درخواست</p>
       </div>
     </div>
-    <the-verify-stage-one v-if="step === 1" @getPass="step++" />
-    <the-verify-stage-two v-if="step === 2" @getPass="step++" />
-    <the-verify-email-stage v-if="step === 3" @getPass="step++" />
-    <the-authentication-stage
-      @getBack="step--"
-      v-if="step === 4"
-      @getPass="step++"
-    />
+    <keep-alive>
+      <the-verify-stage-one v-if="step === 1" @getPass="step++" />
+    </keep-alive>
+    <keep-alive>
+      <the-verify-stage-two v-if="step === 2" @getPass="step++" />
+    </keep-alive>
+    <keep-alive>
+      <the-verify-email-stage v-if="step === 3" @getPass="step++" />
+    </keep-alive>
+    <keep-alive>
+      <the-authentication-stage
+        @getBack="step--"
+        v-if="step === 4"
+        @getPass="step++"
+      />
+    </keep-alive>
     <the-authentication-stage-two
       @getBack="step--"
       v-if="step === 5"
