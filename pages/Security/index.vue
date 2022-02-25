@@ -1,4 +1,5 @@
 <template>
+  <!-- planning this section has to be component base soon  -->
   <div
     class="security-page bg-primary w-full text-Neutral-Gray p-5 min-h-screen"
   >
@@ -152,7 +153,7 @@
       </div>
     </keep-alive>
     <keep-alive>
-      <div v-else-if="stage === 'password' && step === 1">
+      <div v-if="stage === 'password' && step === 1">
         <p class="mx-auto text-lg text-center mt-20">رمز عبور جدید</p>
         <p class="text-base text-center mt-8">
           رمز عبور حدید خود را وارد کرده و برای اطمینان در کادر بعدی دوباره وارد
@@ -236,7 +237,7 @@
       </div>
     </keep-alive>
 
-    <div v-else-if="stage === 'password' && step === 2">
+    <div v-if="stage === 'password' && step === 2">
       <div>
         <div class="flex flex-col justify-center items-center mt-32">
           <p class="text-lg">تغییر رمز عبور شما با موفقیت انجام شد</p>
@@ -288,7 +289,7 @@
       </div>
     </keep-alive>
     <keep-alive>
-      <div class="enter-new-num" v-else-if="stage === 'number' && step === 1">
+      <div class="enter-new-num" v-if="stage === 'number' && step === 1">
         <p class="mx-auto text-lg text-center mt-20">شماره موبایل جدید</p>
         <p class="text-base text-center mt-8">
           شماره موبایل قدیمی شما نمایش داده شده لطفا شماره موبایل جدید خود را
@@ -315,7 +316,7 @@
       </div>
     </keep-alive>
 
-    <div v-else-if="stage === 'number' && step === 2">
+    <div v-if="stage === 'number' && step === 2">
       <div>
         <div class="flex flex-col justify-center items-center mt-32">
           <p class="text-lg">شماره موبایل شما با موفقیت تغییر یافت</p>
