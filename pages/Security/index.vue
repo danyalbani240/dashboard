@@ -110,127 +110,132 @@
       </div>
     </div>
     <!-- password -->
-    <div v-if="stage === 'password' && step === 0">
-      <p class="mx-auto text-lg text-center mt-20">تغییر رمز عبور</p>
-      <p class="text-base text-center mt-8">
-        برای تغییر رمز عبور خود کدی که برای شما ارسال شده است را وارد کنید و به
-        مرحله بعد بروید
-      </p>
-      <div
-        class="sm:w-5/12 password-box items-center w-full flex-wrap-reverse mx-auto flex px-7 mt-24"
-        dir="rtl"
-      >
-        <BaseButton
-          @click="step = 1"
-          class="text-white send-again w-full sm:w-auto"
-          >ارسال مجدد</BaseButton
+    <keep-alive>
+      <div v-if="stage === 'password' && step === 0">
+        <p class="mx-auto text-lg text-center mt-20">تغییر رمز عبور</p>
+        <p class="text-base text-center mt-8">
+          برای تغییر رمز عبور خود کدی که برای شما ارسال شده است را وارد کنید و
+          به مرحله بعد بروید
+        </p>
+        <div
+          class="sm:w-5/12 password-box items-center w-full flex-wrap-reverse mx-auto flex px-7 mt-24"
+          dir="rtl"
         >
-        <div class="code-inputs flex flex-1 justify-between sm:mr-10">
-          <input
-            maxlength="1"
-            size="1"
-            class="code-input bg-primary focus:outline-none text-lg"
-          />
-          <input
-            maxlength="1"
-            size="1"
-            class="code-input bg-primary focus:outline-none text-lg"
-          />
-          <input
-            maxlength="1"
-            size="1"
-            class="code-input bg-primary focus:outline-none text-lg"
-          />
-          <input
-            maxlength="1"
-            size="1"
-            class="code-input bg-primary focus:outline-none text-lg"
-          />
-        </div>
-      </div>
-    </div>
-    <div v-else-if="stage === 'password' && step === 1">
-      <p class="mx-auto text-lg text-center mt-20">رمز عبور جدید</p>
-      <p class="text-base text-center mt-8">
-        رمز عبور حدید خود را وارد کرده و برای اطمینان در کادر بعدی دوباره وارد
-        کنید
-      </p>
-      <div
-        class="new-password justify-between mt-12 w-full sm:w-7/12 mx-auto sm:px-12 pt-7 pb-11 flex"
-        dir="rtl"
-      >
-        <div class="sm:w-7/12 w-full px-5 sm:px-0">
-          <div>
-            <label class="text-base" for="newpassword"> رمز عبور جدید </label>
-            <div
-              class="newpassword-container mt-1.5 h-10 relative w-full shadow-none"
-            >
-              <input
-                type="password"
-                class="border-Neutral-Green1 absolute bg-primary w-full pl-1"
-                id="newpassword"
-                dir="ltr"
-              />
-              <client-only>
-                <img
-                  class="absolute right-4 cursor-pointer inset-y-2.5"
-                  src="../../assets/images/seepass.svg"
-                  v-if="!newPassword"
-                  alt=""
-                  @click="togglenewPassword"
-                />
-                <img
-                  v-else
-                  class="absolute right-4 cursor-pointer inset-y-2.5"
-                  src="../../assets/images/dcpass.svg"
-                  alt=""
-                  @click="togglenewPassword"
-                />
-              </client-only>
-            </div>
-          </div>
-          <div class="mt-10">
-            <label class="text-base" for="newpasswordagain">
-              تکرار رمز عبور جدید
-            </label>
-            <div
-              class="newpassword-container mt-1.5 h-10 relative w-full shadow-none"
-            >
-              <input
-                type="password"
-                class="border-Neutral-Green1 absolute bg-primary w-full pl-1"
-                id="newpasswordagain"
-                dir="ltr"
-              />
-              <client-only>
-                <img
-                  class="absolute right-4 cursor-pointer inset-y-2.5"
-                  src="../../assets/images/seepass.svg"
-                  v-if="!newPasswordAgain"
-                  alt=""
-                  @click="togglenewPasswordAgain"
-                />
-                <img
-                  v-else
-                  class="absolute right-4 cursor-pointer inset-y-2.5"
-                  src="../../assets/images/dcpass.svg"
-                  alt=""
-                  @click="togglenewPasswordAgain"
-                />
-              </client-only>
-            </div>
-          </div>
-          <BaseButton @click="step++" :full="true" class="mt-6"
-            ><span class="text-white">تایید</span></BaseButton
+          <BaseButton
+            @click="step = 1"
+            class="text-white send-again w-full sm:w-auto"
+            >ارسال مجدد</BaseButton
           >
+          <div class="code-inputs flex flex-1 justify-between sm:mr-10">
+            <input
+              maxlength="1"
+              size="1"
+              class="code-input bg-primary focus:outline-none text-lg"
+            />
+            <input
+              maxlength="1"
+              size="1"
+              class="code-input bg-primary focus:outline-none text-lg"
+            />
+            <input
+              maxlength="1"
+              size="1"
+              class="code-input bg-primary focus:outline-none text-lg"
+            />
+            <input
+              maxlength="1"
+              size="1"
+              class="code-input bg-primary focus:outline-none text-lg"
+            />
+          </div>
         </div>
-        <img
-          src="../../assets/images/password-bg.svg"
-          class="md:block hidden"
-          alt=""
-        />
       </div>
-    </div>
+    </keep-alive>
+    <keep-alive>
+      <div v-else-if="stage === 'password' && step === 1">
+        <p class="mx-auto text-lg text-center mt-20">رمز عبور جدید</p>
+        <p class="text-base text-center mt-8">
+          رمز عبور حدید خود را وارد کرده و برای اطمینان در کادر بعدی دوباره وارد
+          کنید
+        </p>
+        <div
+          class="new-password justify-between mt-12 w-full sm:w-7/12 mx-auto sm:px-12 pt-7 pb-11 flex"
+          dir="rtl"
+        >
+          <div class="sm:w-7/12 w-full px-5 sm:px-0">
+            <div>
+              <label class="text-base" for="newpassword"> رمز عبور جدید </label>
+              <div
+                class="newpassword-container mt-1.5 h-10 relative w-full shadow-none"
+              >
+                <input
+                  type="password"
+                  class="border-Neutral-Green1 absolute bg-primary w-full pl-1"
+                  id="newpassword"
+                  dir="ltr"
+                />
+                <client-only>
+                  <img
+                    class="absolute right-4 cursor-pointer inset-y-2.5"
+                    src="../../assets/images/seepass.svg"
+                    v-if="!newPassword"
+                    alt=""
+                    @click="togglenewPassword"
+                  />
+                  <img
+                    v-else
+                    class="absolute right-4 cursor-pointer inset-y-2.5"
+                    src="../../assets/images/dcpass.svg"
+                    alt=""
+                    @click="togglenewPassword"
+                  />
+                </client-only>
+              </div>
+            </div>
+            <div class="mt-10">
+              <label class="text-base" for="newpasswordagain">
+                تکرار رمز عبور جدید
+              </label>
+              <div
+                class="newpassword-container mt-1.5 h-10 relative w-full shadow-none"
+              >
+                <input
+                  type="password"
+                  class="border-Neutral-Green1 absolute bg-primary w-full pl-1"
+                  id="newpasswordagain"
+                  dir="ltr"
+                />
+                <client-only>
+                  <img
+                    class="absolute right-4 cursor-pointer inset-y-2.5"
+                    src="../../assets/images/seepass.svg"
+                    v-if="!newPasswordAgain"
+                    alt=""
+                    @click="togglenewPasswordAgain"
+                  />
+                  <img
+                    v-else
+                    class="absolute right-4 cursor-pointer inset-y-2.5"
+                    src="../../assets/images/dcpass.svg"
+                    alt=""
+                    @click="togglenewPasswordAgain"
+                  />
+                </client-only>
+              </div>
+            </div>
+            <BaseButton @click="step++" :full="true" class="mt-6"
+              ><span class="text-white">تایید</span></BaseButton
+            >
+          </div>
+          <img
+            src="../../assets/images/password-bg.svg"
+            class="md:block hidden"
+            alt=""
+          />
+        </div>
+      </div>
+    </keep-alive>
+
     <div v-else-if="stage === 'password' && step === 2">
       <div>
         <div class="flex flex-col justify-center items-center mt-32">
@@ -251,60 +256,65 @@
       </div>
     </div>
     <!-- number -->
-    <div v-if="stage === 'number' && step === 0">
-      <p class="mx-auto text-lg text-center mt-20">تغییر شماره موبایل</p>
-      <p class="text-base text-center mt-8">
-        گذرواژه خود را برای تغییر شماره تلفن وارد کنید
-      </p>
-      <div
-        class="enter-password justify-between px-9 py-7 sm:w-7/12 mx-auto mt-12 flex"
-        dir="rtl"
-      >
-        <div class="w-full sm:w-8/12">
-          <label for="enter-pass"> گذرواژه: </label>
-          <input
-            dir="ltr"
-            type="text"
-            class="bg-primary border-Neutral-Green1 mt-2.5 w-full"
-            style="height: 60px"
-            id="enter-pass"
+    <keep-alive>
+      <div v-if="stage === 'number' && step === 0">
+        <p class="mx-auto text-lg text-center mt-20">تغییر شماره موبایل</p>
+        <p class="text-base text-center mt-8">
+          گذرواژه خود را برای تغییر شماره تلفن وارد کنید
+        </p>
+        <div
+          class="enter-password justify-between px-9 py-7 sm:w-7/12 mx-auto mt-12 flex"
+          dir="rtl"
+        >
+          <div class="w-full sm:w-8/12">
+            <label for="enter-pass"> گذرواژه: </label>
+            <input
+              dir="ltr"
+              type="text"
+              class="bg-primary border-Neutral-Green1 mt-2.5 w-full"
+              style="height: 60px"
+              id="enter-pass"
+            />
+            <BaseButton class="mt-7" @click="step++" :full="true"
+              ><span class="text-white">تایید</span></BaseButton
+            >
+          </div>
+          <img
+            class="hidden sm:block"
+            src="../../assets/images/enter-password.svg"
+            alt=""
           />
-          <BaseButton class="mt-7" @click="step++" :full="true"
-            ><span class="text-white">تایید</span></BaseButton
-          >
         </div>
-        <img
-          class="hidden sm:block"
-          src="../../assets/images/enter-password.svg"
-          alt=""
-        />
       </div>
-    </div>
-    <div class="enter-new-num" v-else-if="stage === 'number' && step === 1">
-      <p class="mx-auto text-lg text-center mt-20">شماره موبایل جدید</p>
-      <p class="text-base text-center mt-8">
-        شماره موبایل قدیمی شما نمایش داده شده لطفا شماره موبایل جدید خود را وارد
-        کنید
-      </p>
-      <div
-        class="flex enter-new mt-32 justify-between sm:w-7/12 mx-auto py-7 px-5 sm:pl-5 sm:pr-14"
-        dir="rtl"
-      >
-        <div class="sm:w-7/12 w-full">
-          <BaseInput label="شماره موبایل قدیم" />
-          <BaseInput class="mt-4" :code="true" label="شماره موبایل جدید" />
-          <BaseInput class="mt-3" label="کد تایید" />
-          <BaseButton @click="step++" class="mt-7" :full="true"
-            ><span class="text-white">تایید</span></BaseButton
-          >
+    </keep-alive>
+    <keep-alive>
+      <div class="enter-new-num" v-else-if="stage === 'number' && step === 1">
+        <p class="mx-auto text-lg text-center mt-20">شماره موبایل جدید</p>
+        <p class="text-base text-center mt-8">
+          شماره موبایل قدیمی شما نمایش داده شده لطفا شماره موبایل جدید خود را
+          وارد کنید
+        </p>
+        <div
+          class="flex enter-new mt-32 justify-between sm:w-7/12 mx-auto py-7 px-5 sm:pl-5 sm:pr-14"
+          dir="rtl"
+        >
+          <div class="sm:w-7/12 w-full">
+            <BaseInput label="شماره موبایل قدیم" />
+            <BaseInput class="mt-4" :code="true" label="شماره موبایل جدید" />
+            <BaseInput class="mt-3" label="کد تایید" />
+            <BaseButton @click="step++" class="mt-7" :full="true"
+              ><span class="text-white">تایید</span></BaseButton
+            >
+          </div>
+          <img
+            class="md:block hidden"
+            src="../../assets/images/bg-new-num.svg"
+            alt=""
+          />
         </div>
-        <img
-          class="md:block hidden"
-          src="../../assets/images/bg-new-num.svg"
-          alt=""
-        />
       </div>
-    </div>
+    </keep-alive>
+
     <div v-else-if="stage === 'number' && step === 2">
       <div>
         <div class="flex flex-col justify-center items-center mt-32">
